@@ -266,7 +266,7 @@ html,body{height:auto;min-height:100%;overflow-x:hidden}
   #tour .tour-tag{display:inline-block;font-family:var(--cond);font-weight:700;letter-spacing:.18em;font-size:13px;text-transform:uppercase;color:var(--ink);background:var(--lime);padding:6px 18px;border-radius:100px}
   #tour .tour-h{font-family:var(--jp);font-weight:900;font-size:clamp(24px,5vw,44px);line-height:1.25;margin:18px 0 16px;color:#fff}
   #tour .tour-lead{max-width:680px;margin:0 auto 30px;font-size:clamp(14px,3.2vw,15px);line-height:1.9;color:rgba(255,255,255,.88);font-weight:500}
-  #tour .tourfeat{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:left}
+  #tour .tourfeat{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;text-align:left;max-width:760px;margin:0 auto}
   #tour .tf{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:22px 20px}
   #tour .tf .tfico{font-size:30px;display:block;margin-bottom:10px}
   #tour .tf b{display:block;font-family:var(--jp);font-weight:900;font-size:15px;color:var(--lime);margin-bottom:8px}
@@ -287,13 +287,6 @@ html,body{height:auto;min-height:100%;overflow-x:hidden}
 .tppo-x .tx-en{font-family:"Anton",sans-serif;font-size:clamp(30px,7vw,68px);line-height:1;text-transform:uppercase;letter-spacing:.01em}
 .tppo-x .tx-jp{font-weight:700;margin-top:10px;font-size:clamp(13px,2.6vw,17px)}
 
-/* --- serve section (dark) --- */
-.tx-serve{background:linear-gradient(135deg,var(--ink),#0b2733);color:#fff}
-.tx-serve .tx-en{color:#fff}.tx-serve .tx-en em{font-style:normal;color:var(--lime)}
-.tx-serve .tx-jp{color:rgba(255,255,255,.82)}
-.tx-serve .tx-lead{text-align:center;font-size:clamp(15px,3.4vw,19px);font-weight:700;line-height:1.7;margin-bottom:clamp(22px,4vw,32px)}
-.tx-serve .tx-lead b{color:var(--lime);font-size:1.15em}
-
 .tx-game{max-width:620px;margin:0 auto}
 .tx-court{position:relative;height:clamp(120px,26vw,150px);background:linear-gradient(180deg,#0e6aa0,#0b4d75);border:2px solid rgba(255,255,255,.25);border-radius:16px;overflow:hidden;margin-bottom:16px}
 .tx-court::before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:rgba(255,255,255,.35)}
@@ -311,8 +304,6 @@ html,body{height:auto;min-height:100%;overflow-x:hidden}
 .tx-fact b{display:block;font-family:"Anton",sans-serif;font-size:clamp(30px,7vw,46px);line-height:1;color:var(--lime)}
 .tx-fact b i{font-style:normal;font-size:.4em;color:#fff;margin-left:2px}
 .tx-fact span{display:block;font-weight:700;font-size:clamp(11px,2.6vw,13px);color:rgba(255,255,255,.8);margin-top:10px;line-height:1.5}
-.tx-serve .tx-note{text-align:center;font-weight:900;font-size:clamp(15px,3.4vw,19px);margin-top:clamp(26px,4vw,36px);line-height:1.6}
-.tx-serve .tx-note b{color:var(--lime)}
 .tx-cta{display:flex;justify-content:center;margin-top:22px}
 .tx-cta a{display:inline-flex;align-items:center;gap:8px;background:var(--lime);color:var(--ink);font-weight:900;font-size:clamp(15px,2.6vw,18px);padding:15px 32px;border-radius:100px;text-decoration:none;box-shadow:0 10px 28px rgba(0,0,0,.28);transition:transform .2s}
 .tx-cta a:hover{transform:translateY(-3px)}
@@ -411,19 +402,17 @@ section[id],div[id]{scroll-margin-top:64px}
 </section>
 
 <div class="indexblock reveal">
-  <div class="ib-head"><div class="en">ON THIS <em>PAGE</em></div><div class="jp">このページの内容 気になる項目からどうぞ</div></div>
+  <div class="ib-head"><div class="en">ON THIS <em>PAGE</em></div><div class="jp">このページの内容 ─ 気になる項目からどうぞ</div></div>
   <div class="ixlist">
     <a class="ixrow" style="--ixc:#0B7FBF" href="#players"><span class="ixn">01</span><span class="ixtx"><b>世界TOP選手</b><span>TOP5の実力者を紹介</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    <a class="ixrow" style="--ixc:#C6F135" href="#serve"><span class="ixn">02</span><span class="ixtx"><b>サーブ速体験</b><span>世界最速に反応できる？</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    <a class="ixrow" style="--ixc:#E63946" href="#story"><span class="ixn">03</span><span class="ixtx"><b>日本との縁と物語</b><span>戦績だけじゃない背景</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    <a class="ixrow" style="--ixc:#075A87" href="#history"><span class="ixn">04</span><span class="ixtx"><b>大会の歴史と価値</b><span>1984年からの40年</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    <a class="ixrow" style="--ixc:#8134AF" href="#tour"><span class="ixn">05</span><span class="ixtx"><b>観戦ツアー企画</b><span>コーチ同行の特別体験</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    <a class="ixrow" style="--ixc:#0B7FBF" href="#guide"><span class="ixn">06</span><span class="ixtx"><b>初めてでも安心ガイド</b><span>行く前の不安を解消</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="ixrow" style="--ixc:#E63946" href="#story"><span class="ixn">02</span><span class="ixtx"><b>日本との縁と物語</b><span>戦績だけじゃない背景</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="ixrow" style="--ixc:#075A87" href="#history"><span class="ixn">03</span><span class="ixtx"><b>大会の歴史と価値</b><span>1984年からの40年</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="ixrow" style="--ixc:#8134AF" href="#tour"><span class="ixn">04</span><span class="ixtx"><b>観戦ツアー企画</b><span>コーチ同行の特別体験</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="ixrow" style="--ixc:#0B7FBF" href="#guide"><span class="ixn">05</span><span class="ixtx"><b>初めてでも安心ガイド</b><span>行く前の不安を解消</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </div>
 <div class="sidenav" id="sidenav">
   <a href="#players" data-t="players" style="--dc:#0B7FBF"><span class="lbl">世界TOP選手</span></a>
-  <a href="#serve" data-t="serve" style="--dc:#C6F135"><span class="lbl">サーブ速体験</span></a>
   <a href="#story" data-t="story" style="--dc:#E63946"><span class="lbl">日本との縁と物語</span></a>
   <a href="#history" data-t="history" style="--dc:#075A87"><span class="lbl">大会の歴史と価値</span></a>
   <a href="#tour" data-t="tour" style="--dc:#8134AF"><span class="lbl">観戦ツアー企画</span></a>
@@ -671,37 +660,7 @@ section[id],div[id]{scroll-margin-top:64px}
   </section>
 
 <!-- ================= 追加①：日本との関わり・選手ストーリー ================= -->
-<!-- ① サーブ速体験 -->
-<section class="tppo-x tx-serve" id="serve">
-  <div class="tx-inner">
-    <div class="tx-head">
-      <div class="tx-en">CAN YOU <em>REACT?</em></div>
-      <div class="tx-jp">世界最速のサーブ、あなたは反応できる？</div>
-    </div>
 
-    <p class="tx-lead">ルバキナのサーブ最速記録は <b>204&thinsp;km/h</b>。<br>ボタンを押して、あなたの反応の速さを試してみよう。</p>
-
-    <div class="tx-game">
-      <div class="tx-court">
-        <div class="tx-ball" id="txBall"></div>
-        <div class="tx-net"></div>
-        <div class="tx-status" id="txStatus">下のボタンを押してスタート</div>
-      </div>
-      <button class="tx-btn" id="txBtn">サーブを打たせる</button>
-      <div class="tx-result" id="txResult"></div>
-    </div>
-
-    <div class="tx-facts">
-      <div class="tx-fact"><b>204<i>km/h</i></b><span>ルバキナのサーブ最速記録<br>（2024 アブダビ）</span></div>
-      <div class="tx-fact"><b>約0.4<i>秒</i></b><span>コートを横断する時間。<br>人の反応（約0.2秒）の倍速で到達</span></div>
-      <div class="tx-fact"><b>178<i>cm</i></b><span>鄭 欽文の長身から放たれる<br>力強いファーストサーブ</span></div>
-    </div>
-
-    <p class="tx-note">この球速と球音は、テレビでは伝わらない。<br><b>会場にいた人だけが「速さ」を体で知っている。</b></p>
-    <div class="tx-cta"><a href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">生の一球を、体感しに行く →</a></div>
-    <p class="tx-disc">※ 反応時間はブラウザ計測のため目安です。球速は公開記録に基づく数値です。</p>
-  </div>
-</section>
 
 <section class="detail" id="story" style="--ac:#0B7FBF">
   <div class="sec-head" style="padding-top:0">
@@ -804,7 +763,6 @@ section[id],div[id]{scroll-margin-top:64px}
     <p class="tour-lead">一人でも、友達とでも。人気テニスインフルエンサーやテニス365コーチと一緒に、"観るポイント"を教わりながら世界最高峰の試合を楽しむ特別な観戦ツアー。初めての人も、もっと深く楽しみたい人も。</p>
     <div class="tourfeat">
       <div class="tf"><span class="tfico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M4 7c4 2 4 8 0 10M20 7c-4 2-4 8 0 10"/></svg></span><b>まとまった席で一緒に観戦</b><p>ツアー参加者用にまとまった席をご用意。安心して仲間と盛り上がれます。</p></div>
-      <div class="tf"><span class="tfico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span><b>特典：バックヤード見学</b><p>普段は入れないエリアへ。大会の舞台裏を体感できる特別体験（予定）。</p></div>
       <div class="tf"><span class="tfico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v10H8l-4 4V5z"/></svg></span><b>コーチ・インフルエンサーが同行</b><p>試合の見どころや選手の技術を、その場で解説。観戦がもっと面白くなる。</p></div>
     </div>
     <p class="tour-note">※ 内容は企画中の仮案です。実施可否・詳細は決まり次第ご案内します。</p>
@@ -889,7 +847,7 @@ section[id],div[id]{scroll-margin-top:64px}
     var sn=document.getElementById('sidenav'); if(!sn) return;
     var hero=document.querySelector('.hero');
     new IntersectionObserver(function(es){es.forEach(function(e){sn.classList.toggle('show',!e.isIntersecting);});},{threshold:0}).observe(hero);
-    var ids=['players','serve','story','history','tour','guide'];
+    var ids=['players','story','history','tour','guide'];
     var secs=ids.map(function(i){return document.getElementById(i);}).filter(Boolean);
     var dots={}; sn.querySelectorAll('a').forEach(function(a){dots[a.getAttribute('data-t')]=a;});
     new IntersectionObserver(function(es){
@@ -900,70 +858,7 @@ section[id],div[id]{scroll-margin-top:64px}
   })();
 </script>
 <script async src="https://www.instagram.com/embed.js"></script>
-<script>
-(function(){
-  var btn=document.getElementById('txBtn'),ball=document.getElementById('txBall'),
-      statusEl=document.getElementById('txStatus'),result=document.getElementById('txResult');
-  if(!btn||!ball) return;
-  var state='idle',flightStart=0,armed=false,timer=null;
-  var FLIGHT=650; // ms across court (slightly slower so the ball is clearly visible)
-  function setBall(pos,anim){
-    ball.style.transition = anim ? ('left '+FLIGHT+'ms linear') : 'none';
-    ball.style.left = pos;
-  }
-  function launch(){
-    result.innerHTML='';
-    statusEl.textContent='…構えて…';
-    btn.disabled=true;
-    // reset ball to start, no animation
-    setBall('6%',false); ball.style.opacity='0';
-    var delay=700+Math.random()*1400;
-    timer=setTimeout(function(){
-      statusEl.textContent='今だ！ボタンをもう一度！';
-      ball.style.opacity='1';
-      // double rAF guarantees the browser registers the start position before animating
-      requestAnimationFrame(function(){
-        requestAnimationFrame(function(){
-          setBall('90%',true);
-          flightStart=performance.now();
-          armed=true; state='flying';
-          btn.disabled=false; btn.textContent='今すぐ返す！';
-        });
-      });
-      // miss -> ace
-      timer=setTimeout(function(){
-        if(state==='flying'){
-          armed=false; state='idle';
-          result.innerHTML='<span class="bad">エース！</span> 反応が間に合わなかった…<br>これが世界最速サーブの速さ。';
-          statusEl.textContent='下のボタンでもう一度';
-          btn.textContent='もう一度チャレンジ';
-        }
-      },FLIGHT+40);
-    },delay);
-  }
-  btn.addEventListener('click',function(){
-    if(state==='idle'){
-      state='waiting'; launch(); return;
-    }
-    if(state==='waiting'){ return; } // ignore taps during suspense
-    if(state==='flying' && armed){
-      var rt=performance.now()-flightStart;
-      clearTimeout(timer);
-      armed=false; state='idle';
-      // freeze ball where it is
-      var cur=getComputedStyle(ball).left;
-      setBall(cur,false);
-      var msg;
-      if(rt<220) msg='<span class="good">ナイスリターン！</span> '+Math.round(rt)+'ms ─ プロ級の反応！';
-      else if(rt<400) msg='<span class="good">返球成功！</span> '+Math.round(rt)+'ms ─ かなり速い反応です';
-      else msg='<span class="good">ギリギリ届いた！</span> '+Math.round(rt)+'ms ─ 本物はもっと速い…';
-      result.innerHTML=msg;
-      statusEl.textContent='下のボタンでもう一度';
-      btn.textContent='もう一度チャレンジ';
-    }
-  });
-})();
-</script>
+
 <div class="ifxcta"><div class="ifxcta-in">
 <div class="ifxcta-txt">世界最高峰の女子テニス<span class="sp">、東京・有明 ／ 10/26-11/1</span></div>
 <a class="ifxcta-btn" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">今すぐ観に行く →</a>
