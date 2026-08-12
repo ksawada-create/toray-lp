@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TORAY PPO TENNIS 2026｜世界TOP選手 特設</title>
+<meta property="og:title" content="TORAY PPO TENNIS 2026">
+<meta property="og:description" content="国内最高峰の女子テニス。世界TOP選手が東京に集結。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@500;600;700&family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  em,i{font-style:normal}
+  :root{
+    --court:#0B7FBF; --court-deep:#075A87; --court-light:#E8F4FB;
+    --ink:#12212B; --paper:#FFFFFF; --line:#E2E8ED; --mute:#7D8B95;
+    --lime:#C6F135;
+    --disp:"Anton", sans-serif;
+    --cond:"Barlow Condensed", sans-serif;
+    --jp:"Noto Sans JP", sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--jp);font-weight:500;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+
+  /* top bar */
+  .bar{background:var(--ink);color:#fff;padding:12px clamp(16px,4vw,48px);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:80}
+  .bar .logo{font-family:var(--cond);font-weight:700;letter-spacing:.16em;font-size:15px;text-transform:uppercase}
+  .bar .logo b{color:var(--lime)}
+  .bar .cta{font-family:var(--cond);font-weight:700;letter-spacing:.1em;font-size:13px;text-transform:uppercase;background:var(--lime);color:var(--ink);padding:8px 18px;border-radius:100px;transition:transform .2s}
+  .bar .cta:hover{transform:scale(1.05)}
+
+  /* hero */
+  .hero{position:relative;background:linear-gradient(135deg,var(--court),var(--court-deep));color:#fff;padding:clamp(40px,7vw,86px) clamp(16px,4vw,48px) clamp(48px,8vw,90px);overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 2px,transparent 2px 46px);pointer-events:none}
+  .hero .tag{font-family:var(--cond);font-weight:600;letter-spacing:.28em;text-transform:uppercase;font-size:14px;color:var(--lime);margin-bottom:14px;position:relative}
+  .hero h1{font-family:var(--disp);font-size:clamp(46px,10vw,128px);line-height:.92;letter-spacing:.01em;text-transform:uppercase;position:relative;text-shadow:0 6px 30px rgba(0,0,0,.25)}
+  .hero h1 span{display:block}
+  .hero h1 .yellow{color:var(--lime)}
+  .hero .sub{font-family:var(--jp);font-weight:900;font-size:clamp(18px,3.4vw,30px);margin-top:20px;position:relative;letter-spacing:.02em}
+  .hero .meta{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px;position:relative}
+  .hero .meta .chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:100px;padding:8px 18px;font-family:var(--cond);font-weight:600;letter-spacing:.08em;font-size:14px;display:flex;gap:8px;align-items:center}
+  .hero .meta .chip b{color:var(--lime)}
+  .hero .comebuy{margin-top:34px;position:relative;display:inline-flex;align-items:center;gap:12px;background:var(--lime);color:var(--ink);font-family:var(--jp);font-weight:900;font-size:clamp(16px,2.6vw,20px);padding:16px 34px;border-radius:100px;transition:transform .2s,box-shadow .2s;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+  .hero .comebuy:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.28)}
+
+  /* section heading */
+  .sec-head{text-align:center;padding:clamp(40px,6vw,72px) 20px clamp(20px,3vw,32px)}
+  .sec-head .en{font-family:var(--disp);font-size:clamp(34px,6vw,66px);text-transform:uppercase;line-height:1;color:var(--ink)}
+  .sec-head .en em{font-style:normal;color:var(--court)}
+  .sec-head .jp{font-family:var(--jp);font-weight:700;color:var(--mute);margin-top:10px;font-size:clamp(14px,2vw,17px)}
+
+  /* player cards A-E */
+  .cards{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;padding:0 clamp(16px,4vw,48px) clamp(30px,5vw,56px);max-width:1500px;margin:0 auto}
+  .pcard{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s;position:relative}
+  .pcard:hover{transform:translateY(-8px);box-shadow:0 20px 44px rgba(11,127,191,.18);border-color:var(--ac)}
+  .pcard-img{position:relative;aspect-ratio:4/5;overflow:hidden;background:linear-gradient(160deg,var(--ac),#0b1e2a)}
+  .pcard-img img{width:100%;height:100%;object-fit:cover;object-position:center 15%;transition:transform .4s}
+  .pcard:hover .pcard-img img{transform:scale(1.06)}
+  .pcard-img .letter{position:absolute;top:10px;left:12px;font-family:var(--disp);font-size:40px;line-height:.8;color:#fff;text-shadow:0 3px 12px rgba(0,0,0,.4);z-index:2}
+  .pcard-img::after{content:"";position:absolute;left:0;right:0;bottom:0;height:52%;background:linear-gradient(to top,rgba(8,20,28,.82),transparent)}
+  .pcard-body{padding:14px 15px 16px;display:flex;flex-direction:column;gap:5px;flex:1}
+  .pcard-body .rank{font-family:var(--cond);font-weight:700;letter-spacing:.06em;font-size:11px;color:var(--ac);text-transform:uppercase}
+  .pcard-body .name{font-family:var(--disp);font-size:clamp(20px,2.1vw,27px);text-transform:uppercase;line-height:.95;color:var(--ink)}
+  .pcard-body .jp{font-size:12px;color:var(--mute);font-weight:700}
+  .pcard-body .tagline{font-size:13px;font-weight:700;color:var(--ink);margin-top:2px;line-height:1.4}
+  .pcard-body .more{margin-top:auto;padding-top:12px;font-family:var(--cond);font-weight:700;letter-spacing:.06em;font-size:13px;text-transform:uppercase;color:var(--ac);display:inline-flex;align-items:center;gap:6px}
+  .pcard-body .more svg{width:15px;height:15px;transition:transform .2s}
+  .pcard:hover .more svg{transform:translateX(4px)}
+  @media(max-width:1080px){.cards{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.cards{grid-template-columns:1fr}.pcard{flex-direction:row}.pcard-img{width:40%;aspect-ratio:auto}.pcard-body{width:60%}}
+
+  .clickhint{text-align:center;color:var(--mute);font-weight:700;font-size:13px;padding-bottom:clamp(30px,5vw,54px)}
+  .clickhint span{display:inline-flex;align-items:center;gap:8px;background:var(--court-light);color:var(--court-deep);padding:8px 18px;border-radius:100px}
+
+  /* detail sections */
+  .detail{border-top:1px solid var(--line);padding:clamp(40px,6vw,80px) clamp(16px,4vw,48px);scroll-margin-top:60px;background:linear-gradient(180deg,#fff, var(--court-light))}
+  .detail:nth-child(even){background:linear-gradient(180deg,var(--court-light),#fff)}
+  .detail-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:0.85fr 1.15fr;gap:clamp(24px,4vw,56px);align-items:center}
+  .detail-photo{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/5;background:linear-gradient(160deg,var(--ac),#0b1e2a);box-shadow:0 24px 50px rgba(11,33,43,.18)}
+  .detail-photo img{width:100%;height:100%;object-fit:cover;object-position:center 12%}
+  .detail-photo .badge{position:absolute;top:16px;left:18px;font-family:var(--disp);font-size:60px;line-height:.8;color:#fff;text-shadow:0 4px 16px rgba(0,0,0,.4)}
+  .detail-photo::after{content:"";position:absolute;inset:0;border:3px solid var(--ac);border-radius:22px;pointer-events:none;mix-blend-mode:overlay}
+  .detail-text .d-rank{display:inline-block;font-family:var(--cond);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:14px;color:#fff;background:var(--ac);padding:5px 14px;border-radius:100px}
+  .detail-text h2{font-family:var(--disp);font-size:clamp(46px,7vw,92px);text-transform:uppercase;line-height:.9;margin:16px 0 6px;letter-spacing:.01em}
+  .detail-text .d-jp{font-weight:700;color:var(--mute);font-size:16px}
+  .detail-text .d-hero{font-family:var(--jp);font-weight:900;font-size:clamp(20px,3vw,30px);color:var(--ac);margin:20px 0 22px;line-height:1.35}
+  .ach{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:22px}
+  .ach li{display:flex;align-items:center;gap:12px;font-weight:700;font-size:15px}
+  .ach .tick{width:22px;height:22px;border-radius:50%;background:var(--ac);flex:none;position:relative}
+  .ach .tick::after{content:"";position:absolute;left:7px;top:4px;width:5px;height:10px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+  .d-story{font-size:15px;line-height:1.95;color:#33454f;margin-bottom:22px}
+  .whybox{background:#fff;border-left:5px solid var(--ac);border-radius:0 14px 14px 0;padding:16px 20px;margin-bottom:26px;box-shadow:0 8px 24px rgba(11,33,43,.06)}
+  .whybox .whylabel{font-family:var(--cond);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:12px;color:var(--ac)}
+  .whybox p{font-size:15px;font-weight:700;line-height:1.7;margin-top:6px}
+  .d-actions{display:flex;gap:12px;flex-wrap:wrap}
+  .d-actions .ticket{background:var(--ink);color:#fff;font-weight:900;padding:14px 30px;border-radius:100px;transition:transform .2s}
+  .d-actions .ticket:hover{transform:translateY(-3px)}
+  .d-actions .share{background:transparent;border:2px solid var(--ink);color:var(--ink);font-family:var(--jp);font-weight:900;font-size:15px;padding:12px 26px;border-radius:100px;cursor:pointer;transition:all .2s}
+  .d-actions .share:hover{background:var(--ink);color:#fff}
+  .d-actions .ig-btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--cond);font-weight:700;letter-spacing:.02em;font-size:15px;padding:12px 22px;border-radius:100px;color:#fff;background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF,#515BD4);transition:transform .2s,box-shadow .2s;box-shadow:0 6px 18px rgba(221,42,123,.28)}
+  .d-actions .ig-btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(221,42,123,.4)}
+  .d-actions .ig-btn svg{width:20px;height:20px}
+  .d-actions .ig-btn span{font-size:14px}
+  @media(max-width:440px){.d-actions .ig-btn span{display:none}}
+  .ig-embed-row{max-width:1200px;margin:clamp(28px,4vw,44px) auto 0;padding-top:clamp(28px,4vw,44px);border-top:1px dashed rgba(11,33,43,.18)}
+  .ig-embed-label{display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--cond);font-weight:700;letter-spacing:.06em;font-size:14px;text-transform:uppercase;color:var(--ac);margin-bottom:18px}
+  .ig-embed-label svg{width:18px;height:18px}
+  .ig-carousel{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
+  .ig-carousel .instagram-media{margin:0 !important;min-width:0 !important;max-width:100% !important}
+  .ig-swipe-hint{display:none}
+  @media(max-width:820px){
+    .ig-carousel{display:flex;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:14px;padding-bottom:10px;scrollbar-width:thin}
+    .ig-carousel > .instagram-media{flex:0 0 86%;scroll-snap-align:center}
+    .ig-swipe-hint{display:block;text-align:center;font-family:var(--cond);font-weight:600;letter-spacing:.1em;font-size:12px;color:var(--mute);margin-top:12px}
+  }
+  @media(max-width:820px){.detail-inner{grid-template-columns:1fr}.detail-photo{max-width:420px;margin:0 auto}}
+
+  /* bottom CTA */
+  .bottom{background:linear-gradient(135deg,var(--court),var(--court-deep));color:#fff;text-align:center;padding:clamp(50px,8vw,110px) 20px;position:relative;overflow:hidden}
+  .bottom::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 2px,transparent 2px 46px)}
+  .bottom .tag{font-family:var(--cond);font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--lime);font-size:14px;position:relative}
+  .bottom h2{font-family:var(--disp);font-size:clamp(38px,7vw,84px);text-transform:uppercase;line-height:.95;margin:16px 0 8px;position:relative}
+  .bottom .jp{font-weight:900;font-size:clamp(18px,3vw,26px);margin-bottom:30px;position:relative}
+  .bottom .comebuy{position:relative;display:inline-flex;align-items:center;gap:12px;background:var(--lime);color:var(--ink);font-family:var(--jp);font-weight:900;font-size:clamp(17px,2.6vw,22px);padding:18px 40px;border-radius:100px;transition:transform .2s;box-shadow:0 12px 34px rgba(0,0,0,.25)}
+  .bottom .comebuy:hover{transform:translateY(-3px)}
+  .bottom .dates{margin-top:26px;font-family:var(--cond);font-weight:600;letter-spacing:.16em;font-size:15px;position:relative;color:rgba(255,255,255,.85)}
+
+  footer{background:var(--ink);color:rgba(255,255,255,.6);text-align:center;padding:26px 20px;font-family:var(--cond);letter-spacing:.1em;font-size:12px;text-transform:uppercase}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--ink);color:#fff;padding:14px 26px;border-radius:100px;font-weight:900;font-size:14px;z-index:200;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+  .toast.show{transform:translateX(-50%) translateY(0)}
+
+
+  /* ==== Variant B+F: vertical index + side progress nav ==== */
+  .indexblock{background:#fff;padding:clamp(30px,6vw,72px) clamp(14px,4vw,48px)}
+  .indexblock .ib-head{text-align:center;margin-bottom:clamp(20px,3vw,30px)}
+  .indexblock .ib-head .en{font-family:var(--disp);font-size:clamp(28px,5vw,54px);text-transform:uppercase;color:var(--ink)}
+  .indexblock .ib-head .en em{font-style:normal;color:var(--court)}
+  .indexblock .ib-head .jp{font-weight:700;color:var(--mute);margin-top:8px;font-size:clamp(13px,2vw,15px)}
+  .ixlist{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+  .ixrow{display:flex;align-items:center;gap:clamp(14px,3vw,26px);min-height:76px;padding:16px clamp(14px,3vw,22px);background:#fff;border:1px solid var(--line);border-left:6px solid var(--ixc);border-radius:16px;box-shadow:0 4px 14px rgba(11,33,43,.05);transition:transform .2s,box-shadow .2s;-webkit-tap-highlight-color:transparent}
+  .ixrow:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(11,33,43,.12)}
+  .ixrow:active{transform:scale(.99)}
+  .ixrow .ixn{font-family:var(--disp);font-size:clamp(26px,5vw,38px);line-height:1;color:#fff;background:var(--ixc);width:clamp(46px,12vw,58px);height:clamp(46px,12vw,58px);border-radius:14px;display:flex;align-items:center;justify-content:center;flex:none}
+  .ixrow .ixtx{flex:1;min-width:0}
+  .ixrow .ixtx b{display:block;font-family:var(--jp);font-weight:900;font-size:clamp(16px,4.4vw,22px);color:var(--ink);line-height:1.25}
+  .ixrow .ixtx span{display:block;font-size:clamp(12px,3.4vw,14px);font-weight:700;color:var(--mute);margin-top:2px}
+  .ixrow .ixarw{color:var(--ixc);transition:transform .2s;flex:none}
+  .ixrow:hover .ixarw{transform:translateX(5px)}
+  @media(max-width:520px){.ixrow{gap:13px;padding:14px 15px}}
+
+  /* ==== hero teaser (survey hook) ==== */
+  .teaser{background:var(--ink);color:#fff;padding:clamp(30px,5vw,54px) clamp(14px,4vw,48px);position:relative;overflow:hidden}
+  .teaser::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(115deg,rgba(255,255,255,.045) 0 2px,transparent 2px 46px);pointer-events:none}
+  .teaser-inner{max-width:960px;margin:0 auto;position:relative}
+  .teaser-lead{text-align:center;font-family:var(--jp);font-weight:900;font-size:clamp(19px,4.6vw,32px);line-height:1.4;letter-spacing:.01em;margin-bottom:clamp(20px,4vw,30px)}
+  .teaser-lead .hl{color:var(--lime)}
+  .teaser-sub{text-align:center;color:rgba(255,255,255,.72);font-weight:700;font-size:clamp(12px,3vw,14px);margin-top:10px}
+  .teaser-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,3vw,20px);margin-top:clamp(22px,4vw,32px)}
+  .tz{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:clamp(18px,4vw,28px) clamp(14px,3vw,24px);text-align:center}
+  .tz .big{font-family:var(--disp);font-size:clamp(52px,13vw,88px);line-height:.85;color:var(--lime)}
+  .tz .big i{font-style:normal;font-size:.42em;color:#fff;margin-left:2px}
+  .tz .big.ratio{font-size:clamp(38px,10vw,64px);white-space:nowrap}
+  .tz .big.ratio i{font-size:.5em;margin:0 1px}
+  .tz .cap{font-family:var(--jp);font-weight:900;font-size:clamp(14px,3.6vw,18px);margin-top:12px;line-height:1.35}
+  .tz .note{font-size:clamp(11px,2.8vw,13px);font-weight:700;color:rgba(255,255,255,.66);margin-top:7px;line-height:1.5}
+  .teaser-punch{text-align:center;font-family:var(--jp);font-weight:900;font-size:clamp(16px,4vw,24px);margin-top:clamp(22px,4vw,32px);line-height:1.5}
+  .teaser-punch .lime{color:var(--lime)}
+  .teaser-cta{display:flex;justify-content:center;margin-top:22px}
+  .teaser-cta a{display:inline-flex;align-items:center;gap:10px;background:var(--lime);color:var(--ink);font-family:var(--jp);font-weight:900;font-size:clamp(15px,2.4vw,19px);padding:15px 32px;border-radius:100px;box-shadow:0 10px 30px rgba(0,0,0,.28);transition:transform .2s}
+  .teaser-cta a:hover{transform:translateY(-3px)}
+  @media(max-width:520px){.teaser-grid{grid-template-columns:1fr}}
+
+
+  /* side progress nav */
+  .sidenav{position:fixed;top:50%;right:18px;transform:translateY(-50%);z-index:75;display:flex;flex-direction:column;gap:14px;opacity:0;pointer-events:none;transition:opacity .4s}
+  .sidenav.show{opacity:1;pointer-events:auto}
+  .sidenav a{position:relative;width:12px;height:12px;border-radius:50%;background:rgba(11,127,191,.28);transition:background .2s,transform .2s}
+  .sidenav a{--dc:var(--court)}
+  .sidenav a:hover,.sidenav a.active{background:var(--dc);transform:scale(1.4)}
+  .sidenav a .lbl{position:absolute;right:22px;top:50%;transform:translateY(-50%) translateX(6px);white-space:nowrap;background:var(--ink);color:#fff;font-size:12px;font-weight:700;padding:5px 12px;border-radius:100px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+  .sidenav a:hover .lbl{opacity:1;transform:translateY(-50%) translateX(0)}
+  @media(max-width:820px){.sidenav{display:none}}
+
+  /* ==== history heritage restyle ==== */
+  #history{background:linear-gradient(180deg,#f5efe3,#efe6d4) !important;position:relative;overflow:hidden}
+  #history::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 20% 15%,rgba(120,90,40,.05),transparent 60%),radial-gradient(circle at 80% 85%,rgba(120,90,40,.06),transparent 55%);pointer-events:none}
+  #history .sec-head .en{color:#3a2c17}
+  #history .sec-head .en em{color:#a9812f}
+  #history .sec-head .jp{color:#8a744d}
+  .heritage{max-width:920px;margin:0 auto;position:relative}
+  .est-ribbon{text-align:center;margin:0 auto clamp(30px,5vw,44px);max-width:560px}
+  .est-ribbon .est-line{display:flex;align-items:center;gap:14px;justify-content:center;color:#a9812f}
+  .est-ribbon .est-line::before,.est-ribbon .est-line::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,#c9aa6b,transparent)}
+  .est-ribbon .est-line span{font-family:var(--cond);font-weight:700;letter-spacing:.24em;text-transform:uppercase;font-size:13px;white-space:nowrap}
+  .est-ribbon .est-year{font-family:var(--disp);font-size:clamp(46px,10vw,80px);line-height:1;color:#3a2c17;margin-top:6px;letter-spacing:.02em}
+  .est-ribbon .est-cap{font-weight:700;color:#8a744d;font-size:14px;margin-top:8px;line-height:1.7}
+  .est-ribbon .est-cap b{color:#a9812f}
+
+  .tline{position:relative;padding-left:clamp(46px,8vw,72px)}
+  .tline::before{content:"";position:absolute;left:clamp(16px,3.5vw,26px);top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,#c8ab6b,#a9812f)}
+  .ev{position:relative;margin-bottom:clamp(26px,4vw,40px)}
+  .ev:last-child{margin-bottom:0}
+  .ev::before{content:"";position:absolute;left:calc(-1*clamp(46px,8vw,72px) + clamp(16px,3.5vw,26px) - 6px);top:4px;width:16px;height:16px;border-radius:50%;background:#f5efe3;border:3px solid #a9812f;box-shadow:0 0 0 4px rgba(169,129,47,.14)}
+  .ev .yr{font-family:var(--disp);font-size:clamp(24px,4vw,34px);line-height:1;color:#a9812f;letter-spacing:.02em}
+  .ev h3{font-family:var(--jp);font-weight:900;font-size:clamp(16px,3.6vw,20px);color:#3a2c17;margin:6px 0 8px}
+  .ev p{font-size:clamp(13.5px,3.2vw,15px);line-height:1.95;color:#5c4a2e;font-weight:500}
+  .ev p em{font-style:normal;color:#a9812f;font-weight:900}
+
+  .hall{margin-top:clamp(40px,6vw,60px);background:linear-gradient(180deg,#fffdf8,#f7f0e0);border:1px solid #e2d3ac;border-radius:20px;padding:clamp(24px,4vw,38px);box-shadow:0 16px 40px rgba(90,66,26,.12)}
+  .hall .hall-t{text-align:center;font-family:var(--cond);font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:14px;color:#a9812f;margin-bottom:6px}
+  .hall .hall-jp{text-align:center;font-weight:900;color:#3a2c17;font-size:clamp(16px,3.4vw,19px);margin-bottom:22px}
+  .hall-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .champ{background:#fffdf8;border:1px solid #e6d8b6;border-radius:14px;padding:15px 14px;text-align:center;transition:transform .2s,box-shadow .2s}
+  .champ:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(90,66,26,.14)}
+  .champ .cn{font-family:var(--cond);font-weight:700;letter-spacing:.03em;font-size:clamp(14px,3.2vw,16px);color:#3a2c17;text-transform:uppercase;line-height:1.15}
+  .champ .cjp{font-size:11.5px;font-weight:700;color:#8a744d;margin-top:3px}
+  .champ .cyr{font-family:var(--disp);font-size:13px;color:#a9812f;margin-top:6px;letter-spacing:.04em}
+  .champ.legend{background:linear-gradient(160deg,#a9812f,#7d5e1f);border-color:#7d5e1f}
+  .champ.legend .cn{color:#fff}.champ.legend .cjp{color:rgba(255,255,255,.82)}.champ.legend .cyr{color:#f3e6c4}
+  .hall-close{text-align:center;color:#8a744d;font-weight:700;font-size:clamp(13px,3vw,15px);margin-top:24px;line-height:1.8}
+  .hall-close b{color:#a9812f}
+  @media(max-width:640px){.hall-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:380px){.hall-grid{grid-template-columns:1fr}}
+
+
+  /* hero tournament name (big, matches h1 scale) */
+  .hero .eventname{font-family:var(--jp);font-weight:900;font-size:clamp(30px,7vw,80px);line-height:1;letter-spacing:.01em;color:#fff;margin-top:14px;position:relative;text-shadow:0 6px 30px rgba(0,0,0,.25)}
+  .hero .eventname .pp{color:var(--lime)}
+
+
+  /* ==== story cards (redesigned) ==== */
+  #story .ts-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2.5vw,20px);max-width:1000px;margin:0 auto}
+  #story .ts-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 8px 26px rgba(11,33,43,.07);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+  #story .ts-card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(11,33,43,.14)}
+  #story .ts-cardhead{background:var(--tc);color:#fff;padding:16px 20px 14px;position:relative;overflow:hidden}
+  #story .ts-cardhead::after{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(115deg,rgba(255,255,255,.08) 0 2px,transparent 2px 40px);pointer-events:none}
+  #story .ts-flag{position:relative;display:inline-block;font-size:12px;font-weight:900;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);border-radius:100px;padding:3px 12px;margin-bottom:10px}
+  #story .ts-namewrap{position:relative;display:flex;flex-direction:column;gap:2px}
+  #story .ts-en2{font-family:var(--cond);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px;opacity:.85}
+  #story .ts-name{font-weight:900;font-size:clamp(22px,5vw,30px);line-height:1.05}
+  #story .ts-catch{font-weight:900;font-size:clamp(15px,3.6vw,18px);color:var(--tc);padding:16px 20px 0;line-height:1.4}
+  #story .ts-body{font-size:clamp(13.5px,3.2vw,15px);line-height:1.9;color:#33454f;font-weight:500;padding:10px 20px 0}
+  #story .ts-tags{display:flex;flex-wrap:wrap;gap:8px;padding:16px 20px 20px;margin-top:auto}
+  #story .ts-tags span{font-size:12px;font-weight:900;color:var(--tc);background:rgba(0,0,0,.03);border:1px solid var(--line);border-left:4px solid var(--tc);border-radius:8px;padding:5px 12px}
+  @media(max-width:640px){
+    #story .ts-grid{grid-template-columns:1fr}
+    #story .ts-cardhead{display:flex;align-items:center;gap:12px;padding:14px 16px}
+    #story .ts-flag{margin-bottom:0;order:2;font-size:11px;padding:3px 10px}
+    #story .ts-namewrap{order:1;flex:1}
+    #story .ts-catch{padding:14px 16px 0}
+    #story .ts-body{padding:8px 16px 0}
+    #story .ts-tags{padding:14px 16px 18px}
+  }
+
+
+  /* ==== tour section (self-contained, white text on dark) ==== */
+  #tour{background:linear-gradient(135deg,var(--ink),#0b2733) !important;color:#fff}
+  #tour .tourwrap{max-width:960px;margin:0 auto;text-align:center;color:#fff}
+  #tour .tour-tag{display:inline-block;font-family:var(--cond);font-weight:700;letter-spacing:.18em;font-size:13px;text-transform:uppercase;color:var(--ink);background:var(--lime);padding:6px 18px;border-radius:100px}
+  #tour .tour-h{font-family:var(--jp);font-weight:900;font-size:clamp(24px,5vw,44px);line-height:1.25;margin:18px 0 16px;color:#fff}
+  #tour .tour-lead{max-width:680px;margin:0 auto 30px;font-size:clamp(14px,3.2vw,15px);line-height:1.9;color:rgba(255,255,255,.88);font-weight:500}
+  #tour .tourfeat{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:left}
+  #tour .tf{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:22px 20px}
+  #tour .tf .tfico{font-size:30px;display:block;margin-bottom:10px}
+  #tour .tf b{display:block;font-family:var(--jp);font-weight:900;font-size:15px;color:var(--lime);margin-bottom:8px}
+  #tour .tf p{font-size:13px;line-height:1.7;color:rgba(255,255,255,.82);font-weight:500}
+  #tour .tour-note{margin-top:24px;font-size:12px;color:rgba(255,255,255,.6);font-weight:700}
+  @media(max-width:820px){#tour .tourfeat{grid-template-columns:1fr}}
+
+
+
+
+/* ==== serve+guide add-on ==== */
+
+/* ===== 名前空間 tppo-x ===== */
+.tppo-x{--court:#0B7FBF;--court-deep:#075A87;--court-light:#E8F4FB;--ink:#12212B;--lime:#C6F135;--mute:#7D8B95;--line:#E2E8ED;font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;color:#12212B;line-height:1.6;box-sizing:border-box}
+.tppo-x *{box-sizing:border-box;margin:0;padding:0}
+.tppo-x .tx-inner{max-width:960px;margin:0 auto;padding:clamp(30px,5vw,60px) clamp(14px,4vw,40px)}
+.tppo-x .tx-head{text-align:center;margin-bottom:clamp(20px,4vw,32px)}
+.tppo-x .tx-en{font-family:"Anton",sans-serif;font-size:clamp(30px,7vw,68px);line-height:1;text-transform:uppercase;letter-spacing:.01em}
+.tppo-x .tx-jp{font-weight:700;margin-top:10px;font-size:clamp(13px,2.6vw,17px)}
+
+/* --- serve section (dark) --- */
+.tx-serve{background:linear-gradient(135deg,var(--ink),#0b2733);color:#fff}
+.tx-serve .tx-en{color:#fff}.tx-serve .tx-en em{font-style:normal;color:var(--lime)}
+.tx-serve .tx-jp{color:rgba(255,255,255,.82)}
+.tx-serve .tx-lead{text-align:center;font-size:clamp(15px,3.4vw,19px);font-weight:700;line-height:1.7;margin-bottom:clamp(22px,4vw,32px)}
+.tx-serve .tx-lead b{color:var(--lime);font-size:1.15em}
+
+.tx-game{max-width:620px;margin:0 auto}
+.tx-court{position:relative;height:clamp(120px,26vw,150px);background:linear-gradient(180deg,#0e6aa0,#0b4d75);border:2px solid rgba(255,255,255,.25);border-radius:16px;overflow:hidden;margin-bottom:16px}
+.tx-court::before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:rgba(255,255,255,.35)}
+.tx-net{position:absolute;left:50%;top:0;bottom:0;width:2px;background:repeating-linear-gradient(180deg,rgba(255,255,255,.6) 0 6px,transparent 6px 12px)}
+.tx-ball{position:absolute;left:6%;top:50%;width:20px;height:20px;margin-top:-10px;border-radius:50%;background:var(--lime);box-shadow:0 0 16px rgba(198,241,53,.8);opacity:0;transition:none}
+.tx-status{position:absolute;left:0;right:0;bottom:10px;text-align:center;font-weight:900;font-size:clamp(13px,3vw,15px);color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.tx-btn{display:block;width:100%;background:var(--lime);color:var(--ink);font-family:inherit;font-weight:900;font-size:clamp(16px,3.4vw,19px);border:0;border-radius:100px;padding:16px;cursor:pointer;box-shadow:0 10px 26px rgba(0,0,0,.3);transition:transform .15s}
+.tx-btn:hover{transform:translateY(-2px)}.tx-btn:active{transform:scale(.98)}
+.tx-btn:disabled{opacity:.55;cursor:default;transform:none}
+.tx-result{text-align:center;font-weight:900;font-size:clamp(15px,3.6vw,20px);min-height:1.6em;margin-top:16px;line-height:1.5}
+.tx-result .good{color:var(--lime)}.tx-result .bad{color:#ff8b8b}
+
+.tx-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:clamp(28px,5vw,40px)}
+.tx-fact{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:20px 14px;text-align:center}
+.tx-fact b{display:block;font-family:"Anton",sans-serif;font-size:clamp(30px,7vw,46px);line-height:1;color:var(--lime)}
+.tx-fact b i{font-style:normal;font-size:.4em;color:#fff;margin-left:2px}
+.tx-fact span{display:block;font-weight:700;font-size:clamp(11px,2.6vw,13px);color:rgba(255,255,255,.8);margin-top:10px;line-height:1.5}
+.tx-serve .tx-note{text-align:center;font-weight:900;font-size:clamp(15px,3.4vw,19px);margin-top:clamp(26px,4vw,36px);line-height:1.6}
+.tx-serve .tx-note b{color:var(--lime)}
+.tx-cta{display:flex;justify-content:center;margin-top:22px}
+.tx-cta a{display:inline-flex;align-items:center;gap:8px;background:var(--lime);color:var(--ink);font-weight:900;font-size:clamp(15px,2.6vw,18px);padding:15px 32px;border-radius:100px;text-decoration:none;box-shadow:0 10px 28px rgba(0,0,0,.28);transition:transform .2s}
+.tx-cta a:hover{transform:translateY(-3px)}
+.tx-disc{text-align:center;font-size:11px;margin-top:16px;color:rgba(255,255,255,.55);font-weight:700;line-height:1.6}
+@media(max-width:560px){.tx-facts{grid-template-columns:1fr}}
+
+/* --- guide section (light) --- */
+.tx-guide{background:linear-gradient(180deg,#fff,var(--court-light))}
+.tx-guide .tx-en{color:var(--ink)}.tx-guide .tx-en em{font-style:normal;color:var(--court)}
+.tx-guide .tx-jp{color:var(--mute)}
+.tx-qa{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tx-card{background:#fff;border:1px solid var(--line);border-top:5px solid var(--court);border-radius:16px;padding:24px 22px;box-shadow:0 8px 26px rgba(11,33,43,.06)}
+.tx-card .tx-icon{font-size:34px;margin-bottom:10px}
+.tx-card h3{font-weight:900;font-size:clamp(16px,3.6vw,18px);color:var(--court-deep);margin-bottom:10px}
+.tx-card p{font-size:clamp(13.5px,3.2vw,15px);line-height:1.9;color:#33454f;font-weight:500}
+.tx-card p b{color:var(--court-deep)}
+.tx-tips{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px}
+.tx-tip{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:clamp(13px,3vw,14.5px);font-weight:700;color:#33454f}
+.tx-tip span{font-size:22px;flex:none}
+.tx-guide .tx-cta a{box-shadow:0 10px 28px rgba(11,127,191,.28)}
+.tx-guide .tx-disc{color:var(--mute)}
+@media(max-width:640px){.tx-qa{grid-template-columns:1fr}.tx-tips{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body>
+<div class="bar">
+  <div class="logo">TORAY <b>PPO</b> TENNIS</div>
+  <a class="cta" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">チケット</a>
+</div>
+
+<section class="hero">
+  <div class="tag">Toray Pan Pacific Open 2026 ／ WTA 500</div>
+  <h1><span>国内最高峰の</span><span class="yellow">女子テニス。</span></h1>
+  <div class="eventname">東レ<span class="pp">PPO</span>テニス</div>
+  <div class="sub">世界TOP選手が、東京に集結する7日間。</div>
+  <div class="meta"><span class="chip"><b>5</b> 世界TOP選手</span><span class="chip"><b>WTA 500</b> 国内最高峰</span><span class="chip"><b>10/26-11/1</b> 東京・有明</span></div>
+  <a class="comebuy" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">見に来よう。チケットはこちら <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</section>
+
+<section class="teaser reveal">
+  <div class="teaser-inner">
+    <div class="teaser-lead">行ったら分かる、<span class="hl">満足する理由。</span></div>
+    <div class="teaser-grid">
+      <div class="tz">
+        <div class="big">98<i>%</i></div>
+        <div class="cap">が「生のプレー」を<br>いちばんの楽しみに</div>
+        <div class="note">テレビ観戦とは、別物。<br>球速も、音も、震えるほどの迫力も、<br>その場にいた人だけが知っている。</div>
+      </div>
+      <div class="tz">
+        <div class="big ratio">3<i>人に</i>2<i>人</i></div>
+        <div class="cap">が、また来る。<br>（2回目以上のリピーター）</div>
+        <div class="note">一度行くと、やめられない。<br>それが東レPPOの中毒性。</div>
+      </div>
+    </div>
+    <div class="teaser-punch">だから毎年、<span class="lime">また観に行きたくなる。</span></div>
+    <div class="teaser-cta">
+      <a href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">まずは1回、観に行く →</a>
+    </div>
+  </div>
+</section>
+
+<div class="indexblock reveal">
+  <div class="ib-head"><div class="en">ON THIS <em>PAGE</em></div><div class="jp">このページの内容 ─ 気になる項目からどうぞ</div></div>
+  <div class="ixlist">
+    <a class="ixrow" style="--ixc:#0B7FBF" href="#players"><span class="ixn">01</span><span class="ixtx"><b>世界TOP選手</b><span>TOP5の実力者を紹介</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="ixrow" style="--ixc:#C6F135" href="#serve"><span class="ixn">02</span><span class="ixtx"><b>サーブ速体験</b><span>世界最速に反応できる？</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="ixrow" style="--ixc:#E63946" href="#story"><span class="ixn">03</span><span class="ixtx"><b>日本との縁と物語</b><span>戦績だけじゃない背景</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="ixrow" style="--ixc:#075A87" href="#history"><span class="ixn">04</span><span class="ixtx"><b>大会の歴史と価値</b><span>1984年からの40年</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="ixrow" style="--ixc:#8134AF" href="#tour"><span class="ixn">05</span><span class="ixtx"><b>観戦ツアー企画</b><span>コーチ同行の特別体験</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="ixrow" style="--ixc:#0B7FBF" href="#guide"><span class="ixn">06</span><span class="ixtx"><b>初めてでも安心ガイド</b><span>行く前の不安を解消</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</div>
+<div class="sidenav" id="sidenav">
+  <a href="#players" data-t="players" style="--dc:#0B7FBF"><span class="lbl">世界TOP選手</span></a>
+  <a href="#serve" data-t="serve" style="--dc:#C6F135"><span class="lbl">サーブ速体験</span></a>
+  <a href="#story" data-t="story" style="--dc:#E63946"><span class="lbl">日本との縁と物語</span></a>
+  <a href="#history" data-t="history" style="--dc:#075A87"><span class="lbl">大会の歴史と価値</span></a>
+  <a href="#tour" data-t="tour" style="--dc:#8134AF"><span class="lbl">観戦ツアー企画</span></a>
+  <a href="#guide" data-t="guide" style="--dc:#0B7FBF"><span class="lbl">初めてでも安心ガイド</span></a>
+</div>
+
+<div class="sec-head reveal" id="players">
+  <div class="en">WORLD <em>TOP</em> PLAYERS</div>
+  <div class="jp">世界TOP選手紹介 ─ 気になる選手をタップ</div>
+</div>
+
+<div class="cards reveal">
+    <a class="pcard" href="#rybakina" style="--ac:#0A9EC4">
+      <div class="pcard-img">
+        <img src="https://cdn.peraichi.com/userData/5c729cb8-43dc-4ffa-a0db-38270a00002b/img/9a290e11-a682-4f0c-a747-6bcaba703f03/01_rybakina.jpg" alt="Rybakina" onerror="this.parentElement.classList.add('noimg')">
+      </div>
+      <div class="pcard-body">
+        <span class="rank">WORLD No.2 ／ KAZ</span>
+        <span class="name">Rybakina</span>
+        <span class="jp">エレーナ・ルバキナ</span>
+        <span class="tagline">世界2位の破壊力</span>
+        <span class="more">STORY を見る <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+    <a class="pcard" href="#bencic" style="--ac:#F2A900">
+      <div class="pcard-img">
+        <img src="https://cdn.peraichi.com/userData/5c729cb8-43dc-4ffa-a0db-38270a00002b/img/577bceda-18b5-43f6-b611-a74c46bd937f/02_bencic.jpg" alt="Bencic" onerror="this.parentElement.classList.add('noimg')">
+      </div>
+      <div class="pcard-body">
+        <span class="rank">DEFENDING CHAMP ／ SUI</span>
+        <span class="name">Bencic</span>
+        <span class="jp">ベリンダ・ベンチッチ</span>
+        <span class="tagline">母になった金メダリスト</span>
+        <span class="more">STORY を見る <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+    <a class="pcard" href="#osaka" style="--ac:#E63946">
+      <div class="pcard-img">
+        <img src="https://cdn.peraichi.com/userData/5c729cb8-43dc-4ffa-a0db-38270a00002b/img/fc0fe2e6-286e-4917-a5e5-9ab8f1e8b86a/03_osaka.jpg" alt="Osaka" onerror="this.parentElement.classList.add('noimg')">
+      </div>
+      <div class="pcard-body">
+        <span class="rank">4× GRAND SLAM ／ JPN</span>
+        <span class="name">Osaka</span>
+        <span class="jp">大坂 なおみ</span>
+        <span class="tagline">日本が生んだ世界の頂点</span>
+        <span class="more">STORY を見る <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+    <a class="pcard" href="#zheng" style="--ac:#3D5AFE">
+      <div class="pcard-img">
+        <img src="https://cdn.peraichi.com/userData/5c729cb8-43dc-4ffa-a0db-38270a00002b/img/ee3e5ac5-3eb0-4364-a018-c2d0001646e1/04_zheng.jpg" alt="Zheng" onerror="this.parentElement.classList.add('noimg')">
+      </div>
+      <div class="pcard-body">
+        <span class="rank">OLYMPIC GOLD ／ CHN</span>
+        <span class="name">Zheng</span>
+        <span class="jp">鄭 欽文</span>
+        <span class="tagline">パリ五輪の女王</span>
+        <span class="more">STORY を見る <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+    <a class="pcard" href="#kudermetova" style="--ac:#B14FD8">
+      <div class="pcard-img">
+        <img src="https://cdn.peraichi.com/userData/5c729cb8-43dc-4ffa-a0db-38270a00002b/img/830419b6-d4a5-4d82-886d-8adf7f496702/05_kudermetova.jpg" alt="Kudermetova" onerror="this.parentElement.classList.add('noimg')">
+      </div>
+      <div class="pcard-body">
+        <span class="rank">TOP CONTENDER</span>
+        <span class="name">Kudermetova</span>
+        <span class="jp">ベロニカ・クデルメトワ</span>
+        <span class="tagline">トップを脅かす実力派</span>
+        <span class="more">STORY を見る <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+</div>
+<div class="clickhint reveal"><span>▲ カードをタップすると、その選手のストーリーへ</span></div>
+
+  <section class="detail" id="rybakina" style="--ac:#0A9EC4">
+    <div class="detail-inner">
+      <div class="detail-photo">
+        <img src="https://cdn.peraichi.com/userData/5c729cb8-43dc-4ffa-a0db-38270a00002b/img/9a290e11-a682-4f0c-a747-6bcaba703f03/01_rybakina.jpg" alt="Rybakina" onerror="this.parentElement.classList.add('noimg')">
+      </div>
+      <div class="detail-text">
+        <span class="d-rank">WORLD No.2 ／ KAZ</span>
+        <h2>Rybakina</h2>
+        <span class="d-jp">エレーナ・ルバキナ</span>
+        <p class="d-hero">頂点を、射程に。</p>
+        <ul class="ach">
+            <li><span class="tick"></span>2022 ウィンブルドン 優勝</li>
+            <li><span class="tick"></span>2025 WTAファイナルズ 優勝</li>
+            <li><span class="tick"></span>2026 全豪オープン 優勝</li>
+        </ul>
+        <p class="d-story">2022年ウィンブルドンでグランドスラムを制覇し、2026年は全豪オープンを制してキャリアハイの世界2位へ。昨年の東レPPOは腰の負傷で準決勝を棄権したが、シーズン最終戦WTAファイナルズで頂点に立ってみせた。今年こそ、東京で完全な姿を。</p>
+        <div class="whybox">
+          <span class="whylabel">生で見たい理由</span>
+          <p>WTAファイナルズ出場を左右する重要な一戦。テレビでは伝わらないサーブの速度と球音を、いま生で。</p>
+        </div>
+        <div class="d-actions">
+          <a class="ticket" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">チケットを見る</a>
+          <a class="ig-btn" href="https://www.instagram.com/lenarybakina/" target="_blank" rel="noopener" aria-label="Rybakina Instagram">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
+            <span>@lenarybakina</span>
+          </a>
+          <button class="share" data-share="エレーナ・ルバキナ｜世界2位の破壊力。東レPPO 2026、10/26-11/1 東京・有明。">シェア</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="detail" id="bencic" style="--ac:#F2A900">
+    <div class="detail-inner">
+      <div class="detail-photo">
+        <img src="https://cdn.peraichi.com/userData/5c729cb8-43dc-4ffa-a0db-38270a00002b/img/577bceda-18b5-43f6-b611-a74c46bd937f/02_bencic.jpg" alt="Bencic" onerror="this.parentElement.classList.add('noimg')">
+      </div>
+      <div class="detail-text">
+        <span class="d-rank">DEFENDING CHAMP ／ SUI</span>
+        <h2>Bencic</h2>
+        <span class="d-jp">ベリンダ・ベンチッチ</span>
+        <p class="d-hero">王座を守りに、東京へ。</p>
+        <ul class="ach">
+            <li><span class="tick"></span>2021 東京五輪 金メダル</li>
+            <li><span class="tick"></span>2024 第一子 出産</li>
+            <li><span class="tick"></span>2025 東レPPO 優勝</li>
+        </ul>
+        <p class="d-story">2021年、東京オリンピックのシングルスで金メダルを獲得。2024年に出産を経てツアーを離れたが、復帰後アブダビと東レPPOの2大会で優勝。母となった彼女は、以前より強くしなやかに戻ってきた。金メダルを獲った街で、連覇に挑む。</p>
+        <div class="whybox">
+          <span class="whylabel">生で見たい理由</span>
+          <p>金メダルを獲った街に、母として、前年女王として帰ってくる。連覇がかかる物語の続きを、この目で。</p>
+        </div>
+        <div class="d-actions">
+          <a class="ticket" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">チケットを見る</a>
+          <a class="ig-btn" href="https://www.instagram.com/belindabencic/" target="_blank" rel="noopener" aria-label="Bencic Instagram">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
+            <span>@belindabencic</span>
+          </a>
+          <button class="share" data-share="ベリンダ・ベンチッチ｜母になった金メダリスト。東レPPO 2026、10/26-11/1 東京・有明。">シェア</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="detail has-embed" id="osaka" style="--ac:#E63946">
+    <div class="detail-inner">
+      <div class="detail-photo">
+        <img src="https://cdn.peraichi.com/userData/5c729cb8-43dc-4ffa-a0db-38270a00002b/img/fc0fe2e6-286e-4917-a5e5-9ab8f1e8b86a/03_osaka.jpg" alt="Osaka" onerror="this.parentElement.classList.add('noimg')">
+      </div>
+      <div class="detail-text">
+        <span class="d-rank">4× GRAND SLAM ／ JPN</span>
+        <h2>Osaka</h2>
+        <span class="d-jp">大坂 なおみ</span>
+        <p class="d-hero">日本のアイコン、ホームへ。</p>
+        <ul class="ach">
+            <li><span class="tick"></span>2018 全米オープン 優勝</li>
+            <li><span class="tick"></span>2019 全豪オープン 優勝</li>
+            <li><span class="tick"></span>2026 ウィンブルドン 8強</li>
+        </ul>
+        <p class="d-story">全豪2回・全米2回、四大大会を4度制した日本テニス史上最高の実績。出産・育児を経て復帰し、2026年はウィンブルドンで第1シードのサバレンカを破りベスト8へ。芝でも初の決勝進出を果たすなど、女王回帰の途上にある。</p>
+        <div class="whybox">
+          <span class="whylabel">生で見たい理由</span>
+          <p>世界のトップに立った日本人が、地元・東京のコートに立つ。同じ空気のなかで応援できる特別な一週間。</p>
+        </div>
+        <div class="d-actions">
+          <a class="ticket" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">チケットを見る</a>
+          <a class="ig-btn" href="https://www.instagram.com/naomiosaka/" target="_blank" rel="noopener" aria-label="Osaka Instagram">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
+            <span>@naomiosaka</span>
+          </a>
+          <button class="share" data-share="大坂 なおみ｜日本が生んだ世界の頂点。東レPPO 2026、10/26-11/1 東京・有明。">シェア</button>
+        </div>
+      </div>
+    </div>
+    <div class="ig-embed-row">
+      <span class="ig-embed-label"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg> @naomiosaka の投稿</span>
+      <div class="ig-carousel">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DaLgufxCVB-/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:14px;box-shadow:0 8px 24px rgba(11,33,43,.12);margin:0;padding:0;width:100%;min-width:0">
+          <a href="https://www.instagram.com/p/DaLgufxCVB-/?utm_source=ig_embed&amp;utm_campaign=loading" target="_blank" rel="noopener" style="background:#FFFFFF;line-height:0;padding:16px 0;text-align:center;text-decoration:none;width:100%;display:block;font-family:sans-serif;color:#555;font-size:14px">Instagramでこの投稿を見る</a>
+        </blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DZA4mwaCXRG/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:14px;box-shadow:0 8px 24px rgba(11,33,43,.12);margin:0;padding:0;width:100%;min-width:0">
+          <a href="https://www.instagram.com/p/DZA4mwaCXRG/?utm_source=ig_embed&amp;utm_campaign=loading" target="_blank" rel="noopener" style="background:#FFFFFF;line-height:0;padding:16px 0;text-align:center;text-decoration:none;width:100%;display:block;font-family:sans-serif;color:#555;font-size:14px">Instagramでこの投稿を見る</a>
+        </blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DY99DR2lh-V/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:14px;box-shadow:0 8px 24px rgba(11,33,43,.12);margin:0;padding:0;width:100%;min-width:0">
+          <a href="https://www.instagram.com/p/DY99DR2lh-V/?utm_source=ig_embed&amp;utm_campaign=loading" target="_blank" rel="noopener" style="background:#FFFFFF;line-height:0;padding:16px 0;text-align:center;text-decoration:none;width:100%;display:block;font-family:sans-serif;color:#555;font-size:14px">Instagramでこの投稿を見る</a>
+        </blockquote>
+      </div>
+      <span class="ig-swipe-hint">← スワイプで見る →</span>
+    </div>
+  </section>
+  <section class="detail" id="zheng" style="--ac:#3D5AFE">
+    <div class="detail-inner">
+      <div class="detail-photo">
+        <img src="https://cdn.peraichi.com/userData/5c729cb8-43dc-4ffa-a0db-38270a00002b/img/ee3e5ac5-3eb0-4364-a018-c2d0001646e1/04_zheng.jpg" alt="Zheng" onerror="this.parentElement.classList.add('noimg')">
+      </div>
+      <div class="detail-text">
+        <span class="d-rank">OLYMPIC GOLD ／ CHN</span>
+        <h2>Zheng</h2>
+        <span class="d-jp">鄭 欽文</span>
+        <p class="d-hero">五輪女王、勝利の記憶へ。</p>
+        <ul class="ach">
+            <li><span class="tick"></span>2024 パリ五輪 金メダル</li>
+            <li><span class="tick"></span>2024 全豪オープン 準優勝</li>
+            <li><span class="tick"></span>2024 東レPPO 優勝</li>
+        </ul>
+        <p class="d-story">2024年パリオリンピックで中国勢初となるシングルス金メダルを獲得。同年の全豪オープン準優勝、WTAファイナルズ準優勝と、世界の頂点を争う実力者。2024年の東レPPOでは第1シードとして優勝を飾っており、東京は勝利の記憶が刻まれたコートだ。</p>
+        <div class="whybox">
+          <span class="whylabel">生で見たい理由</span>
+          <p>178cmから放たれる力強いサーブと攻撃的なストローク。五輪の頂点を知る選手の一撃を、その迫力ごと。</p>
+        </div>
+        <div class="d-actions">
+          <a class="ticket" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">チケットを見る</a>
+          <a class="ig-btn" href="https://www.instagram.com/zhengqinwen_tennis/" target="_blank" rel="noopener" aria-label="Zheng Instagram">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
+            <span>@zhengqinwen_tennis</span>
+          </a>
+          <button class="share" data-share="鄭 欽文｜パリ五輪の女王。東レPPO 2026、10/26-11/1 東京・有明。">シェア</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="detail" id="kudermetova" style="--ac:#B14FD8">
+    <div class="detail-inner">
+      <div class="detail-photo">
+        <img src="https://cdn.peraichi.com/userData/5c729cb8-43dc-4ffa-a0db-38270a00002b/img/830419b6-d4a5-4d82-886d-8adf7f496702/05_kudermetova.jpg" alt="Kudermetova" onerror="this.parentElement.classList.add('noimg')">
+      </div>
+      <div class="detail-text">
+        <span class="d-rank">TOP CONTENDER</span>
+        <h2>Kudermetova</h2>
+        <span class="d-jp">ベロニカ・クデルメトワ</span>
+        <p class="d-hero">番狂わせの、主役。</p>
+        <ul class="ach">
+            <li><span class="tick"></span>WTAツアー 優勝経験</li>
+            <li><span class="tick"></span>トップ10撃破 多数</li>
+            <li><span class="tick"></span>ダブルスでも実績</li>
+        </ul>
+        <p class="d-story">力強いフォアハンドと安定したベースラインプレーを武器に、世界の強豪と互角に渡り合ってきた実力派。優勝候補に名前が挙がる華やかな選手ではないかもしれないが、調子が噛み合えばトップシードを飲み込む力を持つ。トーナメントの行方を左右するコンテンダー。</p>
+        <div class="whybox">
+          <span class="whylabel">生で見たい理由</span>
+          <p>筋書き通りに進まないのがスポーツの醍醐味。彼女がトップ選手を破る瞬間に立ち会えるかもしれない。</p>
+        </div>
+        <div class="d-actions">
+          <a class="ticket" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">チケットを見る</a>
+          <a class="ig-btn" href="https://www.instagram.com/v.kudermetova/" target="_blank" rel="noopener" aria-label="Kudermetova Instagram">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
+            <span>@v.kudermetova</span>
+          </a>
+          <button class="share" data-share="ベロニカ・クデルメトワ｜トップを脅かす実力派。東レPPO 2026、10/26-11/1 東京・有明。">シェア</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ================= 追加①：日本との関わり・選手ストーリー ================= -->
+<!-- ① サーブ速体験 -->
+<section class="tppo-x tx-serve" id="serve">
+  <div class="tx-inner">
+    <div class="tx-head">
+      <div class="tx-en">CAN YOU <em>REACT?</em></div>
+      <div class="tx-jp">世界最速のサーブ、あなたは反応できる？</div>
+    </div>
+
+    <p class="tx-lead">ルバキナのサーブ最速記録は <b>204&thinsp;km/h</b>。<br>ボタンを押して、あなたの反応の速さを試してみよう。</p>
+
+    <div class="tx-game">
+      <div class="tx-court">
+        <div class="tx-ball" id="txBall"></div>
+        <div class="tx-net"></div>
+        <div class="tx-status" id="txStatus">下のボタンを押してスタート</div>
+      </div>
+      <button class="tx-btn" id="txBtn">サーブを打たせる</button>
+      <div class="tx-result" id="txResult"></div>
+    </div>
+
+    <div class="tx-facts">
+      <div class="tx-fact"><b>204<i>km/h</i></b><span>ルバキナのサーブ最速記録<br>（2024 アブダビ）</span></div>
+      <div class="tx-fact"><b>約0.4<i>秒</i></b><span>コートを横断する時間。<br>人の反応（約0.2秒）の倍速で到達</span></div>
+      <div class="tx-fact"><b>178<i>cm</i></b><span>鄭 欽文の長身から放たれる<br>力強いファーストサーブ</span></div>
+    </div>
+
+    <p class="tx-note">この球速と球音は、テレビでは伝わらない。<br><b>会場にいた人だけが「速さ」を体で知っている。</b></p>
+    <div class="tx-cta"><a href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">生の一球を、体感しに行く →</a></div>
+    <p class="tx-disc">※ 反応時間はブラウザ計測のため目安です。球速は公開記録に基づく数値です。</p>
+  </div>
+</section>
+
+<section class="detail" id="story" style="--ac:#0B7FBF">
+  <div class="sec-head" style="padding-top:0">
+    <div class="en">JAPAN <em>&</em> THEIR STORY</div>
+    <div class="jp">戦績だけじゃない。日本との縁と、それぞれの物語</div>
+  </div>
+  <div class="ts-grid">
+    <article class="ts-card" style="--tc:#E63946">
+      <header class="ts-cardhead"><div class="ts-flag">JPN 日本</div><div class="ts-namewrap"><span class="ts-en2">OSAKA</span><span class="ts-name">大坂 なおみ</span></div></header>
+      <div class="ts-catch">日本のアイコンが、ホームへ帰る。</div>
+      <p class="ts-body">大阪生まれ、3歳で渡米。ハイチと日本のルーツを持つ“日本の顔”。母となり復帰した今、彼女にとって東京は帰る場所そのもの。会場全体が味方になる一週間は、他の大会では味わえない。</p>
+      <div class="ts-tags"><span>四大大会4勝</span><span>地元・東京</span></div>
+    </article>
+    <article class="ts-card" style="--tc:#F2A900">
+      <header class="ts-cardhead"><div class="ts-flag">SUI スイス</div><div class="ts-namewrap"><span class="ts-en2">BENCIC</span><span class="ts-name">ベンチッチ</span></div></header>
+      <div class="ts-catch">金メダルの街に、女王として帰還。</div>
+      <p class="ts-body">2021年、この東京で五輪金メダルを掴んだ選手。出産を経て、その“金メダルの街”に前年女王として戻ってくる。日本のファンにとって、あの夏の記憶とまっすぐ繋がる特別なストーリー。</p>
+      <div class="ts-tags"><span>東京五輪 金</span><span>前年女王</span></div>
+    </article>
+    <article class="ts-card" style="--tc:#3D5AFE">
+      <header class="ts-cardhead"><div class="ts-flag">CHN 中国</div><div class="ts-namewrap"><span class="ts-en2">ZHENG</span><span class="ts-name">鄭 欽文</span></div></header>
+      <div class="ts-catch">勝利の記憶が眠る、有明へ。</div>
+      <p class="ts-body">パリ五輪女王が、2024年の東レPPOでも優勝。東京・有明は彼女にとって“勝利の記憶が刻まれたコート”。アジアの新女王が凱旋する舞台として、これ以上ない縁がある。</p>
+      <div class="ts-tags"><span>パリ五輪 金</span><span>有明で優勝</span></div>
+    </article>
+    <article class="ts-card" style="--tc:#0A9EC4">
+      <header class="ts-cardhead"><div class="ts-flag">KAZ カザフスタン</div><div class="ts-namewrap"><span class="ts-en2">RYBAKINA</span><span class="ts-name">ルバキナ</span></div></header>
+      <div class="ts-catch">昨年の悔しさを、晴らしに来る。</div>
+      <p class="ts-body">昨年の東レPPOは腰の負傷で準決勝を棄権──悔しさを残した東京へのリベンジ。その後シーズン最終戦を制した世界2位が、“やり残し”を晴らしに戻ってくる。続きが見たくなる物語。</p>
+      <div class="ts-tags"><span>世界2位</span><span>東京リベンジ</span></div>
+    </article>
+  </div>
+  <p style="text-align:center;color:var(--mute);font-weight:700;font-size:14px;margin-top:24px">記録の裏にある“縁”を知ると、その一球がもっと特別に見えてくる。</p>
+</section>
+
+<!-- ================= 追加②：大会の歴史と価値 ================= -->
+<section class="detail" id="history" style="--ac:#075A87">
+  <div class="sec-head" style="padding-top:0">
+    <div class="en">40+ <em>YEARS</em> OF HISTORY</div>
+    <div class="jp">1984年から続く、国内最高峰の女子国際テニス大会</div>
+  </div>
+  <div class="heritage">
+
+    <div class="est-ribbon reveal">
+      <div class="est-line"><span>Established</span></div>
+      <div class="est-year">1984</div>
+      <div class="est-cap">前身は1973年の「東レシルックトーナメント」。<br>1984年、<b>アジア初・最大級</b>の国際女子大会として生まれ変わった。</div>
+    </div>
+
+    <div class="tline">
+      <div class="ev reveal">
+        <div class="yr">1984</div>
+        <h3>“哀愁のマレーバ”、記念すべき初代女王に</h3>
+        <p>第1回大会を制したのはマヌエラ・マレーバ。可憐な佇まいから<em>「哀愁のマレーバ」</em>と呼ばれ、翌1985年も連覇。日本のテニスファンに最初に愛された大会の華だった。</p>
+      </div>
+      <div class="ev reveal">
+        <div class="yr">1989</div>
+        <h3>“史上最強”ナブラチロワ、日本に降臨</h3>
+        <p>クリス・エバートとともに初出場したナブラチロワが初優勝。1993年にも制し、優勝スピーチでは急逝したアーサー・アッシュ氏へ哀悼を捧げ、会場に黙祷を促した。<em>シングルス通算167タイトルは今なお歴代1位</em>。</p>
+      </div>
+      <div class="ev reveal">
+        <div class="yr">1997</div>
+        <h3>新旧女王対決 ― グラフ 対 16歳ヒンギス</h3>
+        <p>21のグランドスラムを持つ27歳の女王グラフと、前週に初メジャーを獲った16歳ヒンギス。世代を超えた頂上決戦に、<em>会場には朝から当日券を求める長蛇の列</em>ができた。アジア最大級の大会だった時代を象徴する一戦。</p>
+      </div>
+      <div class="ev reveal">
+        <div class="yr">2000s</div>
+        <h3>セレナ、シャラポワ ― 世界の頂点が東京へ</h3>
+        <p>2000年代に入っても、セレナ・ウィリアムズやシャラポワら、その時代の“世界最強”が来日。<em>日本にいながら世界の頂点を生で観られる</em>場所であり続けた。</p>
+      </div>
+      <div class="ev reveal">
+        <div class="yr">2019</div>
+        <h3>そして、大坂なおみ ― 日本の頂点が優勝</h3>
+        <p>四大大会を制した日本のアイコン、大坂なおみがこの大会で優勝。<em>歴代女王の系譜に、日本人の名が刻まれた瞬間</em>だった。</p>
+      </div>
+    </div>
+
+    <div class="hall reveal">
+      <div class="hall-t">Hall of Champions</div>
+      <div class="hall-jp">この東京のコートで戦った、歴代の女王たち</div>
+      <div class="hall-grid">
+        <div class="champ"><div class="cn">Manuela Maleeva</div><div class="cjp">マヌエラ・マレーバ</div><div class="cyr">1984・85</div></div>
+        <div class="champ legend"><div class="cn">Steffi Graf</div><div class="cjp">シュテフィ・グラフ</div><div class="cyr">GRAND SLAM 22冠</div></div>
+        <div class="champ legend"><div class="cn">Navratilova</div><div class="cjp">ナブラチロワ</div><div class="cyr">通算167タイトル</div></div>
+        <div class="champ legend"><div class="cn">Martina Hingis</div><div class="cjp">マルチナ・ヒンギス</div><div class="cyr">最年少女王</div></div>
+        <div class="champ legend"><div class="cn">Serena Williams</div><div class="cjp">セレナ・ウィリアムズ</div><div class="cyr">GRAND SLAM 23冠</div></div>
+        <div class="champ"><div class="cn">Naomi Osaka</div><div class="cjp">大坂 なおみ</div><div class="cyr">2019</div></div>
+      </div>
+      <div class="hall-close">40年以上にわたり、世界の頂点がここで戦ってきました。<br><b>その歴史の続きが、今年もこの東京で生まれる。</b></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= 追加：観戦ツアー企画（仮） ================= -->
+<section class="detail" id="tour" style="--ac:#C6F135;background:linear-gradient(135deg,var(--ink),#0b2733)">
+  <div class="tourwrap">
+    <div class="tour-tag">SPECIAL TOUR ／ 企画中</div>
+    <h2 class="tour-h">インフルエンサー<br>&amp; テニス365コーチと<br>いっしょに観戦ツアー</h2>
+    <p class="tour-lead">一人でも、友達とでも。人気テニスインフルエンサーやテニス365コーチと一緒に、"観るポイント"を教わりながら世界最高峰の試合を楽しむ特別な観戦ツアー。初めての人も、もっと深く楽しみたい人も。</p>
+    <div class="tourfeat">
+      <div class="tf"><span class="tfico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M4 7c4 2 4 8 0 10M20 7c-4 2-4 8 0 10"/></svg></span><b>まとまった席で一緒に観戦</b><p>ツアー参加者用にまとまった席をご用意。安心して仲間と盛り上がれます。</p></div>
+      <div class="tf"><span class="tfico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span><b>特典：バックヤード見学</b><p>普段は入れないエリアへ。大会の舞台裏を体感できる特別体験（予定）。</p></div>
+      <div class="tf"><span class="tfico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v10H8l-4 4V5z"/></svg></span><b>コーチ・インフルエンサーが同行</b><p>試合の見どころや選手の技術を、その場で解説。観戦がもっと面白くなる。</p></div>
+    </div>
+    <p class="tour-note">※ 内容は企画中の仮案です。実施可否・詳細は決まり次第ご案内します。</p>
+  </div>
+</section>
+
+<!-- ② 初めてでも安心ガイド -->
+<section class="tppo-x tx-guide" id="guide">
+  <div class="tx-inner">
+    <div class="tx-head">
+      <div class="tx-en">FIRST <em>TIME?</em></div>
+      <div class="tx-jp">初めてでも大丈夫。3つの不安、先に解消します</div>
+    </div>
+
+    <div class="tx-qa">
+      <div class="tx-card">
+        <div class="tx-icon"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+        <h3>「一人でも楽しめる？」</h3>
+        <p>むしろ一人観戦は多数派。来場者アンケートでも“1人で気ままに”は上位でした。自分のペースで好きな試合に集中できます。仲間と行きたい人には、コーチ同行の観戦ツアーも企画中。</p>
+      </div>
+      <div class="tx-card">
+        <div class="tx-icon"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2 2 2 0 0 0 0 4 2 2 0 0 1-2 2H5a2 2 0 0 1-2-2 2 2 0 0 0 0-4z"/><path d="M15 6v12" stroke-dasharray="2 2"/></svg></div>
+        <h3>「チケット、高いんじゃ？」</h3>
+        <p>席種によって幅があり、手が届きやすい席から選べます。<b>18歳以下（大学生・専門学校生含む）はA席が無料</b>（事前申込制）。4歳以上はチケットが必要です。まずは公式で席種と価格をチェック。</p>
+      </div>
+      <div class="tx-card">
+        <div class="tx-icon"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14M9 21l-2-2M15 21l2-2"/><circle cx="8.5" cy="14" r="1"/><circle cx="15.5" cy="14" r="1"/></svg></div>
+        <h3>「会場、行きやすい？」</h3>
+        <p>会場は<b>有明コロシアム</b>。ゆりかもめ「有明」「有明テニスの森」駅、りんかい線「国際展示場」駅から<b>いずれも徒歩8分</b>。都心からアクセス良好です。半券があれば<b>再入場OK</b>、途中で食事も楽しめます。</p>
+      </div>
+    </div>
+
+    <div class="tx-tips">
+      <div class="tx-tip"><span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3l4 3 4-3 4 3-3 3v12H7V9L4 6z"/></svg></span>動きやすい服装で。屋内外どちらの席も快適に</div>
+      <div class="tx-tip"><span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 8h16M6 8v9a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8M9 3v3M13 3v3"/></svg></span>飲食エリアあり。半券で再入場もできる</div>
+      <div class="tx-tip"><span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="12" rx="2"/><circle cx="12" cy="13" r="3.2"/><path d="M9 7l1.5-2h3L15 7"/></svg></span>選手が目の前を通ることも。カメラの準備を</div>
+      <div class="tx-tip"><span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>複数試合を一日で観られる日も。早めの来場がおすすめ</div>
+    </div>
+
+    <div class="tx-cta"><a href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">席種・価格を見てみる →</a></div>
+    <p class="tx-disc">※ 料金・無料対象・申込方法などの最新情報は公式サイトでご確認ください。会場：有明コロシアム（東京都江東区有明2-2-22）。</p>
+  </div>
+</section>
+
+<section class="bottom">
+  <div class="tag">Don't miss it</div>
+  <h2>その物語を、<br>生で。</h2>
+  <div class="jp">世界のトップが集う一週間を、東京で。</div>
+  <a class="comebuy" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">
+    チケットを見る
+    <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </a>
+  <div class="dates">Ariake Coliseum ／ Tokyo ／ Oct 26 – Nov 1, 2026</div>
+</section>
+
+<footer>© Toray Pan Pacific Open Tennis Tournament</footer>
+
+
+<div class="toast" id="toast">リンクをコピーしました</div>
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  const toast=document.getElementById('toast');
+  function showToast(m){toast.textContent=m;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2200);}
+  document.querySelectorAll('[data-share]').forEach(b=>b.addEventListener('click',async()=>{
+    const t=b.getAttribute('data-share'),u=location.href;
+    if(navigator.share){try{await navigator.share({title:'TORAY PPO 2026',text:t,url:u});}catch(e){}}
+    else{try{await navigator.clipboard.writeText(t+' '+u);showToast('シェア文をコピーしました');}catch(e){showToast('コピーに失敗しました');}}
+  }));
+  function fixIgWidths(){
+    document.querySelectorAll('.ig-carousel iframe.instagram-media').forEach(function(f){
+      f.style.minWidth='0'; f.style.width='100%'; f.style.margin='0';
+    });
+  }
+  window.addEventListener('load', function(){
+    if(window.instgrm && window.instgrm.Embeds){ window.instgrm.Embeds.process(); }
+    var t=setInterval(fixIgWidths, 600); setTimeout(function(){clearInterval(t);}, 6000);
+  });
+
+  // side progress nav: show after hero, highlight current section
+  (function(){
+    var sn=document.getElementById('sidenav'); if(!sn) return;
+    var hero=document.querySelector('.hero');
+    new IntersectionObserver(function(es){es.forEach(function(e){sn.classList.toggle('show',!e.isIntersecting);});},{threshold:0}).observe(hero);
+    var ids=['players','serve','story','history','tour','guide'];
+    var secs=ids.map(function(i){return document.getElementById(i);}).filter(Boolean);
+    var dots={}; sn.querySelectorAll('a').forEach(function(a){dots[a.getAttribute('data-t')]=a;});
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ Object.values(dots).forEach(function(d){d.classList.remove('active');}); var d=dots[e.target.id]; if(d)d.classList.add('active'); } });
+    },{rootMargin:'-45% 0px -45% 0px'}).observe.bind(null);
+    var ob=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){Object.values(dots).forEach(function(d){d.classList.remove('active');});var d=dots[e.target.id];if(d)d.classList.add('active');}});},{rootMargin:'-45% 0px -45% 0px'});
+    secs.forEach(function(s){ob.observe(s);});
+  })();
+</script>
+<script async src="https://www.instagram.com/embed.js"></script>
+<script>
+(function(){
+  var btn=document.getElementById('txBtn'),ball=document.getElementById('txBall'),
+      statusEl=document.getElementById('txStatus'),result=document.getElementById('txResult');
+  if(!btn||!ball) return;
+  var state='idle',flightStart=0,armed=false,timer=null;
+  var FLIGHT=650; // ms across court (slightly slower so the ball is clearly visible)
+  function setBall(pos,anim){
+    ball.style.transition = anim ? ('left '+FLIGHT+'ms linear') : 'none';
+    ball.style.left = pos;
+  }
+  function launch(){
+    result.innerHTML='';
+    statusEl.textContent='…構えて…';
+    btn.disabled=true;
+    // reset ball to start, no animation
+    setBall('6%',false); ball.style.opacity='0';
+    var delay=700+Math.random()*1400;
+    timer=setTimeout(function(){
+      statusEl.textContent='今だ！ボタンをもう一度！';
+      ball.style.opacity='1';
+      // double rAF guarantees the browser registers the start position before animating
+      requestAnimationFrame(function(){
+        requestAnimationFrame(function(){
+          setBall('90%',true);
+          flightStart=performance.now();
+          armed=true; state='flying';
+          btn.disabled=false; btn.textContent='今すぐ返す！';
+        });
+      });
+      // miss -> ace
+      timer=setTimeout(function(){
+        if(state==='flying'){
+          armed=false; state='idle';
+          result.innerHTML='<span class="bad">エース！</span> 反応が間に合わなかった…<br>これが世界最速サーブの速さ。';
+          statusEl.textContent='下のボタンでもう一度';
+          btn.textContent='もう一度チャレンジ';
+        }
+      },FLIGHT+40);
+    },delay);
+  }
+  btn.addEventListener('click',function(){
+    if(state==='idle'){
+      state='waiting'; launch(); return;
+    }
+    if(state==='waiting'){ return; } // ignore taps during suspense
+    if(state==='flying' && armed){
+      var rt=performance.now()-flightStart;
+      clearTimeout(timer);
+      armed=false; state='idle';
+      // freeze ball where it is
+      var cur=getComputedStyle(ball).left;
+      setBall(cur,false);
+      var msg;
+      if(rt<220) msg='<span class="good">ナイスリターン！</span> '+Math.round(rt)+'ms ─ プロ級の反応！';
+      else if(rt<400) msg='<span class="good">返球成功！</span> '+Math.round(rt)+'ms ─ かなり速い反応です';
+      else msg='<span class="good">ギリギリ届いた！</span> '+Math.round(rt)+'ms ─ 本物はもっと速い…';
+      result.innerHTML=msg;
+      statusEl.textContent='下のボタンでもう一度';
+      btn.textContent='もう一度チャレンジ';
+    }
+  });
+})();
+</script>
+<script>
+(function(){
+  function postH(){
+    var h=document.documentElement.scrollHeight;
+    if(window.parent)window.parent.postMessage({tppoHeight:h},'*');
+  }
+  window.addEventListener('load',postH);
+  window.addEventListener('resize',postH);
+  // also poll a few times in case fonts/images shift layout after load
+  var n=0,t=setInterval(function(){postH();if(++n>10)clearInterval(t);},500);
+})();
+</script>
+</body>
+</html>
