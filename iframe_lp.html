@@ -335,11 +335,13 @@ html,body{height:auto;min-height:100%;overflow-x:hidden}
 .ifxnav{position:fixed;top:0;left:0;right:0;z-index:99999;background:rgba(18,33,43,.97);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.12)}
 .ifxnav-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:6px;overflow-x:auto;padding:11px 16px;scrollbar-width:none}
 .ifxnav-in::-webkit-scrollbar{display:none}
+.ifxnav::after{content:"";position:absolute;top:0;right:0;bottom:0;width:26px;background:linear-gradient(90deg,transparent,rgba(18,33,43,.97));pointer-events:none;z-index:1}
 .ifxnav a{flex:none;font-family:var(--jp);font-weight:700;font-size:13px;color:rgba(255,255,255,.85);padding:7px 13px;border-radius:100px;white-space:nowrap;text-decoration:none;transition:background .2s,color .2s}
 .ifxnav a:hover{background:rgba(255,255,255,.12);color:#fff}
 .ifxnav a.ifx-logo{font-family:var(--cond);font-weight:700;letter-spacing:.1em;color:#fff;margin-right:6px}
 .ifxnav a.ifx-logo b{color:var(--lime)}
 .ifxnav a.ifx-tk{background:var(--lime);color:var(--ink);font-weight:900;margin-left:auto}
+.ifxnav .nvs{display:none}.ifxnav .nvf{display:inline}
 .ifxcta{position:fixed;left:0;right:0;bottom:0;z-index:99999;background:rgba(18,33,43,.96);backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,.14);padding:10px 16px;box-shadow:0 -6px 24px rgba(0,0,0,.25)}
 .ifxcta-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:14px;justify-content:space-between}
 .ifxcta-txt{color:#fff;font-weight:900;font-size:14px;line-height:1.3}
@@ -349,7 +351,7 @@ html,body{height:auto;min-height:100%;overflow-x:hidden}
 body{padding-top:54px;padding-bottom:72px}
 html{scroll-behavior:smooth}
 section[id],div[id]{scroll-margin-top:64px}
-@media(max-width:520px){.ifxcta-txt .sp{display:none}.ifxcta-txt{font-size:12px}.ifxcta-btn{font-size:14px;padding:12px 18px}.ifxnav a.ifx-logo{display:none}}
+@media(max-width:520px){.ifxcta-txt .sp{display:none}.ifxcta-txt{font-size:12px}.ifxcta-btn{font-size:14px;padding:12px 18px}.ifxnav a.ifx-logo{display:none}.ifxnav-in{gap:2px;padding:9px 10px;justify-content:space-between}.ifxnav a{font-size:11.5px;padding:6px 7px}.ifxnav a.ifx-tk{padding:6px 12px}.ifxnav .nvf{display:none}.ifxnav .nvs{display:inline}}@media(max-width:360px){.ifxnav a{font-size:10.5px;padding:5px 5px}}
 
 </style>
 </head>
@@ -357,11 +359,11 @@ section[id],div[id]{scroll-margin-top:64px}
 <span id="top"></span>
 <nav class="ifxnav"><div class="ifxnav-in">
 <a class="ifx-logo" href="#top">TORAY <b>PPO</b></a>
-<a href="#players">世界TOP選手</a>
-<a href="#story">日本との縁</a>
-<a href="#history">大会の歴史</a>
-<a href="#tour">観戦ツアー</a>
-<a href="#guide">初めての方へ</a>
+<a href="#players"><span class="nvf">世界TOP選手</span><span class="nvs">選手</span></a>
+<a href="#story"><span class="nvf">日本との縁</span><span class="nvs">縁</span></a>
+<a href="#history"><span class="nvf">大会の歴史</span><span class="nvs">歴史</span></a>
+<a href="#tour"><span class="nvf">観戦ツアー</span><span class="nvs">ツアー</span></a>
+<a href="#guide"><span class="nvf">初めての方へ</span><span class="nvs">初めて</span></a>
 <a class="ifx-tk" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">チケット</a>
 </div></nav>
 
