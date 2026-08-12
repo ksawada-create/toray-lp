@@ -4,7 +4,7 @@
 <style>
 :root{--court:#0B7FBF;--court-deep:#075A87;--court-light:#E8F4FB;--ink:#12212B;--lime:#C6F135;--mute:#7D8B95;--line:#E2E8ED;--disp:"Anton",sans-serif;--cond:"Barlow Condensed",sans-serif;--jp:"Noto Sans JP",sans-serif;}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:var(--jp);background:linear-gradient(135deg,var(--ink),#0b2733)}
+html,body{margin:0;padding:0}body{font-family:var(--jp);background:transparent}.tppo-x.tx-serve,.tx-serve{margin:0}
 em,i{font-style:normal}
 
 
@@ -165,7 +165,16 @@ em,i{font-style:normal}
 })();
 </script>
 <script>
-(function(){function postH(){var h=document.documentElement.scrollHeight;if(window.parent)window.parent.postMessage({tppoServeHeight:h},'*');}
-window.addEventListener('load',postH);window.addEventListener('resize',postH);var n=0,t=setInterval(function(){postH();if(++n>10)clearInterval(t);},500);})();
+(function(){
+  function h(){
+    var s=document.querySelector('.tx-serve')||document.body;
+    var hh=Math.ceil(s.getBoundingClientRect().height);
+    if(window.parent)window.parent.postMessage({tppoServeHeight:hh},'*');
+  }
+  window.addEventListener('load',h);
+  window.addEventListener('resize',h);
+  if(window.ResizeObserver){try{new ResizeObserver(h).observe(document.querySelector('.tx-serve')||document.body);}catch(e){}}
+  var n=0,t=setInterval(function(){h();if(++n>20)clearInterval(t);},400);
+})();
 </script>
 </body></html>
