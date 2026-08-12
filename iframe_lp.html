@@ -335,9 +335,44 @@
 .tx-guide .tx-disc{color:var(--mute)}
 @media(max-width:640px){.tx-qa{grid-template-columns:1fr}.tx-tips{grid-template-columns:1fr}}
 
+
+/* ==== iframe full: fixed nav + CTA (self-contained) ==== */
+.bar{display:none !important}
+.stickynav{display:none !important}
+.sidenav{display:none !important}
+.ifxnav{position:fixed;top:0;left:0;right:0;z-index:99999;background:rgba(18,33,43,.97);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.12)}
+.ifxnav-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:6px;overflow-x:auto;padding:11px 16px;scrollbar-width:none}
+.ifxnav-in::-webkit-scrollbar{display:none}
+.ifxnav a{flex:none;font-family:var(--jp);font-weight:700;font-size:13px;color:rgba(255,255,255,.85);padding:7px 13px;border-radius:100px;white-space:nowrap;text-decoration:none;transition:background .2s,color .2s}
+.ifxnav a:hover{background:rgba(255,255,255,.12);color:#fff}
+.ifxnav a.ifx-logo{font-family:var(--cond);font-weight:700;letter-spacing:.1em;color:#fff;margin-right:6px}
+.ifxnav a.ifx-logo b{color:var(--lime)}
+.ifxnav a.ifx-tk{background:var(--lime);color:var(--ink);font-weight:900;margin-left:auto}
+.ifxcta{position:fixed;left:0;right:0;bottom:0;z-index:99999;background:rgba(18,33,43,.96);backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,.14);padding:10px 16px;box-shadow:0 -6px 24px rgba(0,0,0,.25)}
+.ifxcta-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:14px;justify-content:space-between}
+.ifxcta-txt{color:#fff;font-weight:900;font-size:14px;line-height:1.3}
+.ifxcta-txt b{color:var(--lime)}
+.ifxcta-btn{flex:none;display:inline-flex;align-items:center;gap:8px;background:var(--lime);color:var(--ink);font-family:var(--jp);font-weight:900;font-size:16px;padding:13px 24px;border-radius:100px;text-decoration:none;box-shadow:0 6px 18px rgba(198,241,53,.35);animation:ifxpulse 2.4s ease-in-out infinite}
+@keyframes ifxpulse{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+body{padding-top:54px;padding-bottom:72px}
+html{scroll-behavior:smooth}
+section[id],div[id]{scroll-margin-top:64px}
+@media(max-width:520px){.ifxcta-txt .sp{display:none}.ifxcta-txt{font-size:12px}.ifxcta-btn{font-size:14px;padding:12px 18px}.ifxnav a.ifx-logo{display:none}}
+
 </style>
 </head>
 <body>
+<span id="top"></span>
+<nav class="ifxnav"><div class="ifxnav-in">
+<a class="ifx-logo" href="#top">TORAY <b>PPO</b></a>
+<a href="#players">世界TOP選手</a>
+<a href="#story">日本との縁</a>
+<a href="#history">大会の歴史</a>
+<a href="#tour">観戦ツアー</a>
+<a href="#guide">初めての方へ</a>
+<a class="ifx-tk" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">チケット</a>
+</div></nav>
+
 <div class="bar">
   <div class="logo">TORAY <b>PPO</b> TENNIS</div>
   <a class="cta" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">チケット</a>
@@ -928,17 +963,9 @@
   });
 })();
 </script>
-<script>
-(function(){
-  function postH(){
-    var h=document.documentElement.scrollHeight;
-    if(window.parent)window.parent.postMessage({tppoHeight:h},'*');
-  }
-  window.addEventListener('load',postH);
-  window.addEventListener('resize',postH);
-  // also poll a few times in case fonts/images shift layout after load
-  var n=0,t=setInterval(function(){postH();if(++n>10)clearInterval(t);},500);
-})();
-</script>
+<div class="ifxcta"><div class="ifxcta-in">
+<div class="ifxcta-txt">世界最高峰の女子テニス<span class="sp">、東京・有明 ／ 10/26-11/1</span></div>
+<a class="ifxcta-btn" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">今すぐ観に行く →</a>
+</div></div>
 </body>
 </html>
