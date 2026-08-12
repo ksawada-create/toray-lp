@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>サーブ速体験｜東レPPO</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@500;600;700&family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--court:#0B7FBF;--court-deep:#075A87;--court-light:#E8F4FB;--ink:#12212B;--lime:#C6F135;--mute:#7D8B95;--line:#E2E8ED;--disp:"Anton",sans-serif;--cond:"Barlow Condensed",sans-serif;--jp:"Noto Sans JP",sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{margin:0;padding:0}body{font-family:var(--jp);background:transparent}.tppo-x.tx-serve,.tx-serve{margin:0}
+em,i{font-style:normal}
+
+
+
+
+
+/* ==== serve+guide add-on ==== */
+
+/* ===== 名前空間 tppo-x ===== */
+.tppo-x{--court:#0B7FBF;--court-deep:#075A87;--court-light:#E8F4FB;--ink:#12212B;--lime:#C6F135;--mute:#7D8B95;--line:#E2E8ED;font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;color:#12212B;line-height:1.6;box-sizing:border-box}
+.tppo-x *{box-sizing:border-box;margin:0;padding:0}
+.tppo-x .tx-inner{max-width:960px;margin:0 auto;padding:clamp(30px,5vw,60px) clamp(14px,4vw,40px)}
+.tppo-x .tx-head{text-align:center;margin-bottom:clamp(20px,4vw,32px)}
+.tppo-x .tx-en{font-family:"Anton",sans-serif;font-size:clamp(30px,7vw,68px);line-height:1;text-transform:uppercase;letter-spacing:.01em}
+.tppo-x .tx-jp{font-weight:700;margin-top:10px;font-size:clamp(13px,2.6vw,17px)}
+
+/* --- serve section (dark) --- */
+.tx-serve{background:linear-gradient(135deg,var(--ink),#0b2733);color:#fff}
+.tx-serve .tx-en{color:#fff}.tx-serve .tx-en em{font-style:normal;color:var(--lime)}
+.tx-serve .tx-jp{color:rgba(255,255,255,.82)}
+.tx-serve .tx-lead{text-align:center;font-size:clamp(15px,3.4vw,19px);font-weight:700;line-height:1.7;margin-bottom:clamp(22px,4vw,32px)}
+.tx-serve .tx-lead b{color:var(--lime);font-size:1.15em}
+
+.tx-game{max-width:620px;margin:0 auto}
+.tx-court{position:relative;height:clamp(120px,26vw,150px);background:linear-gradient(180deg,#0e6aa0,#0b4d75);border:2px solid rgba(255,255,255,.25);border-radius:16px;overflow:hidden;margin-bottom:16px}
+.tx-court::before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:rgba(255,255,255,.35)}
+.tx-net{position:absolute;left:50%;top:0;bottom:0;width:2px;background:repeating-linear-gradient(180deg,rgba(255,255,255,.6) 0 6px,transparent 6px 12px)}
+.tx-ball{position:absolute;left:6%;top:50%;width:20px;height:20px;margin-top:-10px;border-radius:50%;background:var(--lime);box-shadow:0 0 16px rgba(198,241,53,.8);opacity:0;transition:none}
+.tx-status{position:absolute;left:0;right:0;bottom:10px;text-align:center;font-weight:900;font-size:clamp(13px,3vw,15px);color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.tx-btn{display:block;width:100%;background:var(--lime);color:var(--ink);font-family:inherit;font-weight:900;font-size:clamp(16px,3.4vw,19px);border:0;border-radius:100px;padding:16px;cursor:pointer;box-shadow:0 10px 26px rgba(0,0,0,.3);transition:transform .15s}
+.tx-btn:hover{transform:translateY(-2px)}.tx-btn:active{transform:scale(.98)}
+.tx-btn:disabled{opacity:.55;cursor:default;transform:none}
+.tx-result{text-align:center;font-weight:900;font-size:clamp(15px,3.6vw,20px);min-height:1.6em;margin-top:16px;line-height:1.5}
+.tx-result .good{color:var(--lime)}.tx-result .bad{color:#ff8b8b}
+
+.tx-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:clamp(28px,5vw,40px)}
+.tx-fact{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:20px 14px;text-align:center}
+.tx-fact b{display:block;font-family:"Anton",sans-serif;font-size:clamp(30px,7vw,46px);line-height:1;color:var(--lime)}
+.tx-fact b i{font-style:normal;font-size:.4em;color:#fff;margin-left:2px}
+.tx-fact span{display:block;font-weight:700;font-size:clamp(11px,2.6vw,13px);color:rgba(255,255,255,.8);margin-top:10px;line-height:1.5}
+.tx-serve .tx-note{text-align:center;font-weight:900;font-size:clamp(15px,3.4vw,19px);margin-top:clamp(26px,4vw,36px);line-height:1.6}
+.tx-serve .tx-note b{color:var(--lime)}
+.tx-cta{display:flex;justify-content:center;margin-top:22px}
+.tx-cta a{display:inline-flex;align-items:center;gap:8px;background:var(--lime);color:var(--ink);font-weight:900;font-size:clamp(15px,2.6vw,18px);padding:15px 32px;border-radius:100px;text-decoration:none;box-shadow:0 10px 28px rgba(0,0,0,.28);transition:transform .2s}
+.tx-cta a:hover{transform:translateY(-3px)}
+.tx-disc{text-align:center;font-size:11px;margin-top:16px;color:rgba(255,255,255,.55);font-weight:700;line-height:1.6}
+@media(max-width:560px){.tx-facts{grid-template-columns:1fr}}
+
+/* --- guide section (light) --- */
+.tx-guide{background:linear-gradient(180deg,#fff,var(--court-light))}
+.tx-guide .tx-en{color:var(--ink)}.tx-guide .tx-en em{font-style:normal;color:var(--court)}
+.tx-guide .tx-jp{color:var(--mute)}
+.tx-qa{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tx-card{background:#fff;border:1px solid var(--line);border-top:5px solid var(--court);border-radius:16px;padding:24px 22px;box-shadow:0 8px 26px rgba(11,33,43,.06)}
+.tx-card .tx-icon{font-size:34px;margin-bottom:10px}
+.tx-card h3{font-weight:900;font-size:clamp(16px,3.6vw,18px);color:var(--court-deep);margin-bottom:10px}
+.tx-card p{font-size:clamp(13.5px,3.2vw,15px);line-height:1.9;color:#33454f;font-weight:500}
+.tx-card p b{color:var(--court-deep)}
+.tx-tips{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px}
+.tx-tip{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:clamp(13px,3vw,14.5px);font-weight:700;color:#33454f}
+.tx-tip span{font-size:22px;flex:none}
+.tx-guide .tx-cta a{box-shadow:0 10px 28px rgba(11,127,191,.28)}
+.tx-guide .tx-disc{color:var(--mute)}
+@media(max-width:640px){.tx-qa{grid-template-columns:1fr}.tx-tips{grid-template-columns:1fr}}
+</style></head><body>
+<section class="tppo-x tx-serve" id="serve">
+  <div class="tx-inner">
+    <div class="tx-head">
+      <div class="tx-en">CAN YOU <em>REACT?</em></div>
+      <div class="tx-jp">世界最速のサーブ、あなたは反応できる？</div>
+    </div>
+
+    <p class="tx-lead">ルバキナのサーブ最速記録は <b>204&thinsp;km/h</b>。<br>ボタンを押して、あなたの反応の速さを試してみよう。</p>
+
+    <div class="tx-game">
+      <div class="tx-court">
+        <div class="tx-ball" id="txBall"></div>
+        <div class="tx-net"></div>
+        <div class="tx-status" id="txStatus">下のボタンを押してスタート</div>
+      </div>
+      <button class="tx-btn" id="txBtn">サーブを打たせる</button>
+      <div class="tx-result" id="txResult"></div>
+    </div>
+
+    <div class="tx-facts">
+      <div class="tx-fact"><b>204<i>km/h</i></b><span>ルバキナのサーブ最速記録<br>（2024 アブダビ）</span></div>
+      <div class="tx-fact"><b>約0.4<i>秒</i></b><span>コートを横断する時間。<br>人の反応（約0.2秒）の倍速で到達</span></div>
+      <div class="tx-fact"><b>178<i>cm</i></b><span>鄭 欽文の長身から放たれる<br>力強いファーストサーブ</span></div>
+    </div>
+
+    <p class="tx-note">この球速と球音は、テレビでは伝わらない。<br><b>会場にいた人だけが「速さ」を体で知っている。</b></p>
+    <div class="tx-cta"><a href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">生の一球を、体感しに行く →</a></div>
+    <p class="tx-disc">※ 反応時間はブラウザ計測のため目安です。球速は公開記録に基づく数値です。</p>
+  </div>
+</section>
+<script>
+(function(){
+  var btn=document.getElementById('txBtn'),ball=document.getElementById('txBall'),
+      statusEl=document.getElementById('txStatus'),result=document.getElementById('txResult');
+  if(!btn||!ball) return;
+  var state='idle',flightStart=0,armed=false,timer=null;
+  var FLIGHT=650; // ms across court (slightly slower so the ball is clearly visible)
+  function setBall(pos,anim){
+    ball.style.transition = anim ? ('left '+FLIGHT+'ms linear') : 'none';
+    ball.style.left = pos;
+  }
+  function launch(){
+    result.innerHTML='';
+    statusEl.textContent='…構えて…';
+    btn.disabled=true;
+    // reset ball to start, no animation
+    setBall('6%',false); ball.style.opacity='0';
+    var delay=700+Math.random()*1400;
+    timer=setTimeout(function(){
+      statusEl.textContent='今だ！ボタンをもう一度！';
+      ball.style.opacity='1';
+      // double rAF guarantees the browser registers the start position before animating
+      requestAnimationFrame(function(){
+        requestAnimationFrame(function(){
+          setBall('90%',true);
+          flightStart=performance.now();
+          armed=true; state='flying';
+          btn.disabled=false; btn.textContent='今すぐ返す！';
+        });
+      });
+      // miss -> ace
+      timer=setTimeout(function(){
+        if(state==='flying'){
+          armed=false; state='idle';
+          result.innerHTML='<span class="bad">エース！</span> 反応が間に合わなかった…<br>これが世界最速サーブの速さ。';
+          statusEl.textContent='下のボタンでもう一度';
+          btn.textContent='もう一度チャレンジ';
+        }
+      },FLIGHT+40);
+    },delay);
+  }
+  btn.addEventListener('click',function(){
+    if(state==='idle'){
+      state='waiting'; launch(); return;
+    }
+    if(state==='waiting'){ return; } // ignore taps during suspense
+    if(state==='flying' && armed){
+      var rt=performance.now()-flightStart;
+      clearTimeout(timer);
+      armed=false; state='idle';
+      // freeze ball where it is
+      var cur=getComputedStyle(ball).left;
+      setBall(cur,false);
+      var msg;
+      if(rt<220) msg='<span class="good">ナイスリターン！</span> '+Math.round(rt)+'ms ─ プロ級の反応！';
+      else if(rt<400) msg='<span class="good">返球成功！</span> '+Math.round(rt)+'ms ─ かなり速い反応です';
+      else msg='<span class="good">ギリギリ届いた！</span> '+Math.round(rt)+'ms ─ 本物はもっと速い…';
+      result.innerHTML=msg;
+      statusEl.textContent='下のボタンでもう一度';
+      btn.textContent='もう一度チャレンジ';
+    }
+  });
+})();
+</script>
+<script>
+(function(){
+  function h(){
+    var s=document.querySelector('.tx-serve')||document.body;
+    var hh=Math.ceil(s.getBoundingClientRect().height);
+    if(window.parent)window.parent.postMessage({tppoServeHeight:hh},'*');
+  }
+  window.addEventListener('load',h);
+  window.addEventListener('resize',h);
+  if(window.ResizeObserver){try{new ResizeObserver(h).observe(document.querySelector('.tx-serve')||document.body);}catch(e){}}
+  var n=0,t=setInterval(function(){h();if(++n>20)clearInterval(t);},400);
+})();
+</script>
+</body></html>
