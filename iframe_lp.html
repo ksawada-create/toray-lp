@@ -54,7 +54,7 @@ html,body{height:auto;min-height:100%;overflow-x:hidden}
   .sec-head .jp{font-family:var(--jp);font-weight:700;color:var(--mute);margin-top:10px;font-size:clamp(14px,2vw,17px)}
 
   /* player cards A-E */
-  .cards{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;padding:0 clamp(16px,4vw,48px) clamp(30px,5vw,56px);max-width:1500px;margin:0 auto}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:0 clamp(16px,4vw,48px) clamp(30px,5vw,56px);max-width:1000px;margin:0 auto}
   .pcard{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s;position:relative}
   .pcard:hover{transform:translateY(-8px);box-shadow:0 20px 44px rgba(11,127,191,.18);border-color:var(--ac)}
   .pcard-img{position:relative;aspect-ratio:4/5;overflow:hidden;background:linear-gradient(160deg,var(--ac),#0b1e2a)}
@@ -237,6 +237,11 @@ html,body{height:auto;min-height:100%;overflow-x:hidden}
 
   /* ==== story cards (redesigned) ==== */
   #story .ts-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2.5vw,20px);max-width:1000px;margin:0 auto}
+  #story .ts-intro{max-width:820px;margin:0 auto clamp(28px,5vw,44px);text-align:center;background:linear-gradient(135deg,var(--ink),#0b2733);color:#fff;border-radius:20px;padding:clamp(26px,5vw,40px) clamp(20px,4vw,40px)}
+  #story .ts-intro-en{font-family:var(--cond);font-weight:700;letter-spacing:.22em;font-size:13px;color:var(--lime);text-transform:uppercase}
+  #story .ts-intro-h{font-family:var(--jp);font-weight:900;font-size:clamp(22px,5vw,32px);margin:10px 0 14px;line-height:1.3}
+  #story .ts-intro-p{font-size:clamp(13.5px,3.2vw,15.5px);line-height:2;color:rgba(255,255,255,.9);font-weight:500}
+  #story .ts-intro-p b{color:var(--lime)}
   #story .ts-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 8px 26px rgba(11,33,43,.07);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
   #story .ts-card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(11,33,43,.14)}
   #story .ts-cardhead{background:var(--tc);color:#fff;padding:16px 20px 14px;position:relative;overflow:hidden}
@@ -359,11 +364,11 @@ section[id],div[id]{scroll-margin-top:64px}
 <span id="top"></span>
 <nav class="ifxnav"><div class="ifxnav-in">
 <a class="ifx-logo" href="#top">TORAY <b>PPO</b></a>
-<a href="#players"><span class="nvf">世界TOP選手</span><span class="nvs">出場選手</span></a>
-<a href="#story"><span class="nvf">日本との縁</span><span class="nvs">日本と選手</span></a>
-<a href="#history"><span class="nvf">大会の歴史</span><span class="nvs">大会歴史</span></a>
-<a href="#tour"><span class="nvf">観戦ツアー</span><span class="nvs">観戦ツアー</span></a>
-<a href="#guide"><span class="nvf">初めての方へ</span><span class="nvs">初めガイド</span></a>
+<a href="#players"><span class="nvf">世界TOP選手</span><span class="nvs">選手</span></a>
+<a href="#story"><span class="nvf">日本との縁</span><span class="nvs">縁</span></a>
+<a href="#history"><span class="nvf">大会の歴史</span><span class="nvs">歴史</span></a>
+<a href="#tour"><span class="nvf">観戦ツアー</span><span class="nvs">ツアー</span></a>
+<a href="#guide"><span class="nvf">初めての方へ</span><span class="nvs">初めて</span></a>
 <a class="ifx-tk" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">チケット</a>
 </div></nav>
 
@@ -377,8 +382,8 @@ section[id],div[id]{scroll-margin-top:64px}
   <h1><span>国内最高峰の</span><span class="yellow">女子テニス。</span></h1>
   <div class="eventname">東レ<span class="pp">PPO</span>テニス</div>
   <div class="sub">世界TOP選手が、東京に集結する7日間。</div>
-  <div class="meta"><span class="chip"><b>5</b> 世界TOP選手</span><span class="chip"><b>WTA 500</b> 国内最高峰</span><span class="chip"><b>10/24-11/1</b> 東京・有明</span></div>
-  <a class="comebuy" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">見に行こう。チケットはこちら <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <div class="meta"><span class="chip"><b>3</b> 世界TOP選手</span><span class="chip"><b>WTA 500</b> 国内最高峰</span><span class="chip"><b>10/26-11/1</b> 東京・有明</span></div>
+  <a class="comebuy" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">見に来よう。チケットはこちら <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </section>
 
 <section class="teaser reveal">
@@ -404,9 +409,9 @@ section[id],div[id]{scroll-margin-top:64px}
 </section>
 
 <div class="indexblock reveal">
-  <div class="ib-head"><div class="en">ON THIS <em>PAGE</em></div><div class="jp">ページ一覧</div></div>
+  <div class="ib-head"><div class="en">ON THIS <em>PAGE</em></div><div class="jp">このページの内容 ─ 気になる項目からどうぞ</div></div>
   <div class="ixlist">
-    <a class="ixrow" style="--ixc:#0B7FBF" href="#players"><span class="ixn">01</span><span class="ixtx"><b>出場選手</b><span>TOP5の実力者を紹介</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="ixrow" style="--ixc:#0B7FBF" href="#players"><span class="ixn">01</span><span class="ixtx"><b>世界TOP選手</b><span>TOP5の実力者を紹介</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     <a class="ixrow" style="--ixc:#E63946" href="#story"><span class="ixn">02</span><span class="ixtx"><b>日本との縁と物語</b><span>戦績だけじゃない背景</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     <a class="ixrow" style="--ixc:#075A87" href="#history"><span class="ixn">03</span><span class="ixtx"><b>大会の歴史と価値</b><span>1984年からの40年</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     <a class="ixrow" style="--ixc:#8134AF" href="#tour"><span class="ixn">04</span><span class="ixtx"><b>観戦ツアー企画</b><span>コーチ同行の特別体験</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -423,7 +428,7 @@ section[id],div[id]{scroll-margin-top:64px}
 
 <div class="sec-head reveal" id="players">
   <div class="en">WORLD <em>TOP</em> PLAYERS</div>
-  <div class="jp">出場選手紹介 ─ 気になる選手をタップ</div>
+  <div class="jp">世界TOP選手紹介 ─ 気になる選手をタップ</div>
 </div>
 
 <div class="cards reveal">
@@ -460,30 +465,6 @@ section[id],div[id]{scroll-margin-top:64px}
         <span class="name">Osaka</span>
         <span class="jp">大坂 なおみ</span>
         <span class="tagline">日本が生んだ世界の頂点</span>
-        <span class="more">STORY を見る <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </div>
-    </a>
-    <a class="pcard" href="#zheng" style="--ac:#3D5AFE">
-      <div class="pcard-img">
-        <img src="https://cdn.peraichi.com/userData/5c729cb8-43dc-4ffa-a0db-38270a00002b/img/ee3e5ac5-3eb0-4364-a018-c2d0001646e1/04_zheng.jpg" alt="Zheng" onerror="this.parentElement.classList.add('noimg')">
-      </div>
-      <div class="pcard-body">
-        <span class="rank">OLYMPIC GOLD ／ CHN</span>
-        <span class="name">Zheng</span>
-        <span class="jp">鄭 欽文</span>
-        <span class="tagline">パリ五輪の女王</span>
-        <span class="more">STORY を見る <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </div>
-    </a>
-    <a class="pcard" href="#kudermetova" style="--ac:#B14FD8">
-      <div class="pcard-img">
-        <img src="https://cdn.peraichi.com/userData/5c729cb8-43dc-4ffa-a0db-38270a00002b/img/830419b6-d4a5-4d82-886d-8adf7f496702/05_kudermetova.jpg" alt="Kudermetova" onerror="this.parentElement.classList.add('noimg')">
-      </div>
-      <div class="pcard-body">
-        <span class="rank">TOP CONTENDER</span>
-        <span class="name">Kudermetova</span>
-        <span class="jp">ベロニカ・クデルメトワ</span>
-        <span class="tagline">トップを脅かす実力派</span>
         <span class="more">STORY を見る <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </div>
     </a>
@@ -598,68 +579,8 @@ section[id],div[id]{scroll-margin-top:64px}
       <span class="ig-swipe-hint">← スワイプで見る →</span>
     </div>
   </section>
-  <section class="detail" id="zheng" style="--ac:#3D5AFE">
-    <div class="detail-inner">
-      <div class="detail-photo">
-        <img src="https://cdn.peraichi.com/userData/5c729cb8-43dc-4ffa-a0db-38270a00002b/img/ee3e5ac5-3eb0-4364-a018-c2d0001646e1/04_zheng.jpg" alt="Zheng" onerror="this.parentElement.classList.add('noimg')">
-      </div>
-      <div class="detail-text">
-        <span class="d-rank">OLYMPIC GOLD ／ CHN</span>
-        <h2>Zheng</h2>
-        <span class="d-jp">鄭 欽文</span>
-        <p class="d-hero">五輪女王、勝利の記憶へ。</p>
-        <ul class="ach">
-            <li><span class="tick"></span>2024 パリ五輪 金メダル</li>
-            <li><span class="tick"></span>2024 全豪オープン 準優勝</li>
-            <li><span class="tick"></span>2024 東レPPO 優勝</li>
-        </ul>
-        <p class="d-story">2024年パリオリンピックで中国勢初となるシングルス金メダルを獲得。同年の全豪オープン準優勝、WTAファイナルズ準優勝と、世界の頂点を争う実力者。2024年の東レPPOでは第1シードとして優勝を飾っており、東京は勝利の記憶が刻まれたコートだ。</p>
-        <div class="whybox">
-          <span class="whylabel">生で見たい理由</span>
-          <p>178cmから放たれる力強いサーブと攻撃的なストローク。五輪の頂点を知る選手の一撃を、その迫力ごと。</p>
-        </div>
-        <div class="d-actions">
-          <a class="ticket" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">チケットを見る</a>
-          <a class="ig-btn" href="https://www.instagram.com/zhengqinwen_tennis/" target="_blank" rel="noopener" aria-label="Zheng Instagram">
-            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
-            <span>@zhengqinwen_tennis</span>
-          </a>
-          <button class="share" data-share="鄭 欽文｜パリ五輪の女王。東レPPO 2026、10/26-11/1 東京・有明。">シェア</button>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="detail" id="kudermetova" style="--ac:#B14FD8">
-    <div class="detail-inner">
-      <div class="detail-photo">
-        <img src="https://cdn.peraichi.com/userData/5c729cb8-43dc-4ffa-a0db-38270a00002b/img/830419b6-d4a5-4d82-886d-8adf7f496702/05_kudermetova.jpg" alt="Kudermetova" onerror="this.parentElement.classList.add('noimg')">
-      </div>
-      <div class="detail-text">
-        <span class="d-rank">TOP CONTENDER</span>
-        <h2>Kudermetova</h2>
-        <span class="d-jp">ベロニカ・クデルメトワ</span>
-        <p class="d-hero">番狂わせの、主役。</p>
-        <ul class="ach">
-            <li><span class="tick"></span>WTAツアー 優勝経験</li>
-            <li><span class="tick"></span>トップ10撃破 多数</li>
-            <li><span class="tick"></span>ダブルスでも実績</li>
-        </ul>
-        <p class="d-story">力強いフォアハンドと安定したベースラインプレーを武器に、世界の強豪と互角に渡り合ってきた実力派。優勝候補に名前が挙がる華やかな選手ではないかもしれないが、調子が噛み合えばトップシードを飲み込む力を持つ。トーナメントの行方を左右するコンテンダー。</p>
-        <div class="whybox">
-          <span class="whylabel">生で見たい理由</span>
-          <p>筋書き通りに進まないのがスポーツの醍醐味。彼女がトップ選手を破る瞬間に立ち会えるかもしれない。</p>
-        </div>
-        <div class="d-actions">
-          <a class="ticket" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">チケットを見る</a>
-          <a class="ig-btn" href="https://www.instagram.com/v.kudermetova/" target="_blank" rel="noopener" aria-label="Kudermetova Instagram">
-            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
-            <span>@v.kudermetova</span>
-          </a>
-          <button class="share" data-share="ベロニカ・クデルメトワ｜トップを脅かす実力派。東レPPO 2026、10/26-11/1 東京・有明。">シェア</button>
-        </div>
-      </div>
-    </div>
-  </section>
+  
+  
 
 <!-- ================= 追加①：日本との関わり・選手ストーリー ================= -->
 
@@ -669,33 +590,37 @@ section[id],div[id]{scroll-margin-top:64px}
     <div class="en">JAPAN <em>&</em> THEIR STORY</div>
     <div class="jp">戦績だけじゃない。日本との縁と、それぞれの物語</div>
   </div>
+
+  <div class="ts-intro">
+    <div class="ts-intro-en">TOKYO 2020</div>
+    <h3 class="ts-intro-h">3人をつなぐ、東京。</h3>
+    <p class="ts-intro-p">あの夏、3人はそれぞれ違う形で東京にいた。<b>大坂なおみ</b>は開会式で聖火台に火を灯し、<b>ベンチッチ</b>は有明のコートでシングルス金メダルを掴み、<b>ルバキナ</b>はその金メダリストに準決勝で敗れ、あと一歩の4位に終わった。<br>聖火、金メダル、届かなかったメダル──三者三様の記憶が刻まれた東京・有明に、いま「母」「王者」「挑戦者」として、3人がふたたび集まる。</p>
+  </div>
+
   <div class="ts-grid">
     <article class="ts-card" style="--tc:#E63946">
       <header class="ts-cardhead"><div class="ts-flag">JPN 日本</div><div class="ts-namewrap"><span class="ts-en2">OSAKA</span><span class="ts-name">大坂 なおみ</span></div></header>
-      <div class="ts-catch">日本のアイコンが、ホームへ帰る。</div>
-      <p class="ts-body">大阪生まれ、3歳で渡米。ハイチと日本のルーツを持つ“日本の顔”。母となり復帰した今、彼女にとって東京は帰る場所そのもの。会場全体が味方になる一週間は、他の大会では味わえない。</p>
-      <div class="ts-tags"><span>四大大会4勝</span><span>地元・東京</span></div>
+      <div class="ts-catch">日本が生んだ世界の頂点が、原点へ帰る。</div>
+      <p class="ts-body">大阪生まれ、日本・ハイチ・アメリカ――3つの文化を生きる“日本の顔”。日本人初の世界1位に立ち、東京2020では最終聖火ランナーとして聖火台に火を灯した。実はこの東レPPOこそ、2016年に自身初のツアー決勝へ駆け上がり、2019年に初優勝を飾った“原点”の舞台でもある。</p>
+      <p class="ts-body">母となって始まった<b>第2章</b>。2026年はウィンブルドンで自己初の芝の準々決勝に進み、世界13位までトップ戦線へ戻ってきた。「以前の自分に戻る」のではない、現在進行形の物語。桜や“魔法少女”をまとった登場シーンから、日本の文化を世界へ発信する姿まで――勝敗の外にも見どころが尽きない。</p>
+      <div class="ts-tags"><span>聖火台を灯した象徴</span><span>東レPPOが原点</span><span>母としての第2章</span></div>
     </article>
     <article class="ts-card" style="--tc:#F2A900">
       <header class="ts-cardhead"><div class="ts-flag">SUI スイス</div><div class="ts-namewrap"><span class="ts-en2">BENCIC</span><span class="ts-name">ベンチッチ</span></div></header>
-      <div class="ts-catch">金メダルの街に、女王として帰還。</div>
-      <p class="ts-body">2021年、この東京で五輪金メダルを掴んだ選手。出産を経て、その“金メダルの街”に前年女王として戻ってくる。日本のファンにとって、あの夏の記憶とまっすぐ繋がる特別なストーリー。</p>
-      <div class="ts-tags"><span>東京五輪 金</span><span>前年女王</span></div>
-    </article>
-    <article class="ts-card" style="--tc:#3D5AFE">
-      <header class="ts-cardhead"><div class="ts-flag">CHN 中国</div><div class="ts-namewrap"><span class="ts-en2">ZHENG</span><span class="ts-name">鄭 欽文</span></div></header>
-      <div class="ts-catch">勝利の記憶が眠る、有明へ。</div>
-      <p class="ts-body">パリ五輪女王が、2024年の東レPPOでも優勝。東京・有明は彼女にとって“勝利の記憶が刻まれたコート”。アジアの新女王が凱旋する舞台として、これ以上ない縁がある。</p>
-      <div class="ts-tags"><span>パリ五輪 金</span><span>有明で優勝</span></div>
+      <div class="ts-catch">金メダルの街に、女王として帰ってくる。</div>
+      <p class="ts-body">東京2020、この有明でシングルス<b>金メダル</b>を掴んだ選手。さらに2025年の東レPPOも制し、“東京の女王”として今年ディフェンディングチャンピオンで戻ってくる。日本ブランドASICSと歩む姿も含め、東京五輪・東レPPO・ASICSと、幾重にも日本と縁が重なる。</p>
+      <p class="ts-body">2024年に出産し、一度は世界421位まで後退。そこから復帰し、トップ10へ返り咲いてカムバック賞を受賞した。娘のベラを連れて家族で世界を転戦し、優勝の瞬間、トロフィーより先に娘を抱きしめた――「母」と「王者」を諦めずに両立させる生き方そのものが、彼女を応援したくなる理由になる。</p>
+      <div class="ts-tags"><span>有明で五輪金</span><span>前年王者の防衛戦</span><span>娘と歩む王者</span></div>
     </article>
     <article class="ts-card" style="--tc:#0A9EC4">
       <header class="ts-cardhead"><div class="ts-flag">KAZ カザフスタン</div><div class="ts-namewrap"><span class="ts-en2">RYBAKINA</span><span class="ts-name">ルバキナ</span></div></header>
-      <div class="ts-catch">昨年の悔しさを、晴らしに来る。</div>
-      <p class="ts-body">昨年の東レPPOは腰の負傷で準決勝を棄権──悔しさを残した東京へのリベンジ。その後シーズン最終戦を制した世界2位が、“やり残し”を晴らしに戻ってくる。続きが見たくなる物語。</p>
-      <div class="ts-tags"><span>世界2位</span><span>東京リベンジ</span></div>
+      <div class="ts-catch">東京で届かなかったメダルの、続きを。</div>
+      <p class="ts-body">東京2020では準決勝でベンチッチに敗れ、あと一歩の<b>4位</b>。その悔しさを糧に、2025年WTAファイナルズ優勝、2026年全豪オープン優勝と、いま世界2位まで駆け上がった現在進行形のトップ選手。昨年の東レPPOでの勝利がファイナルズ出場を決め、年間王者への入口になった――東京は、彼女の飛躍の起点でもある。</p>
+      <p class="ts-body">184cmから打ち下ろす強烈なサーブと、感情を表に出さない静かな佇まいのギャップが魅力。派手に語らず、遠征から帰れば愛犬のもとへ向かい、試合後もファンへのサインを大切にする。日本ブランドYONEXと歩む“静かな女王”の、東京で完成しなかった物語の続きが始まる。</p>
+      <div class="ts-tags"><span>東京五輪4位</span><span>現・世界2位</span><span>静かな女王</span></div>
     </article>
   </div>
-  <p style="text-align:center;color:var(--mute);font-weight:700;font-size:14px;margin-top:24px">記録の裏にある“縁”を知ると、その一球がもっと特別に見えてくる。</p>
+  <p style="text-align:center;color:var(--mute);font-weight:700;font-size:14px;margin-top:24px">記録の裏にある“縁”と“物語”を知ると、その一球が、もっと特別に見えてくる。</p>
 </section>
 
 <!-- ================= 追加②：大会の歴史と価値 ================= -->
@@ -730,8 +655,8 @@ section[id],div[id]{scroll-margin-top:64px}
       </div>
       <div class="ev reveal">
         <div class="yr">2000s</div>
-        <h3>セレナ、シャラポワ ― 世界の頂点が東京へ</h3>
-        <p>2000年代に入っても、セレナ・ウィリアムズやシャラポワら、その時代の“世界最強”が来日。<em>日本にいながら世界の頂点を生で観られる</em>場所であり続けた。</p>
+        <h3>ヒンギス、ダベンポート ― 東京を制した女王たち</h3>
+        <p>2000年代の東京は、マルチナ・ヒンギスとリンゼイ・ダベンポートが何度も頂点に立った時代。<em>その時代の“世界最強”が集う</em>場所であり続けた。ヒンギスは東レPPO歴代最多の5度の優勝を誇る。</p>
       </div>
       <div class="ev reveal">
         <div class="yr">2019</div>
@@ -748,7 +673,7 @@ section[id],div[id]{scroll-margin-top:64px}
         <div class="champ legend"><div class="cn">Steffi Graf</div><div class="cjp">シュテフィ・グラフ</div><div class="cyr">GRAND SLAM 22冠</div></div>
         <div class="champ legend"><div class="cn">Navratilova</div><div class="cjp">ナブラチロワ</div><div class="cyr">通算167タイトル</div></div>
         <div class="champ legend"><div class="cn">Martina Hingis</div><div class="cjp">マルチナ・ヒンギス</div><div class="cyr">最年少女王</div></div>
-        <div class="champ legend"><div class="cn">Serena Williams</div><div class="cjp">セレナ・ウィリアムズ</div><div class="cyr">GRAND SLAM 23冠</div></div>
+        <div class="champ legend"><div class="cn">Lindsay Davenport</div><div class="cjp">リンゼイ・ダベンポート</div><div class="cyr">東レPPO 4度制覇</div></div>
         <div class="champ"><div class="cn">Naomi Osaka</div><div class="cjp">大坂 なおみ</div><div class="cyr">2019</div></div>
       </div>
       <div class="hall-close">40年以上にわたり、世界の頂点がここで戦ってきました。<br><b>その歴史の続きが、今年もこの東京で生まれる。</b></div>
@@ -767,7 +692,7 @@ section[id],div[id]{scroll-margin-top:64px}
       <div class="tf"><span class="tfico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M4 7c4 2 4 8 0 10M20 7c-4 2-4 8 0 10"/></svg></span><b>まとまった席で一緒に観戦</b><p>ツアー参加者用にまとまった席をご用意。安心して仲間と盛り上がれます。</p></div>
       <div class="tf"><span class="tfico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v10H8l-4 4V5z"/></svg></span><b>コーチ・インフルエンサーが同行</b><p>試合の見どころや選手の技術を、その場で解説。観戦がもっと面白くなる。</p></div>
     </div>
-    <p class="tour-note">※実施可否・詳細は決まり次第ご案内します。</p>
+    <p class="tour-note">※ 内容は企画中の仮案です。実施可否・詳細は決まり次第ご案内します。</p>
   </div>
 </section>
 
@@ -775,8 +700,8 @@ section[id],div[id]{scroll-margin-top:64px}
 <section class="tppo-x tx-guide" id="guide">
   <div class="tx-inner">
     <div class="tx-head">
-      <div class="tx-en">FIRST <em>TIME ?</em></div>
-      <div class="tx-jp">初めてでも大丈夫。よくある3つの不安、先に解消します</div>
+      <div class="tx-en">FIRST <em>TIME?</em></div>
+      <div class="tx-jp">初めてでも大丈夫。3つの不安、先に解消します</div>
     </div>
 
     <div class="tx-qa">
@@ -817,7 +742,7 @@ section[id],div[id]{scroll-margin-top:64px}
     チケットを見る
     <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
   </a>
-  <div class="dates">Ariake Coliseum ／ Tokyo ／ Oct 24 – Nov 1, 2026</div>
+  <div class="dates">Ariake Coliseum ／ Tokyo ／ Oct 26 – Nov 1, 2026</div>
 </section>
 
 <footer>© Toray Pan Pacific Open Tennis Tournament</footer>
@@ -862,7 +787,7 @@ section[id],div[id]{scroll-margin-top:64px}
 <script async src="https://www.instagram.com/embed.js"></script>
 
 <div class="ifxcta"><div class="ifxcta-in">
-<div class="ifxcta-txt">国内最高峰の女子テニス<span class="sp">、東京・有明 ／ 10/24-11/1</span></div>
+<div class="ifxcta-txt">世界最高峰の女子テニス<span class="sp">、東京・有明 ／ 10/26-11/1</span></div>
 <a class="ifxcta-btn" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">今すぐ観に行く →</a>
 </div></div>
 </body>
