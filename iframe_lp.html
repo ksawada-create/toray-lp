@@ -226,6 +226,9 @@ html,body{height:auto;min-height:100%;overflow-x:hidden}
   .champ.legend .cn{color:#fff}.champ.legend .cjp{color:rgba(255,255,255,.82)}.champ.legend .cyr{color:#f3e6c4}
   .hall-close{text-align:center;color:#8a744d;font-weight:700;font-size:clamp(13px,3vw,15px);margin-top:24px;line-height:1.8}
   .hall-close b{color:#a9812f}
+  .hall-more{text-align:center;margin-top:28px}
+  .hall-more a{display:inline-flex;align-items:center;gap:9px;font-family:var(--jp);font-weight:900;font-size:clamp(14px,3vw,16px);color:#3a2f1a;background:linear-gradient(180deg,#e8cf82,#c9a227 60%,#a9812f);padding:14px 30px;border-radius:100px;text-decoration:none;box-shadow:0 8px 22px rgba(169,129,47,.3),inset 0 1px 0 rgba(255,255,255,.5);transition:transform .2s,box-shadow .2s;letter-spacing:.02em}
+  .hall-more a:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(169,129,47,.42),inset 0 1px 0 rgba(255,255,255,.5)}
   @media(max-width:640px){.hall-grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:380px){.hall-grid{grid-template-columns:1fr}}
 
@@ -345,7 +348,10 @@ html,body{height:auto;min-height:100%;overflow-x:hidden}
 .ifxnav a:hover{background:rgba(255,255,255,.12);color:#fff}
 .ifxnav a.ifx-logo{font-family:var(--cond);font-weight:700;letter-spacing:.1em;color:#fff;margin-right:6px}
 .ifxnav a.ifx-logo b{color:var(--lime)}
-.ifxnav a.ifx-tk{background:var(--lime);color:var(--ink);font-weight:900;margin-left:auto}
+.ifxnav a.ifx-tk{background:var(--lime);color:var(--ink);font-weight:900}
+.ifxnav a.ifx-hall{margin-left:auto;color:#e8cf82;border:1px solid rgba(201,162,39,.55);font-weight:900}
+.ifxnav a.ifx-hall:hover{background:rgba(201,162,39,.16);color:#f0d77b}
+@media(max-width:520px){.ifxnav a.ifx-tk{margin-left:auto}}
 .ifxnav .nvs{display:none}.ifxnav .nvf{display:inline}
 .ifxcta{position:fixed;left:0;right:0;bottom:0;z-index:99999;background:rgba(18,33,43,.96);backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,.14);padding:10px 16px;box-shadow:0 -6px 24px rgba(0,0,0,.25)}
 .ifxcta-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:14px;justify-content:space-between}
@@ -356,7 +362,7 @@ html,body{height:auto;min-height:100%;overflow-x:hidden}
 body{padding-top:54px;padding-bottom:72px}
 html{scroll-behavior:smooth}
 section[id],div[id]{scroll-margin-top:64px}
-@media(max-width:520px){.ifxcta-txt .sp{display:none}.ifxcta-txt{font-size:12px}.ifxcta-btn{font-size:14px;padding:12px 18px}.ifxnav a.ifx-logo{display:none}.ifxnav-in{gap:2px;padding:9px 10px;justify-content:space-between}.ifxnav a{font-size:11.5px;padding:6px 7px}.ifxnav a.ifx-tk{padding:6px 12px}.ifxnav .nvf{display:none}.ifxnav .nvs{display:inline}}@media(max-width:360px){.ifxnav a{font-size:10.5px;padding:5px 5px}}
+@media(max-width:520px){.ifxcta-txt .sp{display:none}.ifxcta-txt{font-size:12px}.ifxcta-btn{font-size:14px;padding:12px 18px}.ifxnav a.ifx-logo{display:none}.ifxnav a.ifx-hall{display:none}.ifxnav-in{gap:2px;padding:9px 10px;justify-content:space-between}.ifxnav a{font-size:11.5px;padding:6px 7px}.ifxnav a.ifx-tk{padding:6px 12px}.ifxnav .nvf{display:none}.ifxnav .nvs{display:inline}}@media(max-width:360px){.ifxnav a{font-size:10.5px;padding:5px 5px}}
 
 </style>
 </head>
@@ -364,11 +370,12 @@ section[id],div[id]{scroll-margin-top:64px}
 <span id="top"></span>
 <nav class="ifxnav"><div class="ifxnav-in">
 <a class="ifx-logo" href="#top">TORAY <b>PPO</b></a>
-<a href="#players"><span class="nvf">世界TOP選手</span><span class="nvs">出場選手</span></a>
-<a href="#story"><span class="nvf">日本との縁</span><span class="nvs">日本との縁</span></a>
-<a href="#history"><span class="nvf">大会の歴史</span><span class="nvs">大会歴史</span></a>
-<a href="#tour"><span class="nvf">観戦ツアー</span><span class="nvs">観戦ツアー</span></a>
-<a href="#guide"><span class="nvf">初めての方へ</span><span class="nvs">初めてガイド</span></a>
+<a href="#players"><span class="nvf">世界TOP選手</span><span class="nvs">選手</span></a>
+<a href="#story"><span class="nvf">日本との縁</span><span class="nvs">縁</span></a>
+<a href="#history"><span class="nvf">大会の歴史</span><span class="nvs">歴史</span></a>
+<a href="#tour"><span class="nvf">観戦ツアー</span><span class="nvs">ツアー</span></a>
+<a href="#guide"><span class="nvf">初めての方へ</span><span class="nvs">初めて</span></a>
+<a class="ifx-hall" href="https://ksawada-create.github.io/toray-lp/champions.html"><span class="nvf">歴代優勝者の殿堂</span><span class="nvs">殿堂</span></a>
 <a class="ifx-tk" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">チケット</a>
 </div></nav>
 
@@ -416,6 +423,7 @@ section[id],div[id]{scroll-margin-top:64px}
     <a class="ixrow" style="--ixc:#075A87" href="#history"><span class="ixn">03</span><span class="ixtx"><b>大会の歴史と価値</b><span>1984年からの40年</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     <a class="ixrow" style="--ixc:#8134AF" href="#tour"><span class="ixn">04</span><span class="ixtx"><b>観戦ツアー企画</b><span>コーチ同行の特別体験</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     <a class="ixrow" style="--ixc:#0B7FBF" href="#guide"><span class="ixn">05</span><span class="ixtx"><b>初めてでも安心ガイド</b><span>行く前の不安を解消</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="ixrow" style="--ixc:#a9812f" href="https://ksawada-create.github.io/toray-lp/champions.html"><span class="ixn">06</span><span class="ixtx"><b>歴代優勝者の殿堂</b><span>1984年からの女王たち</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </div>
 <div class="sidenav" id="sidenav">
@@ -677,6 +685,7 @@ section[id],div[id]{scroll-margin-top:64px}
         <div class="champ"><div class="cn">Naomi Osaka</div><div class="cjp">大坂 なおみ</div><div class="cyr">2019</div></div>
       </div>
       <div class="hall-close">40年以上にわたり、世界の頂点がここで戦ってきました。<br><b>その歴史の続きが、今年もこの東京で生まれる。</b></div>
+      <div class="hall-more"><a href="https://ksawada-create.github.io/toray-lp/champions.html">歴代優勝者の殿堂を見る →</a></div>
     </div>
 
   </div>
