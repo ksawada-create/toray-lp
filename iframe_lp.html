@@ -45,6 +45,8 @@ html,body{height:auto;min-height:100%;overflow-x:hidden}
   .hero .meta .chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:100px;padding:8px 18px;font-family:var(--cond);font-weight:600;letter-spacing:.08em;font-size:14px;display:flex;gap:8px;align-items:center}
   .hero .meta .chip b{color:var(--lime)}
   .hero .comebuy{margin-top:34px;position:relative;display:inline-flex;align-items:center;gap:12px;background:var(--lime);color:var(--ink);font-family:var(--jp);font-weight:900;font-size:clamp(16px,2.6vw,20px);padding:16px 34px;border-radius:100px;transition:transform .2s,box-shadow .2s;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+  .hero .official{margin-top:14px;display:flex;align-items:center;justify-content:center;gap:9px;width:fit-content;color:#fff;font-family:var(--jp);font-weight:700;font-size:clamp(13px,2.2vw,15px);padding:12px 26px;border:1.5px solid rgba(255,255,255,.55);border-radius:100px;transition:background .2s,border-color .2s;text-decoration:none}
+  .hero .official:hover{background:rgba(255,255,255,.14);border-color:#fff}
   .hero .comebuy:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.28)}
 
   /* section heading */
@@ -136,7 +138,6 @@ html,body{height:auto;min-height:100%;overflow-x:hidden}
   .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--ink);color:#fff;padding:14px 26px;border-radius:100px;font-weight:900;font-size:14px;z-index:200;transition:transform .5s cubic-bezier(.16,1,.3,1)}
   .toast.show{transform:translateX(-50%) translateY(0)}
 
-
   /* ==== Variant B+F: vertical index + side progress nav ==== */
   .indexblock{background:#fff;padding:clamp(30px,6vw,72px) clamp(14px,4vw,48px)}
   .indexblock .ib-head{text-align:center;margin-bottom:clamp(20px,3vw,30px)}
@@ -172,11 +173,27 @@ html,body{height:auto;min-height:100%;overflow-x:hidden}
   .tz .note{font-size:clamp(11px,2.8vw,13px);font-weight:700;color:rgba(255,255,255,.66);margin-top:7px;line-height:1.5}
   .teaser-punch{text-align:center;font-family:var(--jp);font-weight:900;font-size:clamp(16px,4vw,24px);margin-top:clamp(22px,4vw,32px);line-height:1.5}
   .teaser-punch .lime{color:var(--lime)}
+  .teaser-src{text-align:center;color:rgba(255,255,255,.5);font-weight:600;font-size:clamp(10px,2.4vw,12px);margin-top:16px;letter-spacing:.02em}
+  /* ==== 来場者の声 (voices) ==== */
+  .voices{background:linear-gradient(180deg,#fff,var(--court-light));padding:clamp(40px,7vw,72px) clamp(14px,4vw,40px)}
+  .voices-in{max-width:1100px;margin:0 auto}
+  .voices-head{text-align:center;margin-bottom:clamp(26px,5vw,42px)}
+  .voices-en{font-family:var(--cond);font-weight:700;letter-spacing:.16em;font-size:clamp(12px,2.6vw,14px);color:var(--court);text-transform:uppercase}
+  .voices-jp{font-family:var(--disp);font-size:clamp(26px,6vw,46px);line-height:1.1;color:var(--ink);margin-top:6px}
+  .voices-jp .b{color:var(--court)}
+  .voices-sub{color:var(--mute);font-weight:700;font-size:clamp(12px,2.8vw,14px);margin-top:10px}
+  .voices-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2.5vw,22px)}
+  .vcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(20px,3vw,28px);box-shadow:0 6px 20px rgba(11,33,43,.06);position:relative}
+  .vcard::before{content:"“";position:absolute;top:6px;left:16px;font-family:var(--disp);font-size:56px;color:var(--court);opacity:.16;line-height:1}
+  .vtext{font-weight:700;font-size:clamp(14px,3.2vw,16.5px);line-height:1.85;color:var(--ink);position:relative;z-index:1}
+  .vmeta{margin-top:14px;font-weight:700;font-size:clamp(11px,2.6vw,13px);color:var(--mute);display:flex;align-items:center;gap:8px}
+  .vmeta .dot{width:4px;height:4px;border-radius:50%;background:var(--court)}
+  @media(max-width:600px){.voices-grid{grid-template-columns:1fr}}
+
   .teaser-cta{display:flex;justify-content:center;margin-top:22px}
   .teaser-cta a{display:inline-flex;align-items:center;gap:10px;background:var(--lime);color:var(--ink);font-family:var(--jp);font-weight:900;font-size:clamp(15px,2.4vw,19px);padding:15px 32px;border-radius:100px;box-shadow:0 10px 30px rgba(0,0,0,.28);transition:transform .2s}
   .teaser-cta a:hover{transform:translateY(-3px)}
   @media(max-width:520px){.teaser-grid{grid-template-columns:1fr}}
-
 
   /* side progress nav */
   .sidenav{position:fixed;top:50%;right:18px;transform:translateY(-50%);z-index:75;display:flex;flex-direction:column;gap:14px;opacity:0;pointer-events:none;transition:opacity .4s}
@@ -232,11 +249,9 @@ html,body{height:auto;min-height:100%;overflow-x:hidden}
   @media(max-width:640px){.hall-grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:380px){.hall-grid{grid-template-columns:1fr}}
 
-
   /* hero tournament name (big, matches h1 scale) */
   .hero .eventname{font-family:var(--jp);font-weight:900;font-size:clamp(30px,7vw,80px);line-height:1;letter-spacing:.01em;color:#fff;margin-top:14px;position:relative;text-shadow:0 6px 30px rgba(0,0,0,.25)}
   .hero .eventname .pp{color:var(--lime)}
-
 
   /* ==== story cards (redesigned) ==== */
   #story .ts-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2.5vw,20px);max-width:1000px;margin:0 auto}
@@ -267,7 +282,6 @@ html,body{height:auto;min-height:100%;overflow-x:hidden}
     #story .ts-tags{padding:14px 16px 18px}
   }
 
-
   /* ==== tour section (self-contained, white text on dark) ==== */
   #tour{background:linear-gradient(135deg,var(--ink),#0b2733) !important;color:#fff}
   #tour .tourwrap{max-width:960px;margin:0 auto;text-align:center;color:#fff}
@@ -281,7 +295,6 @@ html,body{height:auto;min-height:100%;overflow-x:hidden}
   #tour .tf p{font-size:13px;line-height:1.7;color:rgba(255,255,255,.82);font-weight:500}
   #tour .tour-note{margin-top:24px;font-size:12px;color:rgba(255,255,255,.6);font-weight:700}
   @media(max-width:820px){#tour .tourfeat{grid-template-columns:1fr}}
-
 
 
 
@@ -335,7 +348,6 @@ html,body{height:auto;min-height:100%;overflow-x:hidden}
 .tx-guide .tx-disc{color:var(--mute)}
 @media(max-width:640px){.tx-qa{grid-template-columns:1fr}.tx-tips{grid-template-columns:1fr}}
 
-
 /* ==== iframe full: fixed nav + CTA (self-contained) ==== */
 .bar{display:none !important}
 .stickynav{display:none !important}
@@ -376,12 +388,12 @@ section[id],div[id]{scroll-margin-top:64px}
 <a href="#tour"><span class="nvf">観戦ツアー</span><span class="nvs">観戦ツアー</span></a>
 <a href="#guide"><span class="nvf">初めての方へ</span><span class="nvs">初めての観戦</span></a>
 <a class="ifx-hall" href="https://ksawada-create.github.io/toray-lp/champions.html"><span class="nvf">歴代優勝者の殿堂</span><span class="nvs">歴代優勝者</span></a>
-<a class="ifx-tk" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">チケット</a>
+<a class="ifx-tk" href="https://bit.ly/4wuh7w8" target="_blank" rel="noopener">チケット</a>
 </div></nav>
 
 <div class="bar">
   <div class="logo">TORAY <b>PPO</b> TENNIS</div>
-  <a class="cta" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">チケット</a>
+  <a class="cta" href="https://bit.ly/4wuh7w8" target="_blank" rel="noopener">チケット</a>
 </div>
 
 <section class="hero">
@@ -390,7 +402,8 @@ section[id],div[id]{scroll-margin-top:64px}
   <div class="eventname">東レ<span class="pp">PPO</span>テニス</div>
   <div class="sub">世界TOP選手が、東京に集結する7日間。</div>
   <div class="meta"><span class="chip"><b>3</b> 世界TOP選手</span><span class="chip"><b>WTA 500</b> 国内最高峰</span><span class="chip"><b>10/24-11/1</b> 東京・有明</span></div>
-  <a class="comebuy" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">見に行こう。チケットはこちら <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <a class="comebuy" href="https://bit.ly/4wuh7w8" target="_blank" rel="noopener">見に行こう。チケットはこちら <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <a class="official" href="https://bit.ly/4qx9YK7" target="_blank" rel="noopener">公式サイトを見る <svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </section>
 
 <section class="teaser reveal">
@@ -398,22 +411,25 @@ section[id],div[id]{scroll-margin-top:64px}
     <div class="teaser-lead">行ったら分かる、<span class="hl">満足する理由。</span></div>
     <div class="teaser-grid">
       <div class="tz">
-        <div class="big">98<i>%</i></div>
-        <div class="cap">が「生のプレー」を<br>いちばんの楽しみに</div>
+        <div class="big">97<i>%</i></div>
+        <div class="cap">が「選手の生のプレー」を<br>楽しみに挙げた</div>
         <div class="note">テレビ観戦とは、別物。<br>球速も、音も、震えるほどの迫力も、<br>その場にいた人だけが知っている。</div>
       </div>
       <div class="tz">
         <div class="big ratio">3<i>人に</i>2<i>人</i></div>
-        <div class="cap">が、また来る。<br>（2回目以上のリピーター）</div>
-        <div class="note">一度行くと、やめられない。<br>それが東レPPOの中毒性。</div>
+        <div class="cap">が、リピーター。<br>（2回目以上の来場）</div>
+        <div class="note">一度行くと、また来たくなる。<br>「毎年、楽しみにしている」という声も多数。</div>
       </div>
     </div>
     <div class="teaser-punch">だから毎年、<span class="lime">また観に行きたくなる。</span></div>
+    <div class="teaser-src">※ 2025年 東レPPOテニス 来場者アンケート（有効回答2,451件）より</div>
     <div class="teaser-cta">
-      <a href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">まずは1回、観に行く →</a>
+      <a href="https://bit.ly/4wuh7w8" target="_blank" rel="noopener">まずは1回、観に行く →</a>
     </div>
   </div>
 </section>
+
+
 
 <div class="indexblock reveal">
   <div class="ib-head"><div class="en">ON THIS <em>PAGE</em></div><div class="jp">このページの内容 ─ 気になる項目からどうぞ</div></div>
@@ -500,7 +516,7 @@ section[id],div[id]{scroll-margin-top:64px}
           <p>WTAファイナルズ出場を左右する重要な一戦。テレビでは伝わらないサーブの速度と球音を、いま生で。</p>
         </div>
         <div class="d-actions">
-          <a class="ticket" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">チケットを見る</a>
+          <a class="ticket" href="https://bit.ly/4wuh7w8" target="_blank" rel="noopener">チケットを見る</a>
           <a class="ig-btn" href="https://www.instagram.com/lenarybakina/" target="_blank" rel="noopener" aria-label="Rybakina Instagram">
             <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
             <span>@lenarybakina</span>
@@ -531,7 +547,7 @@ section[id],div[id]{scroll-margin-top:64px}
           <p>金メダルを獲った街に、母として、前年女王として帰ってくる。連覇がかかる物語の続きを、この目で。</p>
         </div>
         <div class="d-actions">
-          <a class="ticket" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">チケットを見る</a>
+          <a class="ticket" href="https://bit.ly/4wuh7w8" target="_blank" rel="noopener">チケットを見る</a>
           <a class="ig-btn" href="https://www.instagram.com/belindabencic/" target="_blank" rel="noopener" aria-label="Bencic Instagram">
             <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
             <span>@belindabencic</span>
@@ -562,7 +578,7 @@ section[id],div[id]{scroll-margin-top:64px}
           <p>世界のトップに立った日本人が、東京のコートに立つ。同じ空気のなかで応援できる特別な一週間。</p>
         </div>
         <div class="d-actions">
-          <a class="ticket" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">チケットを見る</a>
+          <a class="ticket" href="https://bit.ly/4wuh7w8" target="_blank" rel="noopener">チケットを見る</a>
           <a class="ig-btn" href="https://www.instagram.com/naomiosaka/" target="_blank" rel="noopener" aria-label="Osaka Instagram">
             <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
             <span>@naomiosaka</span>
@@ -591,7 +607,6 @@ section[id],div[id]{scroll-margin-top:64px}
   
 
 <!-- ================= 追加①：日本との関わり・選手ストーリー ================= -->
-
 
 <section class="detail" id="story" style="--ac:#0B7FBF">
   <div class="sec-head" style="padding-top:0">
@@ -738,7 +753,7 @@ section[id],div[id]{scroll-margin-top:64px}
       <div class="tx-tip"><span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>複数試合を一日で観られる日も。早めの来場がおすすめ</div>
     </div>
 
-    <div class="tx-cta"><a href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">席種・価格を見てみる →</a></div>
+    <div class="tx-cta"><a href="https://bit.ly/4wuh7w8" target="_blank" rel="noopener">席種・価格を見てみる →</a></div>
     <p class="tx-disc">※ 料金・無料対象・申込方法などの最新情報は公式サイトでご確認ください。会場：有明コロシアム（東京都江東区有明2-2-22）。</p>
   </div>
 </section>
@@ -747,15 +762,14 @@ section[id],div[id]{scroll-margin-top:64px}
   <div class="tag">Don't miss it</div>
   <h2>その物語を、<br>生で。</h2>
   <div class="jp">世界のトップが集う一週間を、東京で。</div>
-  <a class="comebuy" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">
+  <a class="comebuy" href="https://bit.ly/4wuh7w8" target="_blank" rel="noopener">
     チケットを見る
     <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
   </a>
-  <div class="dates">Ariake Coliseum ／ Tokyo ／ Oct 24 – Nov 1, 2026</div>
+  <div class="dates">Ariake Coliseum ／ Tokyo ／ Oct 26 – Nov 1, 2026</div>
 </section>
 
 <footer>© Toray Pan Pacific Open Tennis Tournament</footer>
-
 
 <div class="toast" id="toast">リンクをコピーしました</div>
 <script>
@@ -796,8 +810,8 @@ section[id],div[id]{scroll-margin-top:64px}
 <script async src="https://www.instagram.com/embed.js"></script>
 
 <div class="ifxcta"><div class="ifxcta-in">
-<div class="ifxcta-txt">国内最高峰の女子テニス<span class="sp">、東京・有明 ／ 10/24-11/1</span></div>
-<a class="ifxcta-btn" href="https://www.toray-ppo.com/ticket/" target="_blank" rel="noopener">今すぐ観に行く →</a>
+<div class="ifxcta-txt"><b>小学生以下は自由席無料</b><span class="sp"> ／ 国内最高峰の女子テニス、東京・有明</span></div>
+<a class="ifxcta-btn" href="https://bit.ly/4wuh7w8" target="_blank" rel="noopener">今すぐ観に行く →</a>
 </div></div>
 </body>
 </html>
