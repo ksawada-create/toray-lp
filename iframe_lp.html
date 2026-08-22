@@ -34,7 +34,13 @@ html,body{height:auto;min-height:100%;overflow-x:hidden}
   .bar .cta:hover{transform:scale(1.05)}
 
   /* hero */
-  .hero{position:relative;background:linear-gradient(135deg,var(--court),var(--court-deep));color:#fff;padding:clamp(40px,7vw,86px) clamp(16px,4vw,48px) clamp(48px,8vw,90px);overflow:hidden}
+  .hero{position:relative;background:linear-gradient(135deg,var(--court),var(--court-deep));color:#fff;padding:clamp(40px,7vw,86px) clamp(16px,4vw,48px) clamp(40px,6vw,64px);overflow:hidden}
+  @media(max-width:560px){
+    .hero-band{grid-template-columns:1fr;gap:8px}
+    .hero-band .hb{aspect-ratio:16/10;background-position:center 22%}
+    .hero-band .hb-name{font-size:26px}
+  }
+
   .hero::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 2px,transparent 2px 46px);pointer-events:none}
   .hero .tag{font-family:var(--cond);font-weight:600;letter-spacing:.28em;text-transform:uppercase;font-size:14px;color:var(--lime);margin-bottom:14px;position:relative}
   .hero h1{font-family:var(--disp);font-size:clamp(46px,10vw,128px);line-height:.92;letter-spacing:.01em;text-transform:uppercase;position:relative;text-shadow:0 6px 30px rgba(0,0,0,.25)}
@@ -346,6 +352,35 @@ html,body{height:auto;min-height:100%;overflow-x:hidden}
 .tx-tip span{font-size:22px;flex:none}
 .tx-guide .tx-cta a{box-shadow:0 10px 28px rgba(11,127,191,.28)}
 .tx-guide .tx-disc{color:var(--mute)}
+  /* ==== 席種ガイド (seat guide) ==== */
+  .seatg{background:linear-gradient(180deg,var(--court-light),#fff);padding:clamp(44px,7vw,80px) clamp(14px,4vw,40px)}
+  .seatg-in{max-width:1080px;margin:0 auto}
+  .seatg-head{text-align:center;margin-bottom:clamp(10px,2vw,16px)}
+  .seatg-badge{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;font-weight:900;font-size:clamp(11px,2.4vw,13px);padding:8px 18px;border-radius:100px;letter-spacing:.04em}
+  .seatg-badge .b{color:var(--lime)}
+  .seatg-en{font-family:var(--cond);font-weight:700;letter-spacing:.14em;font-size:clamp(12px,2.6vw,14px);color:var(--court);text-transform:uppercase;margin-top:18px}
+  .seatg-jp{font-family:var(--disp);font-size:clamp(24px,5.5vw,42px);line-height:1.15;color:var(--ink);margin-top:6px}
+  .seatg-lead{max-width:640px;margin:14px auto 0;text-align:center;color:var(--mute);font-weight:600;font-size:clamp(13px,2.8vw,15px);line-height:1.9}
+  .seatg-groups{margin-top:clamp(28px,5vw,44px);display:flex;flex-direction:column;gap:clamp(18px,3vw,26px)}
+  .seatmap{margin:clamp(24px,4vw,36px) auto 0;max-width:760px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:clamp(14px,3vw,24px);box-shadow:0 8px 26px rgba(11,33,43,.06)}
+  .seatmap img{width:100%;height:auto;border-radius:10px;display:block}
+  .seatmap figcaption{text-align:center;color:var(--mute);font-weight:600;font-size:clamp(11.5px,2.5vw,13px);line-height:1.75;margin-top:14px}
+  .sgrp{background:#fff;border:1px solid var(--line);border-radius:18px;padding:clamp(20px,3.5vw,30px);box-shadow:0 8px 26px rgba(11,33,43,.06)}
+  .sgrp-ttl{display:inline-flex;align-items:center;gap:9px;font-weight:900;font-size:clamp(14px,3vw,17px);color:#fff;padding:8px 18px;border-radius:100px;margin-bottom:18px}
+  .sgrp-rows{display:flex;flex-direction:column;gap:16px}
+  .srow{display:grid;grid-template-columns:1fr auto;gap:6px 16px;align-items:baseline;padding-bottom:16px;border-bottom:1px dashed var(--line)}
+  .srow:last-child{border-bottom:0;padding-bottom:0}
+  .srow-name{font-weight:900;font-size:clamp(15px,3vw,18px);color:var(--ink)}
+  .srow-price{font-family:var(--cond);font-weight:700;font-size:clamp(15px,3vw,19px);color:var(--court);white-space:nowrap}
+  .srow-price small{font-size:.7em;color:var(--mute);font-weight:600}
+  .srow-desc{grid-column:1/-1;color:#54636e;font-weight:600;font-size:clamp(12.5px,2.7vw,14px);line-height:1.75}
+  .srow-pick{grid-column:1/-1;display:flex;align-items:flex-start;gap:8px;margin-top:8px;background:var(--court-light);border-radius:10px;padding:10px 14px;font-weight:700;font-size:clamp(12px,2.6vw,13.5px);color:var(--court-deep);line-height:1.7}
+  .srow-pick .ic{flex:none;width:18px;height:18px;margin-top:1px;color:var(--court)}
+  .seatg-note{text-align:center;color:var(--mute);font-weight:600;font-size:clamp(11px,2.4vw,12.5px);margin-top:24px;line-height:1.8}
+  .seatg-cta{text-align:center;margin-top:26px}
+  .seatg-cta a{display:inline-flex;align-items:center;gap:10px;background:var(--lime);color:var(--ink);font-family:var(--jp);font-weight:900;font-size:clamp(15px,3vw,18px);padding:16px 36px;border-radius:100px;text-decoration:none;box-shadow:0 10px 28px rgba(198,241,53,.35)}
+  @media(max-width:560px){.srow{grid-template-columns:1fr}.srow-price{margin-top:2px}}
+
 @media(max-width:640px){.tx-qa{grid-template-columns:1fr}.tx-tips{grid-template-columns:1fr}}
 
 /* ==== iframe full: fixed nav + CTA (self-contained) ==== */
@@ -376,6 +411,12 @@ html{scroll-behavior:smooth}
 section[id],div[id]{scroll-margin-top:64px}
 @media(max-width:520px){.ifxcta-txt .sp{display:none}.ifxcta-txt{font-size:12px}.ifxcta-btn{font-size:14px;padding:12px 18px}.ifxnav a.ifx-logo{display:none}.ifxnav a.ifx-hall{display:none}.ifxnav-in{gap:2px;padding:9px 10px;justify-content:space-between}.ifxnav a{font-size:11.5px;padding:6px 7px}.ifxnav a.ifx-tk{padding:6px 12px}.ifxnav .nvf{display:none}.ifxnav .nvs{display:inline}}@media(max-width:360px){.ifxnav a{font-size:10.5px;padding:5px 5px}}
 
+
+  .hist-brief{max-width:720px;margin:clamp(24px,4vw,40px) auto 0;text-align:center}
+  .hist-brief p{color:var(--ink);font-weight:700;font-size:clamp(15px,3.2vw,19px);line-height:1.9}
+  .hist-brief b{color:var(--court)}
+  .hist-brief .hist-brief-sub{color:var(--mute);font-weight:600;font-size:clamp(13px,2.8vw,14.5px);line-height:1.85;margin-top:16px}
+
 </style>
 </head>
 <body>
@@ -400,7 +441,7 @@ section[id],div[id]{scroll-margin-top:64px}
   <div class="tag">Toray Pan Pacific Open 2026 ／ WTA 500</div>
   <h1><span>国内最高峰の</span><span class="yellow">女子テニス。</span></h1>
   <div class="eventname">東レ<span class="pp">PPO</span>テニス</div>
-  <div class="sub">世界TOP選手が、東京に集結する9日間。</div>
+  <div class="sub">世界TOP選手が、東京に集結する7日間。</div>
   <div class="meta"><span class="chip"><b>3</b> 世界TOP選手</span><span class="chip"><b>WTA 500</b> 国内最高峰</span><span class="chip"><b>10/24-11/1</b> 東京・有明</span></div>
   <a class="comebuy" href="https://bit.ly/4wuh7w8" target="_blank" rel="noopener">見に行こう。チケットはこちら <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   <a class="official" href="https://bit.ly/4qx9YK7" target="_blank" rel="noopener">公式サイトを見る <svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -660,47 +701,14 @@ section[id],div[id]{scroll-margin-top:64px}
       <div class="est-cap">前身は1973年の「東レシルックトーナメント」。<br>1984年、<b>アジア初・最大級</b>の国際女子大会として生まれ変わった。</div>
     </div>
 
-    <div class="tline">
-      <div class="ev reveal">
-        <div class="yr">1984</div>
-        <h3>“哀愁のマレーバ”、記念すべき初代女王に</h3>
-        <p>第1回大会を制したのはマヌエラ・マレーバ。可憐な佇まいから<em>「哀愁のマレーバ」</em>と呼ばれ、翌1985年も連覇。日本のテニスファンに最初に愛された大会の華だった。</p>
-      </div>
-      <div class="ev reveal">
-        <div class="yr">1989</div>
-        <h3>“史上最強”ナブラチロワ、日本に降臨</h3>
-        <p>クリス・エバートとともに初出場したマルチナ・ナブラチロワが初優勝。1993年にも制し、優勝スピーチでは急逝したアーサー・アッシュ氏へ哀悼を捧げ、会場に黙祷を促した。<em>シングルス通算167タイトルは今なお歴代1位</em>。</p>
-      </div>
-      <div class="ev reveal">
-        <div class="yr">1997</div>
-        <h3>新旧女王対決 ― グラフ 対 16歳ヒンギス</h3>
-        <p>21のグランドスラムを持つ27歳の女王グラフと、前週に初メジャーを獲った16歳ヒンギス。世代を超えた頂上決戦に、<em>会場には朝から当日券を求める長蛇の列</em>ができた。アジア最大級の大会だった時代を象徴する一戦。</p>
-      </div>
-      <div class="ev reveal">
-        <div class="yr">2000s</div>
-        <h3>ヒンギス、シャラポワ ― 東京を制した女王たち</h3>
-        <p>2000年代の東京は、マルチナ・ヒンギスとマリア・シャラポワが何度も頂点に立った時代。<em>その時代の“世界最強”が集う</em>場所であり続けた。ヒンギスは東レPPO歴代最多の5度の優勝を誇る。</p>
-      </div>
-      <div class="ev reveal">
-        <div class="yr">2019</div>
-        <h3>そして、大坂なおみ ― 日本の頂点が優勝</h3>
-        <p>四大大会を制した日本のアイコン、大坂なおみがこの大会で優勝。<em>歴代女王の系譜に、日本人の名が刻まれた瞬間</em>だった。</p>
-      </div>
+    <div class="hist-brief reveal">
+      <p>マレーバ、ナブラチロワ、グラフ、ヒンギス、シャラポワ、そして大坂なおみ──。<br>その時代ごとの<b>“世界最強”がこの東京のコートを制してきた</b>、40年以上の歴史。</p>
+      <p class="hist-brief-sub">歴代優勝者は23人・40回。その物語と、優勝の記念皿を掲げた女王たちの写真を、殿堂ページにまとめました。</p>
     </div>
 
-    <div class="hall reveal">
-      <div class="hall-t">Hall of Champions</div>
-      <div class="hall-jp">この東京のコートで戦った、歴代の女王たち</div>
-      <div class="hall-grid">
-        <div class="champ"><div class="cn">Manuela Maleeva</div><div class="cjp">マヌエラ・マレーバ</div><div class="cyr">1984・85</div></div>
-        <div class="champ legend"><div class="cn">Steffi Graf</div><div class="cjp">シュテフィ・グラフ</div><div class="cyr">GRAND SLAM 22冠</div></div>
-        <div class="champ legend"><div class="cn">Navratilova</div><div class="cjp">ナブラチロワ</div><div class="cyr">通算167タイトル</div></div>
-        <div class="champ legend"><div class="cn">Martina Hingis</div><div class="cjp">マルチナ・ヒンギス</div><div class="cyr">最年少女王</div></div>
-        <div class="champ legend"><div class="cn">Lindsay Davenport</div><div class="cjp">リンゼイ・ダベンポート</div><div class="cyr">東レPPO 4度制覇</div></div>
-        <div class="champ"><div class="cn">Naomi Osaka</div><div class="cjp">大坂 なおみ</div><div class="cyr">2019</div></div>
-      </div>
+    <div class="hall reveal" style="padding-top:0;border:0;background:none;box-shadow:none">
       <div class="hall-close">40年以上にわたり、世界の頂点がここで戦ってきました。<br><b>その歴史の続きが、今年もこの東京で生まれる。</b></div>
-      <div class="hall-more"><a href="https://ksawada-create.github.io/toray-lp/champions.html">歴代優勝者の殿堂を見る →</a></div>
+      <div class="hall-more"><a href="https://ksawada-create.github.io/toray-lp/champions.html">歴史のすべてと、歴代優勝者の殿堂を見る →</a></div>
     </div>
 
   </div>
@@ -758,6 +766,76 @@ section[id],div[id]{scroll-margin-top:64px}
   </div>
 </section>
 
+
+<section class="seatg reveal" id="seats">
+  <div class="seatg-in">
+    <div class="seatg-head">
+      <span class="seatg-badge"><span class="b">TENNIS365</span> スタッフのおすすめ</span>
+      <div class="seatg-en">How to choose your seat</div>
+      <div class="seatg-jp">初心者でも迷わない、<br>「席の選び方」ガイド</div>
+      <p class="seatg-lead">有明コロシアムは、どの席からでも見やすい設計。でも「どの席がいい？」と迷いますよね。観戦スタイル別に、テニス365スタッフがおすすめの席をご紹介します。</p>
+    </div>
+
+    <figure class="seatmap reveal">
+      <img src="https://ksawada-create.github.io/toray-lp/players/seatmap.jpg" alt="有明コロシアム 本戦座席表" loading="lazy">
+      <figcaption>本戦座席表（有明コロシアム）。審判台は西側、選手入場口は北西。<br>この配置をイメージしながら、下のおすすめ席をチェック。</figcaption>
+    </figure>
+
+    <div class="seatg-groups">
+      <div class="sgrp">
+        <div class="sgrp-ttl" style="background:#0B7FBF">試合全体を見渡したいなら</div>
+        <div class="sgrp-rows">
+          <div class="srow">
+            <div class="srow-name">SS席</div><div class="srow-price">¥7,500〜18,000</div>
+            <div class="srow-desc">コロシアム上段からコート全体を見渡せる定番席。ラリーの展開や選手の動きが追いやすく、初観戦にもおすすめ。</div>
+            <div class="srow-pick"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>スタッフ推し：どこを見るか迷ったら、まずはここ。全体が見える安心感。</span></div>
+          </div>
+          <div class="srow">
+            <div class="srow-name">S席 ／ A席</div><div class="srow-price">¥2,000〜8,000</div>
+            <div class="srow-desc">手頃な価格で会場の雰囲気を楽しめるスタンド席。平日（10/26〜30）は自由席の通し券で、複数日入場もOK。</div>
+            <div class="srow-pick"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>スタッフ推し：まず雰囲気を味わいたい・家族や友人とゆったり観たい人に。</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sgrp">
+        <div class="sgrp-ttl" style="background:#E63946">迫力・スピードを体感したいなら</div>
+        <div class="sgrp-rows">
+          <div class="srow">
+            <div class="srow-name">コートエンド席</div><div class="srow-price">¥12,000〜22,000</div>
+            <div class="srow-desc">コートの端、選手の背後側からの視点。サーブやリターンを正面から見られる大迫力のアングル。</div>
+            <div class="srow-pick"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>スタッフ推し：世界最速のサーブの“速さ”を体で感じたい人へ。テレビでは絶対に伝わらない。</span></div>
+          </div>
+          <div class="srow">
+            <div class="srow-name">コートサイド席（前方／後方）</div><div class="srow-price">¥13,000〜34,000</div>
+            <div class="srow-desc">コート長辺の東西両サイド。選手の表情や打球音まで届く“近さ”が魅力。前方はさらに臨場感が増す。</div>
+            <div class="srow-pick"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>スタッフ推し：選手の息づかいを感じたい人に。一度座ると、この距離感が忘れられない。</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sgrp">
+        <div class="sgrp-ttl" style="background:#B8860B">特別な体験をしたいなら</div>
+        <div class="sgrp-rows">
+          <div class="srow">
+            <div class="srow-name">ロイヤルボックス席</div><div class="srow-price">¥21,000〜40,000</div>
+            <div class="srow-desc">コート正面・北側最前列の特等席。段差があり見やすく、特別感と臨場感は圧倒的。</div>
+            <div class="srow-pick"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>スタッフ推し：記念日や“一生モノの一日”に。ここから見る決勝は格別。</span></div>
+          </div>
+          <div class="srow">
+            <div class="srow-name">スーペリア席</div><div class="srow-price">¥20,000〜38,500</div>
+            <div class="srow-desc">ロイヤルボックスに近い視点で、やや段差があるため見やすい。特等席の雰囲気を味わえる。</div>
+            <div class="srow-pick"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span>スタッフ推し：正面の迫力を、少し抑えた価格で楽しみたい人に。</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="seatg-note">※ 価格は日程により変動します（¥表記は最安〜最高の目安）。小学生以下はS席・A席が無料（当日券売場で自由席入場券を受取／4歳以上はチケット必要）。<br>最新の料金・座席表・申込方法は公式サイトで必ずご確認ください。</p>
+    <div class="seatg-cta"><a href="https://bit.ly/4wuh7w8" target="_blank" rel="noopener">席種・価格を見てチケットを選ぶ →</a></div>
+  </div>
+</section>
+
 <section class="bottom">
   <div class="tag">Don't miss it</div>
   <h2>その物語を、<br>生で。</h2>
@@ -766,7 +844,7 @@ section[id],div[id]{scroll-margin-top:64px}
     チケットを見る
     <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
   </a>
-  <div class="dates">Ariake Coliseum ／ Tokyo ／ Oct 24 – Nov 1, 2026</div>
+  <div class="dates">Ariake Coliseum ／ Tokyo ／ Oct 26 – Nov 1, 2026</div>
 </section>
 
 <footer>© Toray Pan Pacific Open Tennis Tournament</footer>
