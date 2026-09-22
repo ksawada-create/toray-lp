@@ -572,6 +572,16 @@ section[id],div[id]{scroll-margin-top:64px}
   .goodsbn .gb-imgs span{aspect-ratio:4/3;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;padding:8px;overflow:hidden}
   .goodsbn .gb-imgs img{max-width:100%;max-height:100%;object-fit:contain}
   @media(max-width:680px){.goodsbn a{grid-template-columns:1fr}.goodsbn .gb-imgs{grid-template-columns:repeat(4,1fr);gap:6px;order:-1}.goodsbn .gb-imgs span{aspect-ratio:1/1;padding:4px}}
+  /* ===== 観戦ツアー：満員御礼 ===== */
+  #tour .tour-full{display:inline-block;margin:0 auto 14px;font-family:var(--jp);font-weight:900;font-size:clamp(20px,4.6vw,28px);letter-spacing:.2em;color:#fff;background:#E63946;padding:8px 28px 8px 34px;border-radius:8px;box-shadow:0 8px 22px rgba(230,57,70,.35);transform:rotate(-2deg)}
+  #tour .tour-deadline b{color:#fff;background:#E63946;padding:1px 10px;border-radius:6px}
+  #tour .tour-closed{display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,.12);color:rgba(255,255,255,.85);border:1.5px solid rgba(255,255,255,.3);font-family:var(--jp);font-weight:900;font-size:clamp(15px,3.4vw,19px);padding:18px 40px;border-radius:100px;cursor:default}
+  .ixrow .ix-full{display:inline-block;margin-left:8px;font-style:normal;font-size:.72em;color:#fff;background:#E63946;padding:2px 9px;border-radius:6px;vertical-align:2px}
+  /* ===== FV下：グッズ決定 ===== */
+  .goodspromo{background:linear-gradient(120deg,#0d3f86,#1E5BB8 55%,#b8397a)}
+  .goodspromo .gp-ph{aspect-ratio:3/4;background:#fff;display:flex;align-items:center;justify-content:center;padding:10px}
+  .goodspromo .gp-ph img{max-width:100%;max-height:100%;object-fit:contain}
+  .hero-goodspop .htp-faces i{background-color:#fff;background-size:contain!important;background-position:center!important;background-repeat:no-repeat}
 </style>
 </head>
 <body>
@@ -606,36 +616,31 @@ section[id],div[id]{scroll-margin-top:64px}
     <div class="hero-tint" aria-hidden="true"></div>
   </div>
   <div class="hero-ctabar">
-    <a class="hero-tourpop" href="#tour">
-      <span class="htp-faces"><i class="ph-ue"></i><i class="ph-tamura"></i></span>
-      <span class="htp-tx"><b>10/28（水）観戦ツアー、参加者募集中</b><span>最強OL 上唯希 × 田村コーチと、まとまったSS席で観戦／定員30名・9/30締切</span></span>
-      <span class="htp-go">詳しく →</span>
+    <a class="hero-tourpop hero-goodspop" href="https://ksawada-create.github.io/toray-lp/goods.html">
+      <span class="htp-faces"><i style="background-image:url(goods/trainer.webp)"></i><i style="background-image:url(goods/cookie-pink.webp)"></i></span>
+      <span class="htp-tx"><b>2026 オフィシャルグッズ、決定！</b><span>アンバサダーコラボのスウェット、ペコちゃんクッキーなど全12点／10/24〜 有明コロシアム西口で販売</span></span>
+      <span class="htp-go">グッズを見る →</span>
     </a>
     <a class="comebuy" href="https://bit.ly/4wuh7w8" target="_blank" rel="noopener">見に行こう。チケットはこちら <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     <a class="official" href="https://bit.ly/4qx9YK7" target="_blank" rel="noopener">公式サイトを見る <svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </section>
 
-<!-- ===== 観戦ツアー 告知カード（FV直下） ===== -->
-<section class="tourpromo">
+<!-- ===== オフィシャルグッズ決定 告知カード（FV直下） ===== -->
+<section class="tourpromo goodspromo">
   <div class="tpm-in">
     <div class="tpm-l">
-      <span class="tpm-badge">Special Tour ／ 参加者募集中</span>
-      <h2><em class="d">10/28（水）開催</em>最強OL 上唯希 × 田村コーチと、<br>まとまった<em>SS席</em>で観る1日。</h2>
-      <p class="tpm-lead">「今のポイント、何が良かった？」をその場で聞ける観戦ツアー。チケットはこちらでSS席をまとめて確保するので、自分で取る必要はありません。おひとり参加も大歓迎です。</p>
-      <ul class="tpm-meta">
-        <li><b>8,500円</b><span>SS席チケット代込み</span></li>
-        <li><b>定員30名</b><span>先着順・最低開催10名</span></li>
-        <li><b>9/30締切</b><span>キャンセル期限 9/25</span></li>
-      </ul>
+      <span class="tpm-badge">Official Goods ／ 販売決定</span>
+      <h2><em class="d">10/24（土）〜 有明コロシアム西口で販売</em>今年だけの<em>オフィシャルグッズ</em>、<br>全12点が決定。</h2>
+      <p class="tpm-lead">大会アンバサダー 土居美咲さん・奈良くるみさんとのコラボスウェット、選手使用タオルの色違いバスタオル、毎年人気のペコちゃんクッキーなど。観戦の思い出に、会場でしか買えないグッズを。</p>
       <div class="tpm-btns">
-        <a class="pr" href="https://ypage.tennis365.net/event/event_detail.html?sp&amp;id=9174" target="_blank" rel="noopener">ツアーに申し込む →</a>
-        <a class="se" href="#tour">ツアーの詳細を見る</a>
+        <a class="pr" href="https://ksawada-create.github.io/toray-lp/goods.html">グッズ一覧を見る →</a>
+        <a class="se" href="https://bit.ly/4wuh7w8" target="_blank" rel="noopener">チケットを見る</a>
       </div>
     </div>
     <div class="tpm-r">
-      <figure><div class="tp-ph ph-ue" role="img" aria-label="上 唯希さん"></div><figcaption>上 唯希<span>YouTube「最強OL」</span></figcaption></figure>
-      <figure><div class="tp-ph ph-tamura" role="img" aria-label="田村 和也コーチ"></div><figcaption>田村 和也<span>人気No.1コーチ</span></figcaption></figure>
+      <figure><div class="gp-ph"><img src="goods/trainer.webp" alt="コラボスウェット"></div><figcaption>コラボスウェット<span>5,500円</span></figcaption></figure>
+      <figure><div class="gp-ph"><img src="goods/cookie-pink.webp" alt="チョコチップクッキー"></div><figcaption>ペコちゃんクッキー<span>950円</span></figcaption></figure>
     </div>
   </div>
 </section>
@@ -669,7 +674,7 @@ section[id],div[id]{scroll-margin-top:64px}
   <div class="ib-head"><div class="en">ON THIS <em>PAGE</em></div><div class="jp">このページの内容 ─ 気になる項目からどうぞ</div></div>
   <div class="ixlist">
     <a class="ixrow" style="--ixc:#0B7FBF" href="#players"><span class="ixn">01</span><span class="ixtx"><b>出場選手</b><span>出場選手紹介</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    <a class="ixrow" style="--ixc:#E63946" href="#tour"><span class="ixn">02</span><span class="ixtx"><b>観戦ツアー（10/28）</b><span>SS席・8,500円／定員30名・9/30締切</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="ixrow" style="--ixc:#E63946" href="#tour"><span class="ixn">02</span><span class="ixtx"><b>観戦ツアー（10/28）<em class="ix-full">満員御礼</em></b><span>ご応募ありがとうございました</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     <a class="ixrow" style="--ixc:#8134AF" href="#story"><span class="ixn">03</span><span class="ixtx"><b>日本との縁と物語</b><span>戦績だけじゃない背景</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     <a class="ixrow" style="--ixc:#075A87" href="#history"><span class="ixn">04</span><span class="ixtx"><b>大会の歴史と価値</b><span>1984年からの40年</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     <a class="ixrow" style="--ixc:#0B7FBF" href="#guide"><span class="ixn">05</span><span class="ixtx"><b>初めての観戦ガイド</b><span>行く前の不安を解消</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -843,13 +848,14 @@ section[id],div[id]{scroll-margin-top:64px}
 
 <!-- ================= 追加①：日本との関わり・選手ストーリー ================= -->
 
-<!-- ================= 観戦ツアー（申込受付中） ================= -->
+<!-- ================= 観戦ツアー（満員御礼・受付終了） ================= -->
 <section class="detail" id="tour" style="--ac:#C6F135;background:linear-gradient(135deg,var(--ink),#0b2733)">
   <div class="tourwrap">
+    <div class="tour-full">満員御礼</div>
     <div class="tour-tag">SPECIAL TOUR ／ 10月28日（水）開催</div>
     <h2 class="tour-h"><span class="th-sm">YouTubeで大人気！最強OL <b>上唯希</b><br>&times; テニス365人気コーチ <b>田村和也</b> と行く</span>東レPPO観戦ツアー</h2>
     <p class="tour-lead">せっかく東レPPOを観るなら、いつもよりちょっと深く、もっと楽しく。<br>参加者みんなで<b>まとまったSS席</b>から観戦し、「今のポイント、何が良かった？」「この選手はどこを狙ってる？」を、その場で上唯希さん・田村コーチに聞ける1日です。観戦日の10/28はシングルス2回戦。シード選手が登場し始める、見どころたっぷりの日程です。</p>
-    <div class="tour-deadline">申込締切 <b>9月30日（水）</b> ／ 定員 <b>30名</b>・先着順</div>
+    <div class="tour-deadline">定員に達したため、受付を終了しました</div>
 
     <div class="tour-sub">Your guides ／ 同行する2人</div>
     <div class="tourppl">
@@ -898,15 +904,15 @@ section[id],div[id]{scroll-margin-top:64px}
         <dt>集合</dt><dd><b>10:00</b>／有明コロシアム 正面玄関前</dd>
         <dt>観戦スケジュール</dt><dd>1試合目 10:30〜 ／ 2試合目 13:00〜 の2試合を観戦<span class="sm">※試合時間は確定ではありません。3試合目以降は各自自由となります。</span></dd>
         <dt>定員</dt><dd><b>30名</b>（最低開催人数 10名）</dd>
-        <dt>申込締切</dt><dd><b>9月30日（水）</b><span class="sm">定員に達し次第、受付を終了します。</span></dd>
+        <dt>受付状況</dt><dd><b>満員御礼</b>（定員に達したため受付を終了しました）</dd>
         <dt>キャンセル</dt><dd>9月25日（金）以降のキャンセルは<b>キャンセル料100%</b>が発生します。</dd>
         <dt>注意事項</dt><dd>昼食は合間に各自でお取りください。会場にはフードスペースがございます。</dd>
       </dl>
     </div>
 
     <div class="tour-cta">
-      <a href="https://ypage.tennis365.net/event/event_detail.html?sp&amp;id=9174" target="_blank" rel="noopener">観戦ツアーに申し込む →</a>
-      <span class="cta-sub">定員30名・先着順です。席数に限りがありますので、お早めにお申し込みください。</span>
+      <span class="tour-closed">満員御礼　受付は終了しました</span>
+      <span class="cta-sub">たくさんのお申し込み、ありがとうございました。当日、会場でお会いしましょう。</span>
     </div>
     <p class="tour-note">※ 上唯希さん・田村和也コーチに加え、テニス365 澤田がストリンガー目線で選手のラケット・ガット・テンションを解説します。最低開催人数（10名）に満たない場合は中止となる場合があります。</p>
   </div>
@@ -990,7 +996,7 @@ section[id],div[id]{scroll-margin-top:64px}
       <div class="tx-card">
         <div class="tx-icon"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
         <h3>「一人でも楽しめる？」</h3>
-        <p>むしろ一人観戦は多数派。来場者アンケートでも“1人で気ままに”は上位でした。自分のペースで好きな試合に集中できます。仲間と行きたい人には、<a href="#tour" style="color:var(--court);font-weight:900">コーチ同行の観戦ツアー</a>も申込受付中（10/28開催・9/30締切）。</p>
+        <p>むしろ一人観戦は多数派。来場者アンケートでも“1人で気ままに”は上位でした。自分のペースで好きな試合に集中できます。仲間と行きたい人には、<a href="#tour" style="color:var(--court);font-weight:900">コーチ同行の観戦ツアー</a>（10/28開催）は、おかげさまで満員御礼となりました。</p>
       </div>
       <div class="tx-card">
         <div class="tx-icon"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2 2 2 0 0 0 0 4 2 2 0 0 1-2 2H5a2 2 0 0 1-2-2 2 2 0 0 0 0-4z"/><path d="M15 6v12" stroke-dasharray="2 2"/></svg></div>
