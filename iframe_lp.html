@@ -557,6 +557,21 @@ section[id],div[id]{scroll-margin-top:64px}
   .tourpromo h2{font-size:clamp(20px,4.1vw,31px)}
   .tourpromo h2 em.d{display:block;font-size:.66em;letter-spacing:.02em;margin-bottom:7px}
 
+  /* ===== オフィシャルグッズ 誘導 ===== */
+  .ifxnav a.ifx-goods{color:#ffb3cf;font-weight:900}
+  .ifxnav a.ifx-goods + .ifx-hall{margin-left:0}
+  .ifxnav a.ifx-goods{margin-left:auto}
+  @media(max-width:520px){.ifxnav a.ifx-goods{margin-left:0}}
+  .goodsbn{max-width:1100px;margin:clamp(40px,7vw,72px) auto clamp(40px,7vw,72px);padding:0 16px}
+  .goodsbn a{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(16px,3vw,32px);align-items:center;background:linear-gradient(125deg,#0d3f86,#1E5BB8 50%,#D63C86);color:#fff;border-radius:22px;padding:clamp(22px,4vw,36px);text-decoration:none;box-shadow:0 14px 36px rgba(30,91,184,.25)}
+  .goodsbn .gb-tag{display:block;font-family:var(--cond);font-weight:700;letter-spacing:.24em;font-size:12.5px;color:var(--lime);text-transform:uppercase}
+  .goodsbn b{display:block;font-weight:900;font-size:clamp(19px,4vw,26px);line-height:1.45;margin:8px 0 10px}
+  .goodsbn .gb-sub{display:block;font-weight:600;font-size:clamp(12.5px,2.7vw,14px);line-height:1.8;color:rgba(255,255,255,.85)}
+  .goodsbn .gb-go{display:inline-block;margin-top:16px;background:var(--lime);color:var(--ink);font-weight:900;font-size:14px;padding:10px 22px;border-radius:100px}
+  .goodsbn .gb-imgs{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .goodsbn .gb-imgs span{aspect-ratio:4/3;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;padding:8px;overflow:hidden}
+  .goodsbn .gb-imgs img{max-width:100%;max-height:100%;object-fit:contain}
+  @media(max-width:680px){.goodsbn a{grid-template-columns:1fr}.goodsbn .gb-imgs{grid-template-columns:repeat(4,1fr);gap:6px;order:-1}.goodsbn .gb-imgs span{aspect-ratio:1/1;padding:4px}}
 </style>
 </head>
 <body>
@@ -568,6 +583,7 @@ section[id],div[id]{scroll-margin-top:64px}
 <a href="#story"><span class="nvf">日本との縁</span><span class="nvs">日本との縁</span></a>
 <a href="#history"><span class="nvf">大会歴史</span><span class="nvs">大会歴史</span></a>
 <a href="#guide"><span class="nvf">初めての観戦</span><span class="nvs">初めての観戦</span></a>
+<a class="ifx-goods" href="https://ksawada-create.github.io/toray-lp/goods.html"><span class="nvf">グッズ</span><span class="nvs">グッズ</span></a>
 <a class="ifx-hall" href="https://ksawada-create.github.io/toray-lp/champions.html"><span class="nvf">歴代優勝者</span><span class="nvs">歴代優勝者</span></a>
 <a class="ifx-tk" href="https://bit.ly/4wuh7w8" target="_blank" rel="noopener">チケット</a>
 </div></nav>
@@ -658,6 +674,7 @@ section[id],div[id]{scroll-margin-top:64px}
     <a class="ixrow" style="--ixc:#075A87" href="#history"><span class="ixn">04</span><span class="ixtx"><b>大会の歴史と価値</b><span>1984年からの40年</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     <a class="ixrow" style="--ixc:#0B7FBF" href="#guide"><span class="ixn">05</span><span class="ixtx"><b>初めての観戦ガイド</b><span>行く前の不安を解消</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     <a class="ixrow" style="--ixc:#a9812f" href="https://ksawada-create.github.io/toray-lp/champions.html"><span class="ixn">06</span><span class="ixtx"><b>歴代優勝者の殿堂</b><span>1984年からの女王たち</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="ixrow" style="--ixc:#E0457B" href="https://ksawada-create.github.io/toray-lp/goods.html"><span class="ixn">07</span><span class="ixtx"><b>オフィシャルグッズ</b><span>全12点・コラボアイテムも</span></span><svg class="ixarw" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </div>
 <div class="sidenav" id="sidenav">
@@ -1050,6 +1067,24 @@ section[id],div[id]{scroll-margin-top:64px}
     <p class="seatg-note"><br>最新の料金・座席表・申込方法は公式サイトで必ずご確認ください。</p>
     <div class="seatg-cta"><a href="https://bit.ly/4wuh7w8" target="_blank" rel="noopener">席種・価格を見てチケットを選ぶ →</a></div>
   </div>
+</section>
+
+<!-- ===== オフィシャルグッズ 誘導バナー ===== -->
+<section class="goodsbn reveal">
+  <a href="https://ksawada-create.github.io/toray-lp/goods.html">
+    <div class="gb-tx">
+      <span class="gb-tag">Official Goods 2026</span>
+      <b>観戦の思い出を、持って帰ろう。</b>
+      <span class="gb-sub">アンバサダーコラボのスウェット、選手使用タオルの色違いバスタオル、ペコちゃんクッキーなど全12点を紹介</span>
+      <span class="gb-go">グッズを見る →</span>
+    </div>
+    <div class="gb-imgs">
+      <span><img src="goods/trainer.webp" alt="" loading="lazy"></span>
+      <span><img src="goods/cookie-pink.webp" alt="" loading="lazy"></span>
+      <span><img src="goods/grip.webp" alt="" loading="lazy"></span>
+      <span><img src="goods/bath-towel.webp" alt="" loading="lazy"></span>
+    </div>
+  </a>
 </section>
 
 <section class="bottom">
