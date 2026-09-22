@@ -582,11 +582,25 @@ section[id],div[id]{scroll-margin-top:64px}
   .goodspromo .gp-ph{aspect-ratio:3/4;background:#fff;display:flex;align-items:center;justify-content:center;padding:10px}
   .goodspromo .gp-ph img{max-width:100%;max-height:100%;object-fit:contain}
   .hero-goodspop .htp-faces i{background-color:#fff;background-size:contain!important;background-position:center!important;background-repeat:no-repeat}
+  /* ===== 現在地表示：番号帯／メニュー強調／進捗バー ===== */
+  .secno{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin:0 auto clamp(18px,3vw,26px);font-family:var(--jp);font-weight:900;font-size:clamp(12.5px,2.8vw,14px);color:var(--ink);text-align:center}
+  .secno b{display:inline-flex;align-items:center;justify-content:center;min-width:36px;height:30px;padding:0 8px;border-radius:8px;background:var(--c);color:#fff;font-family:var(--cond);font-size:18px;letter-spacing:.04em}
+  .secno i{font-style:normal;font-family:var(--cond);font-weight:700;font-size:15px;color:var(--mute);margin-left:-3px}
+  .secno .sn-t{letter-spacing:.04em}
+  .secno .sn-sub{font-weight:700;color:var(--c);padding-left:10px;border-left:2px solid var(--line)}
+  .sec-head > .secno{margin-bottom:16px}
+  #tour .secno{color:#fff}
+  #tour .secno i{color:rgba(255,255,255,.55)}
+  #tour .secno .sn-sub{border-color:rgba(255,255,255,.25)}
+  .detail > .secno{max-width:1100px}
+  .ifxprog{position:absolute;left:0;right:0;bottom:-1px;height:3px;background:rgba(255,255,255,.08);pointer-events:none;z-index:2}
+  .ifxprog i{display:block;height:100%;width:0;background:var(--lime);transition:width .12s linear}
+  .ifxnav a.on{background:rgba(198,241,53,.16);color:var(--lime);box-shadow:inset 0 0 0 1.5px var(--lime)}
 </style>
 </head>
 <body>
 <span id="top"></span>
-<nav class="ifxnav"><div class="ifxnav-in">
+<nav class="ifxnav"><div class="ifxprog" aria-hidden="true"><i id="ifxprog"></i></div><div class="ifxnav-in">
 <a class="ifx-logo" href="#top">TORAY <b>PPO</b></a>
 <a href="#players"><span class="nvf">出場選手</span><span class="nvs">出場選手</span></a>
 <a class="ifx-tour" href="#tour"><span class="nvf">観戦ツアー</span><span class="nvs">観戦ツアー</span></a>
@@ -691,6 +705,7 @@ section[id],div[id]{scroll-margin-top:64px}
 </div>
 
 <div class="sec-head reveal" id="players">
+  <div class="secno" style="--c:#0B7FBF"><b>01</b><i>/ 07</i><span class="sn-t">出場選手</span></div>
   <div class="en">WORLD <em>TOP</em> PLAYERS</div>
   <div class="jp">気になる選手をタップ</div>
 </div>
@@ -736,6 +751,7 @@ section[id],div[id]{scroll-margin-top:64px}
 <div class="clickhint reveal"><span>▲ カードをタップすると、その選手のストーリーへ</span></div>
 
   <section class="detail" id="rybakina" style="--ac:#0A9EC4">
+  <div class="secno" style="--c:#0B7FBF"><b>01</b><i>/ 07</i><span class="sn-t">出場選手</span><span class="sn-sub">ルバキナ</span></div>
     <div class="detail-inner">
       <div class="detail-photo">
         <img src="https://ksawada-create.github.io/toray-lp/players/rybakina.jpg" alt="Rybakina" onerror="this.parentElement.classList.add('noimg')">
@@ -767,6 +783,7 @@ section[id],div[id]{scroll-margin-top:64px}
     </div>
   </section>
   <section class="detail" id="bencic" style="--ac:#F2A900">
+  <div class="secno" style="--c:#0B7FBF"><b>01</b><i>/ 07</i><span class="sn-t">出場選手</span><span class="sn-sub">ベンチッチ</span></div>
     <div class="detail-inner">
       <div class="detail-photo">
         <img src="https://ksawada-create.github.io/toray-lp/players/bencic.jpg" alt="Bencic" onerror="this.parentElement.classList.add('noimg')">
@@ -798,6 +815,7 @@ section[id],div[id]{scroll-margin-top:64px}
     </div>
   </section>
   <section class="detail has-embed" id="osaka" style="--ac:#E63946">
+  <div class="secno" style="--c:#0B7FBF"><b>01</b><i>/ 07</i><span class="sn-t">出場選手</span><span class="sn-sub">大坂なおみ</span></div>
     <div class="detail-inner">
       <div class="detail-photo">
         <img src="https://ksawada-create.github.io/toray-lp/players/osaka.jpg" alt="Osaka" onerror="this.parentElement.classList.add('noimg')">
@@ -850,6 +868,7 @@ section[id],div[id]{scroll-margin-top:64px}
 
 <!-- ================= 観戦ツアー（満員御礼・受付終了） ================= -->
 <section class="detail" id="tour" style="--ac:#C6F135;background:linear-gradient(135deg,var(--ink),#0b2733)">
+  <div class="secno" style="--c:#E63946"><b>02</b><i>/ 07</i><span class="sn-t">観戦ツアー</span></div>
   <div class="tourwrap">
     <div class="tour-full">満員御礼</div>
     <div class="tour-tag">SPECIAL TOUR ／ 10月28日（水）開催</div>
@@ -920,6 +939,7 @@ section[id],div[id]{scroll-margin-top:64px}
 
 <!-- ③ 日本との縁 -->
 <section class="detail" id="story" style="--ac:#0B7FBF">
+  <div class="secno" style="--c:#8134AF"><b>03</b><i>/ 07</i><span class="sn-t">日本との縁と物語</span></div>
   <div class="sec-head" style="padding-top:0">
     <div class="en">JAPAN <em>&</em> THEIR STORY</div>
     <div class="jp">戦績だけじゃない。日本との縁と、それぞれの物語</div>
@@ -959,6 +979,7 @@ section[id],div[id]{scroll-margin-top:64px}
 
 <!-- ================= 追加②：大会の歴史と価値 ================= -->
 <section class="detail" id="history" style="--ac:#075A87">
+  <div class="secno" style="--c:#075A87"><b>04</b><i>/ 07</i><span class="sn-t">大会の歴史と価値</span></div>
   <div class="sec-head" style="padding-top:0">
     <div class="en">40+ <em>YEARS</em> OF HISTORY</div>
     <div class="jp">1984年から続く、国内最高峰の女子国際テニス大会</div>
@@ -986,6 +1007,7 @@ section[id],div[id]{scroll-margin-top:64px}
 
 <!-- ② 初めてでも安心ガイド -->
 <section class="tppo-x tx-guide" id="guide">
+  <div class="secno" style="--c:#0B7FBF"><b>05</b><i>/ 07</i><span class="sn-t">初めての観戦ガイド</span></div>
   <div class="tx-inner">
     <div class="tx-head">
       <div class="tx-en tx-en-jp">初めての<em>観戦ガイド</em></div>
@@ -1024,6 +1046,7 @@ section[id],div[id]{scroll-margin-top:64px}
 
 
 <section class="seatg reveal" id="seats">
+  <div class="secno" style="--c:#0B7FBF"><b>05</b><i>/ 07</i><span class="sn-t">初めての観戦ガイド</span><span class="sn-sub">席の選び方</span></div>
   <div class="seatg-in">
     <div class="seatg-head">
       <span class="seatg-badge"><span class="b">TENNIS365</span> スタッフのおすすめ</span>
@@ -1148,5 +1171,33 @@ section[id],div[id]{scroll-margin-top:64px}
 <div class="ifxcta-txt"><b>小学生以下は自由席無料</b><span class="sp"> ／ 国内最高峰の女子テニス、東京・有明</span></div>
 <a class="ifxcta-btn" href="https://bit.ly/4wuh7w8" target="_blank" rel="noopener">今すぐ観に行く →</a>
 </div></div>
+<script>
+/* 現在地：上部メニュー強調・進捗バー */
+(function(){
+  var secs=[['players','#players'],['tour','#tour'],['story','#story'],['history','#history'],['guide','#guide']];
+  var endEl=document.querySelector('.goodsbn')||document.querySelector('.bottom');
+  var nav=document.querySelector('.ifxnav-in'), bar=document.getElementById('ifxprog');
+  var links={}; secs.forEach(function(x){var a=nav&&nav.querySelector('a[href="#'+x[0]+'"]'); if(a) links[x[0]]=a;});
+  var cur=null, ticking=false;
+  function update(){
+    ticking=false;
+    var de=document.documentElement, max=de.scrollHeight-innerHeight;
+    if(bar) bar.style.width=(max>0?Math.min(100,Math.max(0,scrollY/max*100)):0)+'%';
+    var line=innerHeight*0.35, now=null;
+    secs.forEach(function(x){var el=document.getElementById(x[0]); if(el&&el.getBoundingClientRect().top<=line) now=x[0];});
+    if(endEl&&endEl.getBoundingClientRect().top<=line) now=null;
+    if(now===cur) return;
+    if(cur&&links[cur]) links[cur].classList.remove('on');
+    cur=now;
+    if(cur&&links[cur]){
+      var a=links[cur]; a.classList.add('on');
+      var left=a.offsetLeft-(nav.clientWidth-a.offsetWidth)/2;
+      try{nav.scrollTo({left:left,behavior:'smooth'});}catch(e){nav.scrollLeft=left;}
+    }
+  }
+  function onScroll(){ if(!ticking){ticking=true;requestAnimationFrame(update);} }
+  addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',onScroll); addEventListener('load',update); update();
+})();
+</script>
 </body>
 </html>
