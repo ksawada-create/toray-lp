@@ -596,6 +596,37 @@ section[id],div[id]{scroll-margin-top:64px}
   .ifxprog{position:absolute;left:0;right:0;bottom:-1px;height:3px;background:rgba(255,255,255,.08);pointer-events:none;z-index:2}
   .ifxprog i{display:block;height:100%;width:0;background:var(--lime);transition:width .12s linear}
   .ifxnav a.on{background:rgba(198,241,53,.16);color:var(--lime);box-shadow:inset 0 0 0 1.5px var(--lime)}
+  /* ===== ヒーロー静止画／ダイレクトイン17名 ===== */
+  .hero-bg.hero-static .hbg{animation:none;opacity:1;background-position:center center}
+  .hero-foot{border-top:0}
+  .direct{background:linear-gradient(135deg,#0a1f3d,#12212B 55%,#2a1340);padding:clamp(18px,3.4vw,30px) clamp(14px,4vw,40px) clamp(16px,3vw,26px)}
+  .direct-head{display:flex;align-items:baseline;justify-content:center;flex-wrap:wrap;gap:6px 14px;margin-bottom:clamp(12px,2.4vw,18px);text-align:center}
+  .direct-head .dh-en{font-family:var(--cond);font-weight:700;letter-spacing:.26em;text-transform:uppercase;font-size:clamp(12px,2.6vw,14px);color:var(--lime)}
+  .direct-head .dh-jp{font-family:var(--jp);font-weight:900;font-size:clamp(13px,3vw,16px);color:#fff}
+  .direct-head .dh-jp b{color:var(--lime);font-size:1.25em;margin:0 2px}
+  .direct-list{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(188px,1fr));gap:7px;max-width:1100px;margin:0 auto}
+  .direct-list li{position:relative;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:10px;padding:8px 11px;line-height:1.3}
+  .direct-list b{display:block;font-family:var(--jp);font-weight:900;font-size:clamp(12.5px,2.9vw,14px);color:#fff}
+  .direct-list span{display:block;margin-top:2px;font-family:var(--cond);font-weight:600;letter-spacing:.06em;font-size:11px;color:rgba(255,255,255,.55);text-transform:uppercase}
+  .direct-list em{position:absolute;top:7px;right:8px;font-style:normal;font-family:var(--jp);font-weight:900;font-size:9.5px;color:var(--ink);background:var(--lime);padding:2px 6px;border-radius:5px}
+  .direct-note{max-width:1100px;margin:12px auto 0;text-align:center;font-size:11px;font-weight:600;color:rgba(255,255,255,.5);line-height:1.6}
+  @media(max-width:560px){
+    .direct-list{grid-template-columns:1fr 1fr;gap:6px}
+    .direct-list li{padding:7px 9px}
+    .direct-list em{position:static;display:inline-block;margin-top:4px}
+  }
+  @media(max-width:360px){.direct-list{grid-template-columns:1fr}}
+  .direct-list-more{margin-top:7px}
+  .direct-more{margin-top:10px}
+  .direct-more summary{list-style:none;display:flex;align-items:center;justify-content:center;gap:7px;max-width:360px;margin:0 auto;padding:11px 20px;border:1.5px solid rgba(198,241,53,.6);border-radius:100px;background:rgba(198,241,53,.1);color:var(--lime);font-family:var(--jp);font-weight:900;font-size:clamp(12.5px,2.9vw,14px);cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .direct-more summary::-webkit-details-marker{display:none}
+  .direct-more summary::after{content:"";width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .2s}
+  .direct-more[open] summary::after{transform:translateY(2px) rotate(-135deg)}
+  .direct-more summary:hover{background:rgba(198,241,53,.18)}
+  .direct-more .dm-close,.direct-more[open] .dm-open{display:none}
+  .direct-more[open] .dm-close{display:inline}
+  .direct-more[open] summary{margin-top:10px;order:2}
+  .direct-more[open]{display:flex;flex-direction:column}
 </style>
 </head>
 <body>
@@ -619,16 +650,47 @@ section[id],div[id]{scroll-margin-top:64px}
 
 <section class="hero">
   <div class="hero-imgwrap">
-  <div class="hero-bg hero-bg-pc" aria-hidden="true">
-    <div class="hbg" style="background-image:url('img/hero-pc-1.jpg')"></div>
-    <div class="hbg" style="background-image:url('img/hero-pc-2.jpg')"></div>
+  <div class="hero-bg hero-bg-pc hero-static" aria-hidden="true">
+    <div class="hbg" style="background-image:url('img/hero-pc-2026.jpg')"></div>
   </div>
-  <div class="hero-bg hero-bg-sp" aria-hidden="true">
-    <div class="hbg" style="background-image:url('img/hero-sp.jpg')"></div>
-    <div class="hbg" style="background-image:url('img/hero-sp.jpg')"></div>
+  <div class="hero-bg hero-bg-sp hero-static" aria-hidden="true">
+    <div class="hbg" style="background-image:url('img/hero-sp-2026.jpg')"></div>
   </div>
     <div class="hero-tint" aria-hidden="true"></div>
   </div>
+</section>
+
+<!-- ===== ダイレクトイン17名 ===== -->
+<div class="direct">
+  <div class="direct-head"><span class="dh-en">Direct Entry</span><span class="dh-jp">本戦ストレートイン <b>17</b>名（出場予定選手）</span></div>
+  <ul class="direct-list">
+    <li><b>エレーナ・ルバキナ</b><span>Elena Rybakina</span></li>
+    <li><b>ジェシカ・ペグラ</b><span>Jessica Pegula</span></li>
+    <li><b>エリナ・スビトリナ</b><span>Elina Svitolina</span></li>
+    <li><b>イガ・シフィオンテク</b><span>Iga Swiatek</span></li>
+    <li><b>マルタ・コスチュク</b><span>Marta Kostyuk</span></li>
+    <li><b>ベリンダ・ベンチッチ</b><span>Belinda Bencic</span></li>
+  </ul>
+  <details class="direct-more">
+    <summary><span class="dm-open">もっと見る（残り11名）</span><span class="dm-close">閉じる</span></summary>
+    <ul class="direct-list direct-list-more">
+    <li><b>イバ・ヨビッチ</b><span>Iva Jovic</span><em>初出場</em></li>
+    <li><b>ディアナ・シュナイデル</b><span>Diana Shnaider</span></li>
+    <li><b>ソラナ・チルステア</b><span>Sorana Cirstea</span></li>
+    <li><b>大坂なおみ</b><span>Naomi Osaka</span></li>
+    <li><b>アレクサンドラ・イアラ</b><span>Alexandra Eala</span><em>初出場</em></li>
+    <li><b>エリーズ・メルテンス</b><span>Elise Mertens</span></li>
+    <li><b>ジャスミン・パオリーニ</b><span>Jasmine Paolini</span><em>初出場</em></li>
+    <li><b>マヤ・フファリンスカ</b><span>Maja Chwalinska</span><em>初出場</em></li>
+    <li><b>アンナ・カリンスカヤ</b><span>Anna Kalinskaya</span></li>
+    <li><b>レイラ・フェルナンデス</b><span>Leylah Fernandez</span></li>
+    <li><b>エカテリーナ・アレクサンドロワ</b><span>Ekaterina Alexandrova</span></li>
+    </ul>
+  </details>
+  <p class="direct-note">※ 公式サイト発表の出場予定選手です。出場選手は変更になる場合があります。</p>
+</div>
+
+<section class="hero hero-foot">
   <div class="hero-ctabar">
     <a class="hero-tourpop hero-goodspop" href="https://ksawada-create.github.io/toray-lp/goods.html">
       <span class="htp-faces"><i style="background-image:url(goods/trainer.webp)"></i><i style="background-image:url(goods/cookie-pink.webp)"></i></span>
